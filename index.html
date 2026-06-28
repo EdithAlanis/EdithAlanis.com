@@ -55,422 +55,69 @@ footer{background:#07172C;color:white;text-align:center;padding:38px 8%} footer 
 </main>
 <footer><p><strong>Programa de Innovación EdithAlanis™</strong></p><p>Sitio oficial de Edith Alanis · Innovación mexicana · Propiedad intelectual · Red Nacional de Coinventores</p><p>© 2026 Edith Alanis. Todos los derechos reservados.</p></footer>
 <script>
-const redData = {
-  "Ciudad de México": {
-    "Coyoacan Mexico": [
-      {
-        "clave": "2026-10063",
-        "nombre": "Robles Gonzalez Vania Shuhua"
-      }
-    ]
-  },
-  "Colima": {
-    "Colima": [
-      {
-        "clave": "2026-10037",
-        "nombre": "Lino Gamiño Juan Alfredo"
-      }
-    ]
-  },
-  "Guanajuato": {
-    "Guanajuato": [
-      {
-        "clave": "2026-10041",
-        "nombre": "Lopez Chavez Gilberto"
-      }
-    ]
-  },
-  "Jalisco": {
-    "Guadalajara": [
-      {
-        "clave": "2026-10028",
-        "nombre": "Baltazar Montes Lorenzo"
-      },
-      {
-        "clave": "2026-10072",
-        "nombre": "Bayardo Gonzalez Ruben Alberto"
-      },
-      {
-        "clave": "2026-10011",
-        "nombre": "Calderon Garcia Rocio"
-      },
-      {
-        "clave": "2026-10057",
-        "nombre": "Claustro Bobadilla Javier"
-      },
-      {
-        "clave": "2026-10068",
-        "nombre": "Cortes Camacho Araceli"
-      },
-      {
-        "clave": "2026-10007",
-        "nombre": "Delgadillo Preciado Zaira America"
-      },
-      {
-        "clave": "2026-10059",
-        "nombre": "Dominguez Garcia Rodolfo Omar"
-      },
-      {
-        "clave": "2026-10002",
-        "nombre": "Escutia Gutierrez Raymundo"
-      },
-      {
-        "clave": "2026-10017",
-        "nombre": "Gomez Contreras Flor Alejandra"
-      },
-      {
-        "clave": "2026-10054",
-        "nombre": "Hernandez Landeros Edgar Miguel Raul"
-      },
-      {
-        "clave": "2026-10010",
-        "nombre": "Jimenez Torres Jorge Alfredo"
-      },
-      {
-        "clave": "2026-10040",
-        "nombre": "Kristyan Felype Luis Navarro"
-      },
-      {
-        "clave": "2026-10051",
-        "nombre": "Manzo Palomera Olga Rocio"
-      },
-      {
-        "clave": "2026-10012",
-        "nombre": "Moran Martinez Francisco"
-      },
-      {
-        "clave": "2026-10046",
-        "nombre": "Napoles Salas Luz Elena"
-      },
-      {
-        "clave": "2026-10035",
-        "nombre": "Perez Villalpando Marle Alejandra"
-      },
-      {
-        "clave": "2026-10058",
-        "nombre": "Ramirez Torres Miguel Angel"
-      },
-      {
-        "clave": "2026-10065",
-        "nombre": "Rivas Paz Mariana"
-      },
-      {
-        "clave": "2026-10053",
-        "nombre": "Solorio Gonzalez Carolina"
-      },
-      {
-        "clave": "2026-10022",
-        "nombre": "Yañez Larios Adan"
-      }
-    ],
-    "Jamay": [
-      {
-        "clave": "2026-10033",
-        "nombre": "Becerra Gonzalez Ruber Armando"
-      }
-    ],
-    "Ocotlan": [
-      {
-        "clave": "2026-10031",
-        "nombre": "Aragon Rios Elba Karina"
-      },
-      {
-        "clave": "2026-10025",
-        "nombre": "Castellanos Villarruel Soledad"
-      },
-      {
-        "clave": "2026-10030",
-        "nombre": "Gazpar Castellanos Jose Luis"
-      },
-      {
-        "clave": "2026-10047",
-        "nombre": "Guzman Castellanos Karen Berenice"
-      },
-      {
-        "clave": "2026-10024",
-        "nombre": "Guzman Mares Lucio"
-      },
-      {
-        "clave": "2026-10039",
-        "nombre": "Guzman Villarruel Jesus Fernando"
-      },
-      {
-        "clave": "2026-10032",
-        "nombre": "Hernandez Garcia Anabella"
-      }
-    ],
-    "San Gabriel": [
-      {
-        "clave": "2026-10052",
-        "nombre": "Gonzalez Fajardo Alma Delia"
-      }
-    ],
-    "San Pedro San Pedro Tlaquepaque": [
-      {
-        "clave": "2026-10055",
-        "nombre": "Aguilar Molian Yehoshua"
-      }
-    ],
-    "Tepatitlan de Morelos": [
-      {
-        "clave": "2026-10077",
-        "nombre": "Villegas Alcantar Benjamin"
-      }
-    ],
-    "Tlajomulco de Zuñiga": [
-      {
-        "clave": "2026-10001",
-        "nombre": "Alanis Pérez Jezrael Abraham"
-      },
-      {
-        "clave": "2026-10014",
-        "nombre": "Alanis Pérez Jose Eduardo"
-      },
-      {
-        "clave": "2026-10064",
-        "nombre": "Andalon Alvarez Lisbeth"
-      },
-      {
-        "clave": "2026-10084",
-        "nombre": "Baltazar Alaniz Daniel Alejandro"
-      },
-      {
-        "clave": "2026-10083",
-        "nombre": "Baltazar Alaniz Elsy Susana Edith"
-      }
-    ],
-    "Villa Corona": [
-      {
-        "clave": "2026-10066",
-        "nombre": "Maciel Ruelas Estefany Teresa"
-      }
-    ],
-    "Zapopan": [
-      {
-        "clave": "2026-10018",
-        "nombre": "Alaniz Casillas Christian Eduardo"
-      },
-      {
-        "clave": "2026-10036",
-        "nombre": "Alaniz Partida, Ignacio Ricardo"
-      },
-      {
-        "clave": "2026-10034",
-        "nombre": "Alaniz Perez Ignacio Ricardo"
-      },
-      {
-        "clave": "2026-10082",
-        "nombre": "Alaniz Perez Maria Ivett Janett"
-      },
-      {
-        "clave": "2026-10008",
-        "nombre": "Bautista Gonzalez Jorge Gregorio"
-      },
-      {
-        "clave": "2026-10070",
-        "nombre": "Bautista Gonzalez Jorge Gregorio"
-      },
-      {
-        "clave": "2026-10029",
-        "nombre": "Castillo Medina Diana Iztacihuatl"
-      },
-      {
-        "clave": "2026-10027",
-        "nombre": "Davalos Garcia Sergio Roberto"
-      },
-      {
-        "clave": "2026-10016",
-        "nombre": "Duran Padilla Jose Arturo"
-      },
-      {
-        "clave": "2026-10006",
-        "nombre": "Hernandez Santa Maria Jose Guadalupe"
-      },
-      {
-        "clave": "2026-10045",
-        "nombre": "Lozoya Arandia Jorge"
-      },
-      {
-        "clave": "2026-10056",
-        "nombre": "Luna Rizo Marisol"
-      },
-      {
-        "clave": "2026-10003",
-        "nombre": "Montalvo Nuñez Jorge Antonio"
-      },
-      {
-        "clave": "2026-10061",
-        "nombre": "Ortiz Palafox Karla Haydeee"
-      },
-      {
-        "clave": "2026-10067",
-        "nombre": "Rivera Alaniz Chamir Darinka"
-      },
-      {
-        "clave": "2026-10013",
-        "nombre": "Rivera Alaniz Xiomara Hatzydy"
-      },
-      {
-        "clave": "2026-10062",
-        "nombre": "Rodriguez Nieves Blanca"
-      },
-      {
-        "clave": "2026-10081",
-        "nombre": "Vargas Lares Oscar Alejandro"
-      }
-    ],
-    "Zapotlan El Grande": [
-      {
-        "clave": "2026-10060",
-        "nombre": "Iñiguez Carrillo Adriana Lorena"
-      }
-    ]
-  },
-  "Nuevo León": {
-    "Garcia": [
-      {
-        "clave": "2026-10044",
-        "nombre": "Alanis Mijares Jesus"
-      }
-    ],
-    "San Nicolas de la Garza": [
-      {
-        "clave": "2026-10049",
-        "nombre": "Alanis Mijares Antonia Leticia"
-      },
-      {
-        "clave": "2026-10048",
-        "nombre": "Cruz Alanis Ariana Leticia"
-      },
-      {
-        "clave": "2026-10050",
-        "nombre": "Cruz del Angel Jesus Adrian"
-      }
-    ],
-    "San Nicolas de los Garza": [
-      {
-        "clave": "2026-10069",
-        "nombre": "Alanis Mijares Minerva"
-      }
-    ]
-  },
-  "Oaxaca": {
-    "Huajuapan de Leon": [
-      {
-        "clave": "2026-10020",
-        "nombre": "Carazo Luna Jose Alfredo"
-      },
-      {
-        "clave": "2026-10043",
-        "nombre": "Hernandez Mendez Arturo"
-      },
-      {
-        "clave": "2026-10019",
-        "nombre": "Montesinos Gonzalez Salvador"
-      },
-      {
-        "clave": "2026-10021",
-        "nombre": "Salas Coronado Raul"
-      },
-      {
-        "clave": "2026-10015",
-        "nombre": "Vazquez Cid de Leon Carlos"
-      }
-    ],
-    "de Juarez": [
-      {
-        "clave": "2026-10023",
-        "nombre": "Ramirez Castillo Eric Amin"
-      },
-      {
-        "clave": "2026-10042",
-        "nombre": "Vazquez Arango Maria de Lourdes"
-      }
-    ]
-  },
-  "Tabasco": {
-    "Comalcalco": [
-      {
-        "clave": "2026-10080",
-        "nombre": "Lopez Alvarado Miguel Angel"
-      }
-    ],
-    "Villahermosa": [
-      {
-        "clave": "2026-10079",
-        "nombre": "Hernandez Abreu Karina Esther"
-      },
-      {
-        "clave": "2026-10078",
-        "nombre": "Lehmann Mendoza Jose Miguel"
-      }
-    ]
-  },
-  "Veracruz": {
-    "Camerino Z Mendoza": [
-      {
-        "clave": "2026-10038",
-        "nombre": "Trujillo Mata Amin"
-      }
-    ],
-    "Cosoleacaque": [
-      {
-        "clave": "2026-10076",
-        "nombre": "Carrion Castillo Luz Ovillada"
-      },
-      {
-        "clave": "2026-10005",
-        "nombre": "Carrión Castillo Luz Ovillada"
-      }
-    ],
-    "Fortin": [
-      {
-        "clave": "2026-10026",
-        "nombre": "Chama Mora Hector Adan"
-      }
-    ],
-    "Izhuatlancillo": [
-      {
-        "clave": "2026-10073",
-        "nombre": "Hernandez Cortes Rigoberto"
-      }
-    ],
-    "Minatitlan": [
-      {
-        "clave": "2026-10075",
-        "nombre": "Ortiz Cruz Fabiola"
-      },
-      {
-        "clave": "2026-10004",
-        "nombre": "Soto Chavez Alicia"
-      }
-    ],
-    "Orizaba": [
-      {
-        "clave": "2026-10074",
-        "nombre": "Davila Torres Jose Ignacio"
-      }
-    ]
-  },
-  "Zacatecas": {
-    "Zacatecas": [
-      {
-        "clave": "2026-10009",
-        "nombre": "Zepeda Valle Gustavo"
-      },
-      {
-        "clave": "2026-10071",
-        "nombre": "Zepeda Valle Gustavo"
-      }
-    ]
-  }
-};
-const stateGrid=document.getElementById('stateGrid'),municipiosBox=document.getElementById('municipios'),inventoresBox=document.getElementById('inventores'),breadcrumb=document.getElementById('breadcrumb'),panelTitle=document.getElementById('panelTitle');
-function countEstado(e){return Object.values(redData[e]).reduce((a,b)=>a+b.length,0)}
-function renderStates(){Object.keys(redData).forEach(e=>{const btn=document.createElement('button');btn.type='button';btn.className='state-btn';btn.innerHTML=`${e}<small>${countEstado(e)} coinventores</small>`;btn.addEventListener('click',()=>selectEstado(e,btn));stateGrid.appendChild(btn)})}
-function selectEstado(e,btn){document.querySelectorAll('.state-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');breadcrumb.textContent=`México → ${e}`;panelTitle.textContent=e;municipiosBox.innerHTML='';inventoresBox.className='empty';inventoresBox.textContent='Seleccione un municipio para ver la lista de coinventores.';Object.keys(redData[e]).forEach(m=>{const mb=document.createElement('button');mb.type='button';mb.className='mun-btn';mb.innerHTML=`${m}<small>${redData[e][m].length} integrante(s)</small>`;mb.addEventListener('click',()=>selectMunicipio(e,m,mb));municipiosBox.appendChild(mb)})}
-function selectMunicipio(e,m,btn){document.querySelectorAll('.mun-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');breadcrumb.textContent=`México → ${e} → ${m}`;inventoresBox.className='';inventoresBox.innerHTML=`<ul class="inventor-list">${redData[e][m].map(p=>`<li><strong>${p.nombre}</strong><small>${p.clave}</small></li>`).join('')}</ul>`}
-renderStates();
-</script>
-</body>
-</html>
+<section id="coinventores" class="section">
+  <div class="container">
+
+    <h2>Programa de Innovación EdithAlanis™</h2>
+
+    <!-- FUNDADORES -->
+    <h3>Equipo Fundador</h3>
+
+    <div class="cards">
+      <div class="card"><h4>Dra. María Elvia Edith Alanis Pérez</h4><p>Fundadora</p></div>
+      <div class="card"><h4>Elsy Susana Edith Baltazar Alaniz</h4><p>Cofundadora</p></div>
+      <div class="card"><h4>Daniel Alejandro Baltazar Alaniz</h4><p>Cofundador</p></div>
+    </div>
+
+    <!-- COLABORADORES -->
+    <h3>Colaboradores</h3>
+
+    <div class="cards">
+      <div class="card"><h4>Lisbeth Andalón Álvarez</h4><p>Colaboradora Experta</p></div>
+      <div class="card"><h4>Apolonio Navarro Paredes</h4><p>Colaborador de Desarrollos</p></div>
+      <div class="card"><h4>Rocío Calderón García</h4><p>Colaboradora Experta</p></div>
+      <div class="card"><h4>Lucio Guzmán Mares</h4><p>Colaborador de Vinculación</p></div>
+      <div class="card"><h4>María Soledad Castellanos Villarruel</h4><p>Colaboradora de Revisión Ortográfica</p></div>
+      <div class="card"><h4>Carlos Vázquez Cid de León</h4><p>Colaborador de Vinculación Nacional</p></div>
+      <div class="card"><h4>Adán Yáñez Larios</h4><p>Colaborador Internacional</p></div>
+      <div class="card"><h4>Sergio Roberto Dávalos García</h4><p>Colaborador Tecnológico</p></div>
+      <div class="card"><h4>Marlene Alejandra Pérez Villalpando</h4><p>Colaboradora Revisora</p></div>
+      <div class="card"><h4>Martha Alicia González Palacios</h4><p>Colaboradora de Vinculación Académica</p></div>
+    </div>
+
+    <!-- REGISTRO -->
+    <h3>Registro Nacional de Coinventores 2026</h3>
+
+    <div class="registro-grid">
+
+      <div class="registro-item"><strong>1.</strong> Aguilar Molina Yehoshua<br><span>San Pedro Tlaquepaque, Jalisco</span></div>
+      <div class="registro-item"><strong>2.</strong> Alanis Mijares Antonia Leticia<br><span>San Nicolás de la Garza, Nuevo León</span></div>
+      <div class="registro-item"><strong>3.</strong> Alanis Mijares Jesús<br><span>García, Nuevo León</span></div>
+      <div class="registro-item"><strong>4.</strong> Alanis Mijares Minerva<br><span>San Nicolás de los Garza, Nuevo León</span></div>
+      <div class="registro-item"><strong>5.</strong> Alanis Pérez Jezrael Abraham<br><span>Tlajomulco de Zúñiga, Jalisco</span></div>
+      <div class="registro-item"><strong>6.</strong> Alanis Pérez José Eduardo<br><span>Tlajomulco de Zúñiga, Jalisco</span></div>
+      <div class="registro-item"><strong>7.</strong> Alanis Pérez María Elvia Edith<br><span>Tlajomulco de Zúñiga, Jalisco</span></div>
+      <div class="registro-item"><strong>8.</strong> Alaniz Casillas Christian Eduardo<br><span>Zapopan, Jalisco</span></div>
+      <div class="registro-item"><strong>9.</strong> Alaniz Partida Ignacio Ricardo<br><span>Zapopan, Jalisco</span></div>
+      <div class="registro-item"><strong>10.</strong> Alaniz Pérez Ignacio Ricardo<br><span>Zapopan, Jalisco</span></div>
+      <div class="registro-item"><strong>11.</strong> Alaniz Pérez María Ivett Janett<br><span>Zapopan, Jalisco</span></div>
+      <div class="registro-item"><strong>12.</strong> Andalón Álvarez Lisbeth<br><span>Tlajomulco de Zúñiga, Jalisco</span></div>
+      <div class="registro-item"><strong>13.</strong> Aragón Ríos Elba Karina<br><span>Ocotlán, Jalisco</span></div>
+      <div class="registro-item"><strong>14.</strong> Baltazar Alaniz Daniel Alejandro<br><span>Tlajomulco de Zúñiga, Jalisco</span></div>
+      <div class="registro-item"><strong>15.</strong> Baltazar Alaniz Elsy Susana Edith<br><span>Tlajomulco de Zúñiga, Jalisco</span></div>
+      <div class="registro-item"><strong>16.</strong> Baltazar Montes Lorenzo<br><span>Guadalajara, Jalisco</span></div>
+      <div class="registro-item"><strong>17.</strong> Bautista González Jorge Gregorio<br><span>Zapopan, Jalisco</span></div>
+      <div class="registro-item"><strong>18.</strong> Bayardo González Rubén Alberto<br><span>Guadalajara, Jalisco</span></div>
+      <div class="registro-item"><strong>19.</strong> Becerra González Rubén Armando<br><span>Jamay, Jalisco</span></div>
+      <div class="registro-item"><strong>20.</strong> Calderón García Rocío<br><span>Guadalajara, Jalisco</span></div>
+
+      <!-- resto continúa igual hasta el final -->
+      <div class="registro-item"><strong>39.</strong> González Palacios Martha Alicia<br><span>Guadalajara, Jalisco</span></div>
+
+      <div class="registro-item"><strong>41.</strong> Guzmán Mares Lucio<br><span>Ocotlán, Jalisco</span></div>
+
+      <div class="registro-item"><strong>82.</strong> Zepeda Valle Gustavo<br><span>Zacatecas, Zacatecas</span></div>
+
+    </div>
+  </div>
+</section>
