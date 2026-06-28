@@ -1,130 +1,122 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Edith Alanis | Programa de Innovación EdithAlanis™</title>
-<meta name="description" content="Portal oficial del Programa de Innovación EdithAlanis™, innovación mexicana, propiedad intelectual, red nacional de coinventores y archivo tecnológico.">
+
 <style>
-:root{--azul:#0B1F3A;--azul2:#123B66;--beige:#C7A64B;--beige2:#E6D6A4;--fondo:#F7F8FA;--texto:#1F2933;--muted:#657080;--borde:#E3E8EF;--blanco:#FFF}
-*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--texto);background:white;line-height:1.65}
-header{position:sticky;top:0;z-index:100;background:rgba(11,31,58,.98);color:white;box-shadow:0 4px 18px rgba(0,0,0,.18)}
-.topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 7%;flex-wrap:wrap}
-.logo{display:flex;align-items:center;gap:12px} .mark{width:46px;height:46px;border-radius:50%;background:var(--beige);color:var(--azul);display:grid;place-items:center;font-weight:900;border:2px solid var(--beige2)} .logo h1{font-size:1.1rem;margin:0;letter-spacing:.5px} .logo p{font-size:.84rem;margin:0;color:var(--beige2)}
-nav{display:flex;gap:12px;flex-wrap:wrap;font-size:.88rem} nav a{color:white;text-decoration:none;font-weight:700} nav a:hover{color:var(--beige)}
-.hero{min-height:620px;display:grid;place-items:center;text-align:center;color:white;padding:90px 8%;background:linear-gradient(120deg,rgba(11,31,58,.95),rgba(18,59,102,.84)),radial-gradient(circle at 20% 20%,rgba(199,166,75,.35),transparent 28%),var(--azul)}
-.hero h2{font-size:3.25rem;line-height:1.08;margin:0 0 18px} .hero h2 span{display:block;color:var(--beige2)} .hero p{font-size:1.18rem;max-width:880px;margin:0 auto 30px;color:#EEF3F8} .kicker{color:var(--beige2);text-transform:uppercase;letter-spacing:2px;font-weight:800;font-size:.88rem;margin-bottom:16px}
-.btn{display:inline-block;margin:7px;padding:13px 24px;border-radius:40px;text-decoration:none;font-weight:800;border:2px solid var(--beige)} .primary{background:var(--beige);color:var(--azul)} .secondary{background:transparent;color:white}
-section{padding:74px 8%} section:nth-child(even){background:var(--fondo)} .section-head{text-align:center;margin:0 auto 36px;max-width:980px} .eyebrow{color:var(--beige);font-weight:900;letter-spacing:1.6px;text-transform:uppercase;font-size:.88rem;margin-bottom:6px} .section-head h2{color:var(--azul);font-size:2.35rem;margin:0 0 10px} .section-head p{margin:0 auto;color:var(--muted);font-size:1.05rem} .rule{width:90px;height:4px;background:linear-gradient(90deg,var(--azul),var(--beige));margin:18px auto 0;border-radius:10px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:22px} .card{background:white;border:1px solid var(--borde);border-radius:20px;padding:26px;box-shadow:0 10px 24px rgba(11,31,58,.08)} .card h3{margin:0 0 8px;color:var(--azul)} .accent{color:var(--beige);font-weight:900}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px;margin:30px 0} .stat{background:var(--azul);color:white;border-radius:20px;padding:26px;text-align:center;border:1px solid rgba(199,166,75,.38)} .stat strong{display:block;font-size:2.35rem;line-height:1;color:var(--beige2);margin-bottom:8px}
-.portfolio{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:30px} .pcard{background:white;border:1px solid var(--borde);border-left:6px solid var(--beige);border-radius:18px;padding:20px;box-shadow:0 8px 18px rgba(0,0,0,.06)} .pcard h3{margin:0;color:var(--azul)} .pcard p{margin:7px 0;color:var(--muted)} .badge{display:inline-block;border-radius:24px;padding:7px 12px;font-size:.84rem;font-weight:800;margin-top:8px} .presented{background:#E7F7ED;color:#176B36} .review{background:#E8F1FF;color:#174B8A} .prep{background:#FFF2D7;color:#865400} .dev{background:#F1EEFC;color:#46308B}
-.quote{background:white;border-left:7px solid var(--beige);border-radius:18px;padding:26px;max-width:1000px;margin:25px auto;box-shadow:0 8px 20px rgba(0,0,0,.07);font-size:1.06rem}
-.network{display:grid;grid-template-columns:1fr 1.25fr;gap:24px;max-width:1180px;margin:34px auto 0;align-items:start} .panel{background:white;border:1px solid var(--borde);border-radius:22px;padding:24px;box-shadow:0 10px 24px rgba(11,31,58,.08)} .panel h3{margin:0 0 10px;color:var(--azul)} .mexico-box{background:linear-gradient(145deg,#fff,#f0f4f8);border:1px solid var(--borde);border-radius:18px;padding:22px;min-height:420px;position:relative;overflow:hidden} .mexico-box:before{content:"MX";position:absolute;right:18px;bottom:-10px;font-size:9rem;font-weight:900;color:rgba(11,31,58,.05)}
-.state-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;margin-top:18px;position:relative;z-index:1} .state-btn,.mun-btn{width:100%;border:1px solid var(--borde);background:white;color:var(--azul);border-radius:15px;padding:13px;text-align:left;cursor:pointer;font-weight:800;transition:.2s} .state-btn small,.mun-btn small{display:block;color:var(--muted);font-weight:700;margin-top:3px} .state-btn:hover,.state-btn.active,.mun-btn:hover,.mun-btn.active{border-color:var(--beige);box-shadow:0 8px 18px rgba(199,166,75,.22);transform:translateY(-1px)} .breadcrumb{color:var(--muted);font-size:.94rem;margin-bottom:12px} .municipios{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:10px;margin:18px 0} .empty{border:1px dashed #B7C1CF;border-radius:15px;padding:22px;color:var(--muted);background:#FAFCFF} .inventor-list{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px} .inventor-list li{background:#FBFCFE;border:1px solid var(--borde);border-left:5px solid var(--beige);border-radius:14px;padding:12px 14px} .inventor-list strong{display:block;color:var(--azul)} .inventor-list small{color:var(--muted)}
-.bio-wrap{display:grid;grid-template-columns:260px 1fr;gap:28px;align-items:center;max-width:1050px;margin:0 auto} .portrait{width:220px;height:220px;border-radius:50%;background:linear-gradient(135deg,var(--azul),var(--beige));display:grid;place-items:center;color:white;font-size:4rem;font-weight:900;border:8px solid white;box-shadow:0 12px 30px rgba(11,31,58,.22)} .bio-card{background:white;border:1px solid var(--borde);border-radius:22px;padding:30px;box-shadow:0 10px 24px rgba(11,31,58,.08)} .bio-card h3{color:var(--azul);font-size:1.7rem;margin:0 0 4px} .bio-card .role{color:var(--beige);font-weight:900;margin-bottom:14px}
-.notice{max-width:950px;margin:28px auto 0;padding:18px;background:#FFF8E3;border:1px solid #EED37A;border-radius:16px;text-align:center}
-form{max-width:740px;margin:28px auto 0;display:grid;gap:14px} input,textarea{width:100%;padding:14px;border:1px solid #C9D1DD;border-radius:12px;font:inherit} textarea{min-height:140px} button.submit{background:var(--azul);color:white;border:0;border-radius:40px;padding:14px 24px;font-weight:800;cursor:pointer}
-footer{background:#07172C;color:white;text-align:center;padding:38px 8%} footer strong{color:var(--beige2)}
-@media(max-width:900px){.network,.bio-wrap{grid-template-columns:1fr}.portrait{margin:auto}.hero h2{font-size:2.35rem}header{position:relative}}
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f5f7fa;
+  color:#1f2a37;
+}
+
+header{
+  background:#0b1f3a;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+
+section{
+  padding:40px;
+  max-width:1100px;
+  margin:auto;
+}
+
+h2{
+  color:#0b1f3a;
+  border-bottom:2px solid #c7a64b;
+  padding-bottom:8px;
+}
+
+h3{
+  margin-top:30px;
+  color:#123b66;
+}
+
+.card{
+  background:white;
+  padding:15px;
+  margin:10px 0;
+  border-radius:10px;
+  border:1px solid #ddd;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  background:#0b1f3a;
+  color:white;
+  margin-top:40px;
+}
 </style>
+
 </head>
+
 <body>
-<header><div class="topbar"><div class="logo"><div class="mark">EA</div><div><h1>Edith Alanis</h1><p>Programa de Innovación EdithAlanis™</p></div></div><nav>
-<a href="#inicio">Inicio</a><a href="#programa">Programa</a><a href="#centro">Centro</a><a href="#portafolio">Portafolio</a><a href="#red">Red Nacional</a><a href="#premios">Premios</a><a href="#quien">Quién está detrás</a><a href="#contacto">Contacto</a>
-</nav></div></header>
-<main>
-<section class="hero" id="inicio"><div><div class="kicker">Sitio oficial</div><h2>Programa de Innovación EdithAlanis™ <span>Innovación mexicana para la ciencia, la tecnología y la sociedad</span></h2><p>Portal institucional dedicado a documentar, preservar y difundir invenciones, propiedad intelectual, colaboración científica, desarrollo tecnológico y aportaciones mexicanas a la innovación.</p><a class="btn primary" href="#portafolio">Ver portafolio</a><a class="btn secondary" href="#red">Explorar red nacional</a></div></section>
 
-<section id="programa"><div class="section-head"><div class="eyebrow">Programa de Innovación</div><h2>Una plataforma mexicana de desarrollo tecnológico</h2><p>El Programa de Innovación EdithAlanis™ integra investigación aplicada, protección de propiedad intelectual, colaboración nacional y documentación histórica de invenciones.</p><div class="rule"></div></div><div class="grid"><div class="card"><h3>Propósito</h3><p>Impulsar invenciones capaces de aportar soluciones a necesidades reales en salud, educación, infraestructura, energía, organización social y desarrollo tecnológico.</p></div><div class="card"><h3>Archivo tecnológico</h3><p>Conservar solicitudes, figuras técnicas, evidencia de desarrollo, constancias, reconocimientos y documentación institucional.</p></div><div class="card"><h3>Impacto colaborativo</h3><p>Reconocer la participación de coinventores y colaboradores que contribuyen a crear indicadores de innovación en México.</p></div></div></section>
+<header>
+  <h1>Programa de Innovación EdithAlanis™</h1>
+</header>
 
-<section id="centro"><div class="section-head"><div class="eyebrow">Centro de Innovación</div><h2>Áreas tecnológicas</h2><p>Desarrollos agrupados por líneas estratégicas de impacto biomédico, energético, educativo, infraestructural y social.</p><div class="rule"></div></div><div class="grid"><div class="card"><h3>Ingeniería Biomédica</h3><p>Salud, regeneración, monitoreo y tecnologías biomédicas.</p></div><div class="card"><h3>Infraestructura Universal</h3><p>Continuidad operativa, organización funcional y sistemas interconectados.</p></div><div class="card"><h3>Energía</h3><p>Gestión, transporte, recuperación y continuidad energética.</p></div><div class="card"><h3>Educación, salud y cultura</h3><p>Sistemas orientados a fortalecer capacidades sociales e institucionales.</p></div></div></section>
-
-<section id="portafolio"><div class="section-head"><div class="eyebrow">Portafolio tecnológico</div><h2>Indicadores del programa</h2><p>Información pública general, sin expedientes, títulos reservados ni datos técnicos confidenciales.</p><div class="rule"></div></div><div class="stats"><div class="stat"><strong>7</strong>Patentes otorgadas</div><div class="stat"><strong>113</strong>Solicitudes presentadas</div><div class="stat"><strong>12</strong>En revisión institucional</div><div class="stat"><strong>84</strong>Coinventores registrados</div></div><div class="portfolio"><div class="pcard"><h3>Solicitudes 1–56</h3><p>2025 · Ingeniería Biomédica y Tecnologías Aplicadas</p><span class="badge presented">Presentadas</span></div><div class="pcard"><h3>Solicitudes 57–113</h3><p>2026 · Diversas áreas tecnológicas</p><span class="badge presented">Presentadas</span></div><div class="pcard"><h3>Solicitudes 114–120</h3><p>2026 · Ingeniería Biomédica e Infraestructura Universal</p><span class="badge dev">En desarrollo documental</span></div><div class="pcard"><h3>Solicitudes 350–360</h3><p>2026 · Ingeniería Biomédica</p><span class="badge review">Presentadas en institución educativa para su revisión e ingreso</span></div><div class="pcard"><h3>Solicitud 371</h3><p>2026 · Ingeniería Energética</p><span class="badge review">Presentada en institución educativa para su revisión e ingreso</span></div><div class="pcard"><h3>Solicitudes 361–370</h3><p>2026 · Ingeniería Biomédica</p><span class="badge prep">Preparación para revisión institucional</span></div><div class="pcard"><h3>Solicitudes 372–381</h3><p>2026 · Ingeniería Biomédica</p><span class="badge dev">Desarrollo documental</span></div></div><div class="notice">La información publicada tiene carácter exclusivamente informativo y no incluye datos técnicos o jurídicos de naturaleza confidencial.</div></section>
-
-<section id="red"><div class="section-head"><div class="eyebrow">México · Estados · Municipios</div><h2>Red Nacional de Coinventores</h2><p>Seleccione un estado participante, después un municipio, para consultar la lista correspondiente de coinventores.</p><div class="rule"></div></div><div class="quote">Agradecemos a todos y cada uno de los colaboradores por su confianza, amistad, aprecio y compromiso, especialmente por contribuir a crear indicadores de innovación en México.</div><div class="network"><div class="panel"><div class="mexico-box"><h3>Estados participantes</h3><p>9 estados · 27 municipios · 84 coinventores</p><div class="state-grid" id="stateGrid"></div></div></div><div class="panel"><div class="breadcrumb" id="breadcrumb">México → Seleccione un estado</div><h3 id="panelTitle">Red por estado y municipio</h3><div class="municipios" id="municipios"></div><div id="inventores" class="empty">Aquí aparecerán los municipios y coinventores registrados.</div></div></div></section>
-
-<section id="archivo"><div class="section-head"><div class="eyebrow">Memoria documental</div><h2>Archivo histórico</h2><p>Espacio destinado a conservar la memoria documental del programa: solicitudes, figuras técnicas, constancias, evidencia visual y materiales de seguimiento.</p><div class="rule"></div></div></section>
-
-<section id="galeria"><div class="section-head"><div class="eyebrow">Material visual</div><h2>Galería y videos</h2><p>Sección preparada para fotografías institucionales, entrevistas, presentaciones, cápsulas informativas y archivo audiovisual del programa.</p><div class="rule"></div></div><div class="grid"><div class="card"><h3>Galería fotográfica</h3><p>Fotografías, eventos, documentos, prototipos conceptuales y archivo visual.</p></div><div class="card"><h3>Videos</h3><p>Entrevistas, conferencias, presentaciones y material académico.</p></div></div></section>
-
-<section id="premios"><div class="section-head"><div class="eyebrow">Trayectoria y distinciones</div><h2>Premios y reconocimientos</h2><p>Espacio preparado para integrar constancias, fotografías, participaciones, menciones institucionales y logros vinculados al programa.</p><div class="rule"></div></div><div class="notice">Pendiente de integrar: fotografías, diplomas, constancias, fechas, instituciones otorgantes y descripción breve de cada reconocimiento.</div></section>
-
-<section id="quien"><div class="section-head"><div class="eyebrow">La visión detrás del programa</div><h2>¿Quién está detrás del Programa de Innovación?</h2><p>Conoce a la inventora que impulsa esta iniciativa de innovación mexicana.</p><div class="rule"></div></div><div class="bio-wrap"><div class="portrait">EA</div><div class="bio-card"><h3>María Elvia Edith Alanis Pérez</h3><div class="role">Inventora mexicana · Impulsora del Programa de Innovación EdithAlanis™</div><p>Su trabajo integra investigación aplicada, creatividad tecnológica, documentación técnica y protección de propiedad intelectual, con una visión orientada al fortalecimiento de México mediante indicadores de innovación.</p><p>El programa reúne invenciones, archivo histórico, figuras técnicas, solicitudes, reconocimientos y una red nacional de coinventores que acompaña el desarrollo de nuevas propuestas tecnológicas.</p></div></div></section>
-
-<section id="contacto"><div class="section-head"><div class="eyebrow">Vinculación</div><h2>Contacto</h2><p>Para colaboración académica, institucional, tecnológica o de innovación.</p><div class="rule"></div></div><form action="mailto:edithalaniz@gmail.com" method="post" enctype="text/plain"><input type="text" name="nombre" placeholder="Nombre completo" required><input type="email" name="correo" placeholder="Correo electrónico" required><textarea name="mensaje" placeholder="Mensaje" required></textarea><button class="submit" type="submit">Enviar mensaje</button></form></section>
-</main>
-<footer><p><strong>Programa de Innovación EdithAlanis™</strong></p><p>Sitio oficial de Edith Alanis · Innovación mexicana · Propiedad intelectual · Red Nacional de Coinventores</p><p>© 2026 Edith Alanis. Todos los derechos reservados.</p></footer>
-<script>
-span></div>
-  <section id="coinventores" style="padding:40px; max-width:1100px; margin:auto; font-family:Arial, sans-serif;">
-
-  <h2 style="text-align:center;">Programa de Innovación EdithAlanis™</h2>
-
-  <!-- EQUIPO FUNDADOR -->
-  <h3>Equipo Fundador</h3>
-
-  <p><strong>Dra. María Elvia Edith Alanis Pérez</strong><br>Fundadora</p>
-  <p><strong>Elsy Susana Edith Baltazar Alaniz</strong><br>Cofundadora</p>
-  <p><strong>Daniel Alejandro Baltazar Alaniz</strong><br>Cofundador</p>
-
-  <hr>
-
-  <!-- COLABORADORES -->
-  <h3>Colaboradores</h3>
-
-  <p><strong>Lisbeth Andalón Álvarez</strong><br>Colaboradora Experta</p>
-  <p><strong>Apolonio Navarro Paredes</strong><br>Colaborador de Desarrollos</p>
-  <p><strong>Rocío Calderón García</strong><br>Colaboradora Experta</p>
-  <p><strong>Lucio Guzmán Mares</strong><br>Colaborador de Vinculación</p>
-  <p><strong>María Soledad Castellanos Villarruel</strong><br>Colaboradora de Revisión Ortográfica</p>
-  <p><strong>Carlos Vázquez Cid de León</strong><br>Colaborador de Vinculación Nacional</p>
-  <p><strong>Adán Yáñez Larios</strong><br>Colaborador Internacional</p>
-  <p><strong>Sergio Roberto Dávalos García</strong><br>Colaborador Tecnológico</p>
-  <p><strong>Marlene Alejandra Pérez Villalpando</strong><br>Colaboradora Revisora</p>
-  <p><strong>Martha Alicia González Palacios</strong><br>Colaboradora de Vinculación Académica</p>
-
-  <hr>
-
-  <!-- REGISTRO -->
-  <h3>Registro Nacional de Coinventores 2026</h3>
-
-  <p>Listado oficial de coinventores organizado alfabéticamente por apellido.</p>
-
-  <div>
-
-    <p><strong>1.</strong> Aguilar Molina Yehoshua — San Pedro Tlaquepaque, Jalisco</p>
-    <p><strong>2.</strong> Alanis Mijares Antonia Leticia — San Nicolás de la Garza, Nuevo León</p>
-    <p><strong>3.</strong> Alanis Mijares Jesús — García, Nuevo León</p>
-    <p><strong>4.</strong> Alanis Mijares Minerva — San Nicolás de los Garza, Nuevo León</p>
-    <p><strong>5.</strong> Alanis Pérez Jezrael Abraham — Tlajomulco de Zúñiga, Jalisco</p>
-    <p><strong>6.</strong> Alanis Pérez José Eduardo — Tlajomulco de Zúñiga, Jalisco</p>
-    <p><strong>7.</strong> Alanis Pérez María Elvia Edith — Tlajomulco de Zúñiga, Jalisco</p>
-    <p><strong>8.</strong> Alaniz Casillas Christian Eduardo — Zapopan, Jalisco</p>
-    <p><strong>9.</strong> Alaniz Partida Ignacio Ricardo — Zapopan, Jalisco</p>
-    <p><strong>10.</strong> Alaniz Pérez Ignacio Ricardo — Zapopan, Jalisco</p>
-    <p><strong>11.</strong> Alaniz Pérez María Ivett Janett — Zapopan, Jalisco</p>
-    <p><strong>12.</strong> Andalón Álvarez Lisbeth — Tlajomulco de Zúñiga, Jalisco</p>
-    <p><strong>13.</strong> Aragón Ríos Elba Karina — Ocotlán, Jalisco</p>
-    <p><strong>14.</strong> Baltazar Alaniz Daniel Alejandro — Tlajomulco de Zúñiga, Jalisco</p>
-    <p><strong>15.</strong> Baltazar Alaniz Elsy Susana Edith — Tlajomulco de Zúñiga, Jalisco</p>
-    <p><strong>16.</strong> Baltazar Montes Lorenzo — Guadalajara, Jalisco</p>
-    <p><strong>17.</strong> Bautista González Jorge Gregorio — Zapopan, Jalisco</p>
-    <p><strong>18.</strong> Bayardo González Rubén Alberto — Guadalajara, Jalisco</p>
-    <p><strong>19.</strong> Becerra González Rubén Armando — Jamay, Jalisco</p>
-    <p><strong>20.</strong> Calderón García Rocío — Guadalajara, Jalisco</p>
-    <p><strong>21.</strong> Carrión Castillo Luz Ovillada — Cosoleacaque, Veracruz</p>
-    <p><strong>22.</strong> Carazo Luna José Alfredo — Huajuapan de León, Oaxaca</p>
-    <p><strong>23.</strong> Castellanos Villarruel Soledad — Ocotlán, Jalisco</p>
-    <p><strong>24.</strong> Castillo Medina Diana Iztacihuatl — Zapopan, Jalisco</p>
-    <p><strong>25.</strong> Chama Mora Héctor Adán — Fortín, Veracruz</p>
-    <p><strong>26.</strong> Claustro Bobadilla Javier — Guadalajara, Jalisco</p>
-    <p><strong>27.</strong> Cortés Camacho Araceli — Guadalajara, Jalisco</p>
-    <p><strong>28.</strong> Cruz Alanis Ariana Leticia — San Nicolás de la Garza, Nuevo León</p>
-    <p><strong>29.</strong> Cruz del Ángel Jesús Adrián — San Nicolás de la Garza, Nuevo León</p>
-    <p><strong>30.</strong> Dávalos García Sergio Roberto — Zapopan, Jalisco</p>
-
-  </div>
-
-    </div>
-  </div>
+<!-- INTRO -->
+<section>
+  <h2>Bienvenida</h2>
+  <p>Portal oficial del programa de innovación, coinventores y desarrollo tecnológico.</p>
 </section>
+
+<!-- EQUIPO FUNDADOR -->
+<section>
+  <h2>Equipo Fundador</h2>
+
+  <div class="card">Dra. María Elvia Edith Alanis Pérez — Fundadora</div>
+  <div class="card">Elsy Susana Edith Baltazar Alaniz — Cofundadora</div>
+  <div class="card">Daniel Alejandro Baltazar Alaniz — Cofundador</div>
+</section>
+
+<!-- COLABORADORES -->
+<section>
+  <h2>Colaboradores</h2>
+
+  <div class="card">Lisbeth Andalón Álvarez — Experta</div>
+  <div class="card">Apolonio Navarro Paredes — Desarrollo</div>
+  <div class="card">Rocío Calderón García — Experta</div>
+  <div class="card">Lucio Guzmán Mares — Vinculación</div>
+  <div class="card">María Soledad Castellanos Villarruel — Ortografía</div>
+  <div class="card">Carlos Vázquez Cid de León — Vinculación Nacional</div>
+  <div class="card">Adán Yáñez Larios — Internacional</div>
+  <div class="card">Sergio Roberto Dávalos García — Tecnológico</div>
+  <div class="card">Martha Alicia González Palacios — Académica</div>
+</section>
+
+<!-- COINVENTORES -->
+<section>
+  <h2>Registro Nacional de Coinventores 2026</h2>
+
+  <div class="card">1. Aguilar Molina Yehoshua — Jalisco</div>
+  <div class="card">2. Alanis Mijares Antonia Leticia — Nuevo León</div>
+  <div class="card">3. Alanis Mijares Jesús — Nuevo León</div>
+  <div class="card">4. Alanis Mijares Minerva — Nuevo León</div>
+  <div class="card">5. Alanis Pérez Jezrael Abraham — Jalisco</div>
+  <div class="card">6. Alanis Pérez José Eduardo — Jalisco</div>
+  <div class="card">7. Alanis Pérez María Elvia Edith — Jalisco</div>
+  <div class="card">8. Alaniz Casillas Christian Eduardo — Jalisco</div>
+  <div class="card">9. Alaniz Pérez Ignacio Ricardo — Jalisco</div>
+  <div class="card">10. Alaniz Pérez María Ivett Janett — Jalisco</div>
+  <div class="card">11. Baltazar Alaniz Daniel Alejandro — Jalisco</div>
+  <div class="card">12. Baltazar Alaniz Elsy Susana Edith — Jalisco</div>
+  <div class="card">13. Calderón García Rocío — Jalisco</div>
+  <div class="card">14. Dávalos García Sergio Roberto — Jalisco</div>
+  <div class="card">15. Guzmán Mares Lucio — Jalisco</div>
+</section>
+
+<footer>
+  © 2026 Programa de Innovación EdithAlanis™
+</footer>
+
+</body>
+</html>
