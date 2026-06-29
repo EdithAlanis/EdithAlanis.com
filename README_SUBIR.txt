@@ -1,11 +1,25 @@
-INSTRUCCIONES PARA SUBIR A GITHUB
+PORTAL OFICIAL EDITHALANIS™ – VERSIÓN COMPLETA ACTUALIZADA V1.3
 
-1. Descomprime este ZIP.
-2. En GitHub abre el repositorio EdithAlanis.com.
-3. Selecciona Add file > Upload files.
-4. Sube el contenido de esta carpeta: index.html, styles.css, script.js y la carpeta images.
-5. No subas el ZIP completo.
-6. En Commit changes escribe: Portal Oficial EdithAlanis actualización V1.1
-7. Espera 2 a 5 minutos y abre https://edithalanis.com
+Instrucciones para GitHub:
+1. Descomprimir este ZIP.
+2. Subir TODO el contenido descomprimido al repositorio:
+   - index.html
+   - script.js
+   - styles.css
+   - style.css
+   - carpeta images completa
+3. No subir el ZIP comprimido.
+4. Hacer Commit changes con el mensaje:
+   Actualización completa portal V1.3
+5. Esperar 2 a 5 minutos y abrir https://edithalanis.com
 
-Nota: esta versión no muestra expedientes ni nombres específicos de solicitudes; solo áreas tecnológicas y estados de avance.
+Incluye:
+- Equipo Institucional corregido en orden oficial.
+- Elsy y Daniel como Cofundadores · Coinventores.
+- Lorenzo Baltazar Montes.
+- Rocío Calderón García.
+- Ma. Soledad Castellanos Villarruel.
+- Cargos corregidos.
+- Red Nacional de Coinventores.
+- Portafolio Tecnológico con 461 desarrollos.
+- 7 patentes otorgadas, 106 solicitudes presentadas, 336 desarrollos en preparación y 12 en revisión institucional.
