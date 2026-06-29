@@ -1,176 +1,133 @@
 <!doctype html>
-<html lang="es-MX">
+<html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Programa de Innovación EdithAlanis™</title>
-  <meta name="description" content="Portal Oficial del Programa de Innovación EdithAlanis™: Red Nacional de Coinventores, Portafolio Tecnológico y áreas de innovación." />
+  <meta name="description" content="Portal oficial del Programa de Innovación EdithAlanis™, Red Nacional de Coinventores y áreas tecnológicas." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#inicio" aria-label="Inicio">
-      <span class="brand-mark">EA</span>
-      <span><strong>Programa de Innovación</strong><small>EdithAlanis™</small></span>
-    </a>
-    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    <nav class="nav" aria-label="Navegación principal">
+  <header class="site-header">
+    <a class="brand" href="#inicio">EdithAlanis™</a>
+    <button class="menu-btn" aria-label="Abrir menú">☰</button>
+    <nav class="nav">
       <a href="#fundadora">Fundadora</a>
       <a href="#equipo">Equipo</a>
       <a href="#red">Red Nacional</a>
-      <a href="#portafolio">Portafolio</a>
-      <a href="#areas">Áreas</a>
+      <a href="#areas">Áreas Tecnológicas</a>
+      <a href="#visitantes">Visitantes</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
-  <main id="inicio">
-    <section class="hero section">
-      <div class="hero-copy">
-        <p class="eyebrow">Portal Oficial · Versión 2026</p>
+  <main>
+    <section id="inicio" class="hero section">
+      <div class="hero-card">
+        <p class="eyebrow">Portal oficial</p>
         <h1>Programa de Innovación EdithAlanis™</h1>
-        <p class="lead">Impulsando el desarrollo científico y tecnológico mediante innovación interdisciplinaria, colaboración nacional y soluciones de alto impacto para la sociedad.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#portafolio">Ver portafolio tecnológico</a>
-          <a class="btn ghost" href="#red">Explorar Red Nacional</a>
+        <p class="lead">Innovación científica, tecnológica y colaborativa con alcance nacional.</p>
+        <div class="stats">
+          <div><strong>7</strong><span>Patentes otorgadas</span></div>
+          <div><strong>113</strong><span>Invenciones desarrolladas</span></div>
+          <div><strong id="visitorPreview">Visitantes</strong><span>Consulta nacional e internacional</span></div>
         </div>
       </div>
-      <div class="hero-panel" aria-label="Resumen del programa">
-        <img src="images/portal-referencia.png" alt="Representación institucional del portal de innovación" />
-      </div>
     </section>
 
-    <section class="stats section" aria-label="Indicadores del programa">
-      <article><span>7</span><p>Patentes otorgadas</p></article>
-      <article><span>106</span><p>Solicitudes presentadas</p></article>
-      <article><span>336</span><p>Desarrollos en preparación</p></article>
-      <article><span>12</span><p>En revisión institucional</p></article>
-      <article class="total"><span>461</span><p>Desarrollos tecnológicos</p></article>
-    </section>
-
-    <section id="fundadora" class="section founder">
-      <div class="section-title">
-        <p class="eyebrow">Fundadora</p>
-        <h2>Dra. Edith Alanis</h2>
-        <p>Fundadora del Programa de Innovación EdithAlanis™ y promotora de una red de colaboración tecnológica con alcance nacional.</p>
-      </div>
+    <section id="fundadora" class="section">
+      <h2>Fundadora</h2>
       <div class="founder-card">
-        <h3>Fundadora y Directora General</h3>
-        <p>El programa integra desarrollos tecnológicos, coinvención interdisciplinaria y organización institucional para fortalecer la innovación mexicana.</p>
+        <p class="eyebrow">Fundadora</p>
+        <h3>Dra. Edith Alanis</h3>
+        <p>Fundadora del Programa de Innovación EdithAlanis™</p>
+        <p class="mini">Inventora · Investigadora · Desarrollo tecnológico</p>
       </div>
     </section>
 
-    <section id="equipo" class="section">
-      <div class="section-title">
-        <p class="eyebrow">Equipo institucional</p>
-        <h2>Cofundadores, coinventores, colaboradores y equipo de apoyo</h2>
+    <section id="equipo" class="section alt">
+      <h2>Cofundadores, Coinventores y Equipo de Apoyo</h2>
+      <div class="grid two">
+        <article class="person-card featured"><h3>Elsy Susana Edith Baltazar Alaniz</h3><p>Cofundadora · Coinventora · Colaboradora</p></article>
+        <article class="person-card featured"><h3>Daniel Alejandro Baltazar Alaniz</h3><p>Cofundador · Coinventor · Colaborador</p></article>
       </div>
-      <div class="team-feature">
-        <img src="images/equipo-aprobado.png" alt="Diseño institucional del equipo del Programa de Innovación EdithAlanis" />
-      </div>
-      <div class="team-grid" id="teamGrid"></div>
-    </section>
-
-    <section id="red" class="section red-section">
-      <div class="section-title">
-        <p class="eyebrow">Red Nacional de Coinventores</p>
-        <h2>Talento mexicano organizado por estado y municipio</h2>
-        <p>La Red Nacional de Coinventores integra especialistas, investigadores y colaboradores distribuidos en diversas entidades federativas de México, promoviendo el desarrollo tecnológico mediante una colaboración interdisciplinaria organizada. Investigadores mexicanos están invitados a participar en este proyecto.</p>
-      </div>
-      <div class="search-row">
-        <input id="coinventorSearch" type="search" placeholder="Buscar por nombre, municipio o estado" aria-label="Buscar coinventor" />
-        <button class="btn ghost" id="clearCoinventorSearch">Limpiar</button>
-      </div>
-      <div class="red-summary" id="redSummary"></div>
-      <div class="network" id="network"></div>
-      <p class="note">La Red Nacional de Coinventores se encuentra en actualización permanente. Si detecta algún error en su nombre, municipio o entidad federativa, puede solicitar corrección mediante el formulario de contacto.</p>
-    </section>
-
-    <section id="portafolio" class="section portfolio-section">
-      <div class="section-title">
-        <p class="eyebrow">Portafolio tecnológico</p>
-        <h2>461 desarrollos tecnológicos</h2>
-        <p>Catálogo institucional organizado por número interno, área tecnológica y estado de avance. No se muestran expedientes ni nombres específicos de solicitudes.</p>
-      </div>
-      <div class="portfolio-dashboard">
-        <article><b>🏆 7</b><span>Patentes otorgadas</span></article>
-        <article><b>📄 106</b><span>Solicitudes presentadas</span></article>
-        <article><b>🛠 336</b><span>Desarrollos en preparación</span></article>
-        <article><b>🏛 12</b><span>En revisión institucional</span></article>
-      </div>
-      <div class="filters">
-        <input id="portfolioSearch" type="search" placeholder="Buscar desarrollo, área o estado" aria-label="Buscar desarrollo tecnológico" />
-        <select id="statusFilter" aria-label="Filtrar por estado">
-          <option value="todos">Todos los estados</option>
-          <option value="Patente otorgada">Patentes otorgadas</option>
-          <option value="Solicitud presentada">Solicitudes presentadas</option>
-          <option value="En preparación">En preparación</option>
-          <option value="Revisión institucional">Revisión institucional</option>
-        </select>
-        <select id="areaFilter" aria-label="Filtrar por área">
-          <option value="todas">Todas las áreas</option>
-        </select>
-      </div>
-      <div class="portfolio-grid" id="portfolioGrid"></div>
-      <button class="btn ghost load-more" id="loadMorePortfolio">Mostrar más desarrollos</button>
-    </section>
-
-    <section id="areas" class="section">
-      <div class="section-title">
-        <p class="eyebrow">Áreas tecnológicas</p>
-        <h2>Líneas estratégicas de innovación</h2>
-      </div>
-      <div class="areas-grid" id="areasGrid"></div>
-    </section>
-
-    <section id="noticias" class="section updates">
-      <div class="section-title">
-        <p class="eyebrow">Novedades del portal</p>
-        <h2>Actualización quincenal</h2>
-        <p>El portal se actualizará cada quincena con nuevas incorporaciones, avances tecnológicos, noticias, galería y fortalecimiento de la Red Nacional de Coinventores.</p>
-      </div>
-      <div class="update-card">
-        <strong>Versión Oficial 1.0</strong>
-        <span>Integración de identidad institucional, Portafolio Tecnológico, Red Nacional de Coinventores y estructura base del portal.</span>
+      <h3 class="subheading">Equipo de apoyo</h3>
+      <div class="grid people">
+        <article class="person-card"><h3>Lisbeth Andalón Álvarez</h3><p>Colaboradora · Experta</p></article>
+        <article class="person-card"><h3>Apolinar Navarro Paredes</h3><p>Colaborador · Desarrollo</p></article>
+        <article class="person-card"><h3>Lucio Guzmán Mares</h3><p>Colaborador · Vinculación</p></article>
+        <article class="person-card"><h3>María Soledad Castellanos Villarruel</h3><p>Colaboradora · Ortografía</p></article>
+        <article class="person-card"><h3>Carlos Vázquez Cid de León</h3><p>Colaborador · Vinculación Nacional</p></article>
+        <article class="person-card"><h3>Adán Yáñez Larios</h3><p>Colaborador · Internacional</p></article>
+        <article class="person-card"><h3>Sergio Roberto Dávalos García</h3><p>Colaborador · Tecnológico</p></article>
+        <article class="person-card"><h3>Martha Alicia González Palacios</h3><p>Colaboradora · Académica</p></article>
       </div>
     </section>
 
-    <section id="visitantes" class="section visitors">
-      <div class="section-title">
-        <p class="eyebrow">Alcance del portal</p>
-        <h2>Visitantes y ubicación de visitantes</h2>
+    <section id="red" class="section">
+      <h2>Red Nacional de Coinventores</h2>
+      <p class="section-intro">La Red Nacional de Coinventores integra especialistas, investigadores y colaboradores distribuidos en diversas entidades federativas de México, promoviendo el desarrollo tecnológico mediante una colaboración interdisciplinaria organizada. Asimismo, investigadores mexicanos interesados en contribuir al fortalecimiento de la innovación científica y tecnológica están cordialmente invitados a formar parte de esta iniciativa.</p>
+      <div class="network-layout">
+        <aside class="state-panel">
+          <button class="state-btn active" data-state="jalisco">Jalisco <span>12</span></button>
+          <button class="state-btn" data-state="nuevoleon">Nuevo León <span>4</span></button>
+          <button class="state-btn" data-state="veracruz">Veracruz <span>2</span></button>
+        </aside>
+        <div class="municipality-panel">
+          <h3 id="stateTitle">Jalisco</h3>
+          <div id="municipalities" class="municipalities"></div>
+          <div id="coinventors" class="grid coinventors"></div>
+        </div>
       </div>
-      <div class="visitor-cards">
-        <article><span>👥</span><b>Visitantes</b><small>Espacio listo para contador</small></article>
-        <article><span>🌍</span><b>Ubicación de visitantes</b><small>Espacio listo para mapa o contador geográfico</small></article>
+    </section>
+
+    <section id="areas" class="section alt">
+      <h2>Áreas Tecnológicas</h2>
+      <p class="section-intro">Tarjetas visuales por rubro tecnológico, sin expedientes y sin fotografías personales.</p>
+      <div class="grid areas">
+        <article class="area-card"><div class="area-img med"></div><h3>Medicina Regenerativa</h3><p>Tecnologías bioelectrocarbonosas para regeneración, soporte funcional y evaluación biomédica.</p></article>
+        <article class="area-card"><div class="area-img bio"></div><h3>Sistemas Bioelectrocarbonosos</h3><p>Plataformas tecnológicas para integración biomédica, energética y fisiológica.</p></article>
+        <article class="area-card"><div class="area-img infra"></div><h3>Infraestructura Universal</h3><p>Sistemas autónomos para educación, salud, cultura, logística, vivienda e infraestructura estratégica.</p></article>
+        <article class="area-card"><div class="area-img energy"></div><h3>Energía y Continuidad</h3><p>Tecnologías para continuidad operativa, recuperación y gestión energética distribuida.</p></article>
+        <article class="area-card"><div class="area-img bios"></div><h3>Arquitectura Autónoma Biosférica Universal</h3><p>Integración de plataformas, redes, módulos e infraestructuras de alcance biosférico.</p></article>
+        <article class="area-card"><div class="area-img space"></div><h3>Infraestructura Extraplanetaria</h3><p>Visiones tecnológicas para entornos avanzados, espaciales y de alta interoperabilidad.</p></article>
+      </div>
+    </section>
+
+    <section id="visitantes" class="section visitors-section">
+      <h2>Alcance del Portal</h2>
+      <p class="section-intro">Indicadores públicos simples para mostrar el alcance nacional e internacional del sitio.</p>
+      <div class="visitor-grid compact-visitors">
+        <article class="visitor-card">
+          <span class="visitor-icon">👥</span>
+          <h3>Visitantes</h3>
+          <div class="visitor-map-placeholder small" id="visitorCounter">
+            <strong>Contador de visitantes</strong>
+            <span>Pegar aquí el código del contador elegido.</span>
+          </div>
+        </article>
+        <article class="visitor-card">
+          <span class="visitor-icon">🌎</span>
+          <h3>Ubicación de visitantes</h3>
+          <div class="visitor-map-placeholder small" id="visitorMap">
+            <strong>Ubicación de visitantes</strong>
+            <span>Pegar aquí el código de mapa o banderas.</span>
+          </div>
+        </article>
       </div>
     </section>
 
     <section id="contacto" class="section contact">
-      <div class="section-title">
-        <p class="eyebrow">Contacto</p>
-        <h2>Quiero formar parte de la Red Nacional de Coinventores</h2>
-        <p>Investigadores mexicanos interesados pueden enviar sus datos para conocer los mecanismos de colaboración.</p>
-      </div>
-      <form class="contact-form" action="mailto:contacto@edithalanis.com" method="post" enctype="text/plain">
-        <input name="nombre" placeholder="Nombre completo" required />
-        <input name="institucion" placeholder="Institución o área de especialidad" />
-        <input name="estado" placeholder="Estado" />
-        <input name="municipio" placeholder="Municipio" />
-        <input type="email" name="correo" placeholder="Correo electrónico" required />
-        <textarea name="mensaje" rows="4" placeholder="Mensaje"></textarea>
-        <button class="btn primary" type="submit">Enviar mensaje</button>
-      </form>
+      <h2>Contacto</h2>
+      <p>Programa de Innovación EdithAlanis™</p>
+      <p class="mini">Innovación · Ciencia · Tecnología · Colaboración</p>
     </section>
   </main>
 
-  <footer class="footer">
-    <strong>Programa de Innovación EdithAlanis™</strong>
-    <p>Innovación • Ciencia • Tecnología • Colaboración</p>
-    <p>Portal Oficial del Programa de Innovación EdithAlanis™ · © 2026</p>
+  <footer>
+    <p>© 2026 Programa de Innovación EdithAlanis™. Todos los derechos reservados.</p>
     <a href="#inicio">Volver arriba ↑</a>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>
