@@ -1,0 +1,1 @@
+function filterNames(){const q=document.getElementById('search').value.toLowerCase();document.querySelectorAll('#nameList div').forEach(el=>{el.style.display=el.textContent.toLowerCase().includes(q)?'block':'none'})}
