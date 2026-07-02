@@ -1,404 +1,191 @@
 <!DOCTYPE html>
-<html lang="es-MX">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Programa de Innovación EdithAlanis™</title>
-  <meta name="description" content="Portal institucional oficial del Programa de Innovación EdithAlanis™. Investigación, academia, innovación científica, patentes y red de coinventores.">
-  <style>
-    :root{
-      --azul:#071f3a;
-      --azul2:#0d3c69;
-      --dorado:#b88a2e;
-      --dorado2:#e2bf63;
-      --negro:#111;
-      --blanco:#fff;
-      --gris:#f4f7fb;
-      --gris2:#e8eef6;
-      --texto:#263241;
-      --muted:#66768a;
-      --sombra:0 24px 70px rgba(7,31,58,.12);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      color:var(--texto);
-      background:#fff;
-      line-height:1.65;
-    }
-    a{text-decoration:none;color:inherit}
-    .top{
-      position:sticky;top:0;z-index:99;
-      display:flex;align-items:center;justify-content:space-between;
-      padding:14px 5%;
-      background:rgba(255,255,255,.96);
-      border-bottom:1px solid var(--gris2);
-      backdrop-filter:blur(14px);
-    }
-    .brand{display:flex;gap:12px;align-items:center;font-weight:900;color:var(--azul)}
-    .brand .seal{
-      width:44px;height:44px;border-radius:50%;
-      display:grid;place-items:center;
-      color:var(--dorado2);
-      background:linear-gradient(135deg,var(--azul),#000);
-      box-shadow:0 8px 28px rgba(7,31,58,.18);
-    }
-    nav{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}
-    nav a{font-size:.9rem;padding:8px 11px;border-radius:999px;color:#263241}
-    nav a:hover{background:var(--gris);color:var(--azul);font-weight:800}
-    .menu{display:none;border:0;background:var(--azul);color:white;border-radius:12px;padding:10px 13px;font-size:1.1rem}
-    .hero{
-      min-height:88vh;
-      display:grid;align-items:center;
-      color:#fff;
-      background:
-        radial-gradient(circle at 80% 15%,rgba(226,191,99,.26),transparent 28%),
-        radial-gradient(circle at 20% 80%,rgba(255,255,255,.09),transparent 28%),
-        linear-gradient(120deg,rgba(7,31,58,.98),rgba(0,0,0,.88));
-      overflow:hidden;
-      position:relative;
-    }
-    .hero:after{
-      content:"";
-      position:absolute;inset:auto -10% -20% -10%;
-      height:280px;
-      background:linear-gradient(90deg,transparent,rgba(226,191,99,.18),transparent);
-      transform:rotate(-4deg);
-    }
-    .hero-inner{position:relative;z-index:2;padding:100px 7%;max-width:1180px}
-    .kicker{
-      margin:0 0 14px;
-      color:var(--dorado2);
-      letter-spacing:2.6px;
-      text-transform:uppercase;
-      font-weight:900;
-      font-size:.78rem;
-    }
-    h1,h2,h3{line-height:1.08}
-    h1{font-size:clamp(2.7rem,7vw,6.4rem);margin:0 0 24px;letter-spacing:-2px}
-    h2{font-size:clamp(2rem,4.5vw,4rem);margin:0;color:var(--azul);letter-spacing:-1px}
-    h3{font-size:1.35rem;margin:0 0 10px;color:var(--azul)}
-    .lead{font-size:clamp(1.08rem,2vw,1.35rem);max-width:920px;color:#eef5ff;margin:0 0 32px}
-    .actions{display:flex;gap:14px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:999px;font-weight:900}
-    .btn.gold{background:var(--dorado);color:white}
-    .btn.outline{border:1px solid rgba(255,255,255,.5);color:white}
-    .section{padding:82px 7%}
-    .alt{background:var(--gris)}
-    .head{max-width:1050px;margin:0 0 34px}
-    .head p{max-width:850px;color:var(--muted);font-size:1.08rem}
-    .grid{display:grid;gap:24px}
-    .two{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .three{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .four{grid-template-columns:repeat(4,minmax(0,1fr))}
-    .card{
-      background:#fff;
-      border:1px solid var(--gris2);
-      border-radius:28px;
-      padding:30px;
-      box-shadow:var(--sombra);
-    }
-    .card p{margin-top:0;color:#455367}
-    .stats .card{text-align:center}
-    .stats strong{display:block;font-size:2.65rem;color:var(--azul);line-height:1}
-    .stats span{display:block;margin-top:9px;color:var(--muted);font-weight:800}
-    .bio{
-      max-width:1120px;margin:auto;
-      background:#fff;border:1px solid var(--gris2);border-radius:32px;
-      padding:clamp(28px,5vw,54px);
-      box-shadow:var(--sombra);
-    }
-    .bio p{font-size:1.03rem;margin:0 0 17px}
-    .timeline{display:grid;gap:18px;max-width:980px}
-    .time-item{display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:start}
-    .year{font-weight:900;color:var(--dorado);font-size:1.15rem}
-    .bar{height:100%;min-height:70px;border-left:3px solid var(--dorado);padding-left:22px}
-    .pill-list{display:flex;gap:10px;flex-wrap:wrap}
-    .pill{padding:9px 13px;border:1px solid var(--gris2);border-radius:999px;background:white;font-weight:800;color:var(--azul)}
-    .search{
-      width:100%;max-width:760px;
-      border:1px solid var(--gris2);
-      border-radius:18px;
-      padding:16px 18px;
-      font-size:1rem;
-      margin-bottom:24px;
-    }
-    .profile{text-align:center}
-    .avatar{
-      width:90px;height:90px;margin:0 auto 18px;border-radius:50%;
-      background:linear-gradient(135deg,var(--azul),#000);
-      color:var(--dorado2);
-      display:grid;place-items:center;
-      font-weight:900;font-size:1.5rem;
-    }
-    .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-    .gallery div{
-      min-height:180px;border-radius:28px;
-      background:linear-gradient(135deg,#fff,var(--gris));
-      border:1px solid var(--gris2);
-      display:grid;place-items:center;
-      text-align:center;
-      padding:24px;
-      color:var(--azul);
-      font-weight:900;
-      box-shadow:0 14px 40px rgba(7,31,58,.07);
-    }
-    .contact{
-      background:
-        radial-gradient(circle at top right,rgba(226,191,99,.18),transparent 32%),
-        linear-gradient(135deg,var(--azul),#050b12);
-      color:white;
-    }
-    .contact h2{color:white}
-    .contact .head p{color:#d9e4f0}
-    form{display:grid;gap:14px;max-width:780px}
-    input,textarea{
-      width:100%;
-      border:1px solid rgba(255,255,255,.25);
-      background:rgba(255,255,255,.08);
-      color:white;
-      border-radius:18px;
-      padding:16px 18px;
-      font:inherit;
-    }
-    input::placeholder,textarea::placeholder{color:#ccd8e6}
-    textarea{min-height:145px}
-    button{border:0;background:var(--dorado);color:white;border-radius:999px;padding:15px 22px;font-weight:900;font:inherit;cursor:pointer}
-    footer{
-      background:#090909;
-      color:white;
-      padding:34px 7%;
-      display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap
-    }
-    footer p{margin:.2rem 0;color:#cbd3dd;max-width:760px}
-    .small{font-size:.9rem}
-    @media(max-width:1050px){
-      .menu{display:block}
-      nav{display:none;width:100%;padding-top:12px;justify-content:flex-start}
-      nav.open{display:flex;flex-direction:column}
-      .top{flex-wrap:wrap}
-      .two,.three,.four,.gallery{grid-template-columns:1fr}
-      .time-item{grid-template-columns:1fr}
-      .hero{min-height:auto}
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EdithAlanis™ | Programa de Innovación</title>
+  <meta name="description" content="Portal oficial del Programa de Innovación EdithAlanis™: investigación, academia, patentes, solicitudes en proceso, red nacional de coinventores y colaboradores.">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <header class="top">
-    <a class="brand" href="#inicio">
-      <span class="seal">EA</span>
-      <span>EdithAlanis™</span>
-    </a>
-    <button class="menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#biografia">Biografía</a>
-      <a href="#programa">Programa</a>
-      <a href="#academia">Academia</a>
-      <a href="#patentes">Patentes</a>
-      <a href="#investigacion">Investigación</a>
-      <a href="#coinventores">Coinventores</a>
-      <a href="#colaboradores">Colaboradores</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+  <header class="topbar">
+    <span>✉ contacto@edithalanis.com</span>
+    <span>Portal Oficial del Programa de Innovación EdithAlanis™</span>
   </header>
 
-  <main id="inicio">
-    <section class="hero">
-      <div class="hero-inner">
-        <p class="kicker">Portal institucional oficial</p>
-        <h1>Programa de Innovación EdithAlanis™</h1>
-        <p class="lead">Impulsando una nueva sociedad de innovación científica en México, mediante la colaboración, el conocimiento y la protección legal de las ideas y los desarrollos tecnológicos.</p>
-        <div class="actions">
-          <a class="btn gold" href="#programa">Conocer el programa</a>
-          <a class="btn outline" href="#patentes">Ver desarrollos tecnológicos</a>
+  <nav class="navbar">
+    <a class="brand" href="#inicio"><span class="logo">💡</span><span>EDITHALANIS<sup>™</sup><small>Programa de Innovación</small></span></a>
+    <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+    <div class="navlinks">
+      <a href="#inicio">Inicio</a>
+      <a href="#fundadora">Fundadora</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#inventores">Inventores</a>
+      <a href="#red">Red Nacional</a>
+      <a href="#portafolio">Patentes</a>
+      <a href="#academia">Academia</a>
+      <a href="#areas">Áreas</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Portal institucional</p>
+        <h1>Programa de Innovación <span>EdithAlanis™</span></h1>
+        <p>Impulsando una nueva sociedad de innovación científica en México, mediante la colaboración, el conocimiento y la protección legal de las ideas y los desarrollos tecnológicos.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#academia">Academia</a>
+          <a class="btn secondary" href="#portafolio">Propiedad intelectual</a>
         </div>
       </div>
+      <div class="orb" aria-hidden="true"></div>
     </section>
 
-    <section class="section alt">
-      <div class="grid four stats">
-        <div class="card"><strong>38</strong><span>años de trayectoria en la Universidad de Guadalajara</span></div>
-        <div class="card"><strong>7</strong><span>patentes concedidas</span></div>
-        <div class="card"><strong>+3,000</strong><span>diseños computacionales</span></div>
-        <div class="card"><strong>+80,000</strong><span>estudiantes analizados en investigación</span></div>
-      </div>
+    <section class="stats-panel">
+      <div><strong>7</strong><span>Patentes y modelo de utilidad</span></div>
+      <div><strong>113</strong><span>Solicitudes de patente en proceso</span></div>
+      <div><strong>23</strong><span>Áreas tecnológicas</span></div>
+      <div><strong>52</strong><span>Cursos iniciales</span></div>
+      <div><strong>83</strong><span>Coinventores registrados</span></div>
     </section>
 
-    <section id="biografia" class="section">
-      <div class="head">
-        <p class="kicker">Biografía institucional</p>
-        <h2>Dra. María Elvia Edith Alanis Pérez</h2>
-        <p>El nombre completo se presenta únicamente en esta sección institucional.</p>
-      </div>
-      <article class="bio">
+    <section id="fundadora" class="section founder">
+      <p class="eyebrow">Fundadora</p>
+      <h2>Dra. María Elvia Edith Alanis Pérez</h2>
+      <p>Profesora-investigadora de la Universidad de Guadalajara, inventora y fundadora del Programa de Innovación EdithAlanis™. Este portal reúne la estructura institucional, la Academia, el portafolio tecnológico y la Red Nacional de Coinventores vinculada al desarrollo de soluciones científicas y tecnológicas con alcance nacional.</p>
+    </section>
+
+    <section id="biografia" class="section alt">
+      <p class="eyebrow">Biografía institucional</p>
+      <h2>Trayectoria académica y científica</h2>
+      <div class="bio-box">
         <p>La Dra. María Elvia Edith Alanis Pérez es profesora-investigadora de la Universidad de Guadalajara, con 38 años de trayectoria académica, reconocida por sus contribuciones en investigación científica, innovación tecnológica, educación superior, gestión universitaria y desarrollo de propiedad intelectual.</p>
-        <p>Es Doctora en Ciencias, en Cooperación y Bienestar Social, por la Universidad de Oviedo, España, con mención Cum Laude; Doctorante del Doctorado en Ciencias de la Ingeniería con orientación en Administración de la Tecnología por el Centro Universitario de la Ciénega de la Universidad de Guadalajara; ambos doctorados con promedio de 100.</p>
-        <p>Cuenta con Especialidad como Experta en Exclusión Social por la Universidad de Oviedo, España; reconocimiento como Perfil PRODEP; pertenece al Sistema Nacional de Investigadoras e Investigadores, SNII Nivel I, México, periodo 2023-2028; es Coordinadora Líder en ISO 9001 e ISO 14001; Maestra en Planeación de la Educación Superior por el CUCEA de la Universidad de Guadalajara; Ingeniera en Comunicaciones y Electrónica y Auxiliar de Contador.</p>
-        <p>Fue ganadora a nivel estatal con el primer lugar a la mejor tesis del año en Educación por la Cámara de Comercio de Guadalajara; recibió la Presea Enrique Díaz de León al Mérito Académico 2018 y el Premio Colibrí 2018 al trabajo en defensa del medio ambiente, en modalidad de investigación aplicada.</p>
-        <p>Es inventora, ha obtenido siete patentes y tiene en proceso varias solicitudes más. Durante 2023-2024 fue Presidenta de la Comisión 2 del Área XI Interdisciplinarias del Sistema Nacional de Investigadores del Conahcyt. Durante 2024-2025 fue Secretaria de la Comisión 2 del Área XI Interdisciplinarias, participando en evaluación de proyectos de postdoctorado, ingreso y reconsideraciones del SNII.</p>
-        <p>Cuenta con autoría de varios libros. Su especialidad docente comprende Seminario de Investigación, Introducción a la Investigación, Metodología de la Investigación y Tópicos Selectos. Ha dirigido más de cuarenta tesis como directora y participado como asesora, lectora o profesora en más de dos mil quinientas tesis de nivel maestría, además de direcciones a nivel doctorado y seminarios para doctorado en México y España.</p>
-        <p>Ha sido Coordinadora de Planeación, Programación y Presupuestación de la Coordinación General de Internacionalización de UdeG; Coordinadora de Calidad ISO 9001:2008 e ISO 14001:2004; Coordinadora de Posgrados de cuatro maestrías y dos doctorados en el Centro Universitario de la Ciénega, y ha apoyado la tramitología de cuatro programas reconocidos como de calidad PNPC por CONACYT.</p>
-        <p>Diseña sistemas computacionales para la optimización de áreas administrativas, con más de 3,000 diseños de su autoría en FileMaker Pro. Sus líneas de investigación incluyen trayectorias escolares por cohortes reales, con estudios que comprenden a más de 80,000 estudiantes de diversas universidades, así como estudios prospectivos de innovaciones y tecnologías en México.</p>
-      </article>
+        <p>Es Doctora en Ciencias, en Cooperación y Bienestar Social, por la Universidad de Oviedo, España, con mención Cum Laude; Doctorante del Doctorado en Ciencias de la Ingeniería con orientación en Administración de la Tecnología por la Universidad de Guadalajara; Maestra en Planeación de la Educación Superior por el CUCEA; Ingeniera en Comunicaciones y Electrónica; integrante del SNII Nivel I y Perfil PRODEP.</p>
+        <p>Ha recibido la Presea Enrique Díaz de León al Mérito Académico 2018 y el Premio Colibrí 2018 por investigación aplicada en defensa del medio ambiente. Es inventora, ha obtenido siete patentes y tiene en proceso diversas solicitudes de patente.</p>
+      </div>
     </section>
 
-    <section id="programa" class="section alt">
-      <div class="head">
-        <p class="kicker">Innovación científica</p>
-        <h2>Programa de Innovación EdithAlanis™</h2>
-        <p>Un ecosistema académico para articular investigación, formación, desarrollo tecnológico, colaboración y protección legal de ideas.</p>
+    <section id="equipo" class="section">
+      <p class="eyebrow">Equipo institucional</p>
+      <h2>Fundadora, cofundadores, colaboradores y equipo de apoyo</h2>
+      <div class="team-grid" id="teamGrid"></div>
+    </section>
+
+    <section id="inventores" class="section alt">
+      <p class="eyebrow">Inventores</p>
+      <h2>Inventores en patentes concedidas y en proceso</h2>
+      <p class="lead">Registro institucional de inventores participantes en patentes, modelo de utilidad y patente en proceso, todas en el Estado de Jalisco, México.</p>
+      <div class="patent-grid" id="patentGrid"></div>
+    </section>
+
+    <section id="red" class="section">
+      <p class="eyebrow">Red Nacional</p>
+      <h2>Red Nacional de Coinventores</h2>
+      <p class="lead">La Red Nacional de Coinventores integra especialistas, investigadores y colaboradores distribuidos en diversas entidades federativas de México, promoviendo el desarrollo tecnológico mediante colaboración interdisciplinaria organizada.</p>
+      <div class="search-row">
+        <input id="coinventorSearch" type="search" placeholder="Buscar coinventor, municipio o estado">
+        <span id="coinventorCount"></span>
       </div>
-      <div class="grid three">
-        <article class="card"><h3>Misión</h3><p>Promover capacidades de investigación, formación, innovación y protección legal de desarrollos tecnológicos mediante una plataforma colaborativa.</p></article>
-        <article class="card"><h3>Visión</h3><p>Consolidar una comunidad nacional orientada a la innovación científica, la transferencia del conocimiento y la defensa de la propiedad intelectual.</p></article>
-        <article class="card"><h3>Valores</h3><p>Colaboración, legalidad, rigor científico, creatividad tecnológica, responsabilidad social, inclusión académica y protección de las ideas.</p></article>
+      <div class="network-layout">
+        <aside class="state-list" id="stateList"></aside>
+        <div class="network-detail">
+          <h3 id="stateTitle">Coinventores</h3>
+          <div class="municipalities" id="municipalityTabs"></div>
+          <div class="coinventor-grid" id="coinventorGrid"></div>
+        </div>
       </div>
+      <p class="note">La Red Nacional de Coinventores se encuentra en actualización permanente. Si detecta algún error en su nombre, municipio o entidad federativa, puede solicitar su corrección mediante el formulario de contacto.</p>
+    </section>
+
+    <section id="portafolio" class="section alt">
+      <p class="eyebrow">Propiedad intelectual</p>
+      <h2>Patentes concedidas y solicitudes en proceso</h2>
+      <div class="portfolio-summary">
+        <div><strong>🏆 6</strong><span>Patentes concedidas</span></div>
+        <div><strong>🏅 1</strong><span>Modelo de utilidad concedido</span></div>
+        <div><strong>📄 113</strong><span>Solicitudes de patente en proceso</span></div>
+        <div><strong>🧭 23</strong><span>Áreas de desarrollo tecnológico</span></div>
+      </div>
+      <div class="filters">
+        <button data-filter="all" class="active">Todos</button>
+        <button data-filter="otorgada">Patentes y modelo de utilidad</button>
+        <button data-filter="presentada">Solicitudes en proceso</button>
+      </div>
+      <div class="search-row">
+        <input id="portfolioSearch" type="search" placeholder="Buscar por número, área o estatus">
+        <span id="portfolioCount"></span>
+      </div>
+      <div class="portfolio-grid" id="portfolioGrid"></div>
     </section>
 
     <section id="academia" class="section">
-      <div class="head">
-        <p class="kicker">Formación</p>
-        <h2>Academia EdithAlanis™</h2>
-        <p>Cursos, seminarios y acompañamiento académico para fortalecer capacidades metodológicas, científicas y tecnológicas.</p>
-      </div>
-      <div class="grid two">
-        <article class="card"><h3>Cursos</h3><p>Costo general: $500 MXN.</p></article>
-        <article class="card"><h3>Constancia</h3><p>Costo de constancia: $300 MXN, independiente de descuentos o condonación del curso.</p></article>
-        <article class="card"><h3>Apoyos</h3><p>Edith Alanis podrá autorizar descuentos o condonación cuando una persona presente evidencia que le impida pagar.</p></article>
-        <article class="card"><h3>Grupos</h3><p>Para grupos de 20 personas se entregarán 23 accesos. La constancia se cubre por separado cuando sea requerida.</p></article>
-      </div>
-    </section>
-
-    <section id="patentes" class="section alt">
-      <div class="head">
-        <p class="kicker">Propiedad intelectual</p>
-        <h2>Patentes y desarrollos tecnológicos</h2>
-        <p>Archivo institucional de patentes concedidas, solicitudes, familias tecnológicas, figuras técnicas, evidencia visual y documentación de soporte.</p>
-      </div>
-      <input class="search" id="buscar" onkeyup="filtrar()" placeholder="Buscar en patentes, investigación, academia o red...">
-      <div class="grid three" id="tarjetas">
-        <article class="card item"><h3>Patentes concedidas</h3><p>Siete patentes concedidas y múltiples solicitudes en proceso.</p></article>
-        <article class="card item"><h3>Familias tecnológicas</h3><p>Desarrollos bioelectrocarbonosos, biomédicos, regenerativos, biosféricos y de innovación avanzada.</p></article>
-        <article class="card item"><h3>Figuras técnicas</h3><p>Ilustraciones técnicas con referencias numéricas, fondo blanco y estilo de patente.</p></article>
-        <article class="card item"><h3>Evidencia documental</h3><p>Documentos de viabilidad, anexos, descripciones técnicas, solicitudes y archivos históricos.</p></article>
-        <article class="card item"><h3>Protección legal</h3><p>Organización de ideas, familias de invención, reivindicaciones y soportes institucionales.</p></article>
-        <article class="card item"><h3>Innovación interdisciplinaria</h3><p>Proyectos orientados a salud, educación, sostenibilidad, infraestructura y tecnologías del futuro.</p></article>
-      </div>
-    </section>
-
-    <section id="investigacion" class="section">
-      <div class="head">
-        <p class="kicker">Investigación</p>
-        <h2>Líneas de investigación</h2>
-      </div>
-      <div class="timeline">
-        <div class="time-item"><div class="year">Línea 1</div><div class="bar"><h3>Trayectorias escolares</h3><p>Investigaciones por cohortes reales con más de 80,000 estudiantes de diversas universidades.</p></div></div>
-        <div class="time-item"><div class="year">Línea 2</div><div class="bar"><h3>Prospectiva tecnológica</h3><p>Estudios del futuro sobre innovaciones, tecnologías y transformación institucional en México.</p></div></div>
-        <div class="time-item"><div class="year">Línea 3</div><div class="bar"><h3>Educación y nuevas tecnologías</h3><p>Transformación digital, diseño de bases de datos, gestión universitaria y optimización administrativa.</p></div></div>
-        <div class="time-item"><div class="year">Línea 4</div><div class="bar"><h3>Innovación protegida</h3><p>Diseño de sistemas, plataformas, familias de invención y documentación para propiedad intelectual.</p></div></div>
-      </div>
-    </section>
-
-    <section id="publicaciones" class="section alt">
-      <div class="head">
-        <p class="kicker">Producción académica</p>
-        <h2>Publicaciones y archivo académico</h2>
-        <p>Libros, artículos, capítulos, documentos técnicos, materiales docentes, constancias, reconocimientos y recursos institucionales.</p>
-      </div>
-      <div class="pill-list">
-        <span class="pill">Libros</span>
-        <span class="pill">Artículos</span>
-        <span class="pill">Capítulos</span>
-        <span class="pill">Documentos técnicos</span>
-        <span class="pill">Material docente</span>
-        <span class="pill">Reconocimientos</span>
-      </div>
-    </section>
-
-    <section id="coinventores" class="section">
-      <div class="head">
-        <p class="kicker">Colaboración nacional</p>
-        <h2>Red Nacional de Coinventores</h2>
-        <p>Red organizada por entidad federativa, registro interno, listado alfabético y fotografías cuando estén disponibles.</p>
-      </div>
-      <div class="grid three">
-        <article class="card"><h3>Jalisco</h3><p>Integración inicial de registros de coinventores y colaboradores.</p></article>
-        <article class="card"><h3>Veracruz</h3><p>Integración inicial de registros de coinventores y colaboradores.</p></article>
-        <article class="card"><h3>Red nacional</h3><p>La estructura crecerá por estados, registros internos, orden alfabético y perfiles institucionales.</p></article>
-      </div>
-    </section>
-
-    <section id="colaboradores" class="section alt">
-      <div class="head">
-        <p class="kicker">Equipo</p>
-        <h2>Colaboradores</h2>
-      </div>
-      <div class="grid two">
-        <article class="card profile">
-          <div class="avatar">EA</div>
-          <h3>Edith Alanis</h3>
-          <p>Dirección del Programa de Innovación EdithAlanis™</p>
+      <p class="eyebrow">Academia EdithAlanis™</p>
+      <h2>Formación desde cero, con acompañamiento progresivo</h2>
+      <p class="lead">Todos los cursos están diseñados para personas sin conocimientos previos. Al concluir un curso, la Academia podrá sugerir cursos relacionados para continuar la formación de acuerdo con las competencias adquiridas.</p>
+      <div class="academy-cards">
+        <article>
+          <h3>Oferta académica</h3>
+          <div class="course-list" id="courseList"></div>
         </article>
-        <article class="card profile">
-          <div class="avatar">BR</div>
-          <h3>Baltazar Ruiz Jesús Alejandro</h3>
-          <p>Colaborador Gráfico</p>
+        <article>
+          <h3>Modalidades</h3>
+          <p>Cursos, talleres, seminarios, diplomados, conferencias y asesorías especializadas.</p>
+          <h3>Dirigido a</h3>
+          <p>Estudiantes, profesores, investigadores, profesionistas, empresas, instituciones públicas y privadas, y público en general interesado en aprender.</p>
+          <h3>Costos</h3>
+          <p><strong>Curso:</strong> $500.00 MXN. Incluye constancia de participación.</p>
+          <p><strong>Constancias:</strong> $300.00 MXN cuando el curso es gratuito.</p>
+          <h3>Apoyos</h3>
+          <p>La Dirección del Programa podrá autorizar descuentos o condonación del curso cuando el solicitante presente evidencia que justifique la imposibilidad de cubrir el pago.</p>
+          <h3>Inscripciones grupales</h3>
+          <p>En grupos de 20 participantes se otorgarán 23 accesos. La expedición de constancias se realizará conforme a la política correspondiente.</p>
         </article>
       </div>
     </section>
 
-    <section id="galeria" class="section">
-      <div class="head">
-        <p class="kicker">Memoria visual</p>
-        <h2>Galería, videos y archivo histórico</h2>
-        <p>Espacio para fotografías institucionales, eventos, reconocimientos, figuras técnicas, videos, entrevistas, clases y documentos históricos.</p>
+    <section id="areas" class="section alt">
+      <p class="eyebrow">Áreas tecnológicas</p>
+      <h2>Líneas estratégicas</h2>
+      <div class="areas-grid">
+        <article><span>🧬</span><h3>Medicina regenerativa</h3><p>Tecnologías para regeneración, soporte funcional y evaluación biomédica.</p></article>
+        <article><span>⚡</span><h3>Sistemas bioelectrocarbonosos</h3><p>Arquitecturas funcionales para integración biomédica, energética y fisiológica.</p></article>
+        <article><span>🏛</span><h3>Infraestructura universal</h3><p>Modelos autónomos para educación, salud, cultura, vivienda y logística.</p></article>
+        <article><span>🔋</span><h3>Energía y continuidad</h3><p>Transporte, recuperación, regulación y continuidad operativa energética.</p></article>
       </div>
-      <div class="gallery">
-        <div>Fotografía institucional</div>
-        <div>Eventos académicos</div>
-        <div>Reconocimientos</div>
-        <div>Figuras técnicas</div>
-        <div>Videos y clases</div>
-        <div>Archivo histórico</div>
+    </section>
+
+    <section class="section" id="alcance">
+      <p class="eyebrow">Alcance del portal</p>
+      <h2>Visitantes y ubicación</h2>
+      <div class="visitor-box">
+        <div><strong>👥 Visitantes</strong><span id="visitorNumber">En actualización</span></div>
+        <div><strong>🌍 Ubicación de visitantes</strong><span>Disponible mediante contador externo</span></div>
       </div>
     </section>
 
     <section id="contacto" class="section contact">
-      <div class="head">
-        <p class="kicker">Contacto</p>
-        <h2>Solicita información</h2>
-        <p>Contacto institucional para cursos, colaboración, academia, red de coinventores, patentes y proyectos de innovación.</p>
-      </div>
-      <form onsubmit="return false;">
-        <input type="text" placeholder="Nombre completo">
-        <input type="email" placeholder="Correo electrónico">
-        <input type="text" placeholder="Asunto">
-        <textarea placeholder="Mensaje"></textarea>
-        <button onclick="alert('Formulario de presentación. Se puede conectar posteriormente a correo institucional.')">Enviar solicitud</button>
-      </form>
+      <p class="eyebrow">Contacto</p>
+      <h2>Únete a la Red Nacional de Coinventores</h2>
+      <p>Investigadores, académicos y especialistas mexicanos interesados en colaborar pueden comunicarse para integrarse a esta iniciativa.</p>
+      <a class="btn primary" href="mailto:contacto@edithalanis.com">contacto@edithalanis.com</a>
     </section>
   </main>
 
   <footer>
-    <div>
-      <strong>Programa de Innovación EdithAlanis™</strong>
-      <p>Impulsando una nueva sociedad de innovación científica en México, mediante la colaboración, el conocimiento y la protección legal de las ideas y los desarrollos tecnológicos.</p>
-    </div>
-    <p class="small">© 2026 EdithAlanis™. Portal institucional oficial.</p>
+    <strong>Programa de Innovación EdithAlanis™</strong>
+    <span>Innovación • Ciencia • Tecnología • Colaboración</span>
+    <small>© 2026 Portal Oficial del Programa de Innovación EdithAlanis™</small>
   </footer>
 
   <script>
-    function filtrar(){
-      const q = document.getElementById('buscar').value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
-      document.querySelectorAll('.item').forEach(card=>{
-        const t = card.innerText.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
-        card.style.display = t.includes(q) ? 'block' : 'none';
-      });
-    }
+    window.PORTAL_TEAM = [["Dra. María Elvia Edith Alanis Pérez", "Fundadora", "💡"], ["Elsy Susana Edith Baltazar Alaniz", "Cofundadora", "🤝"], ["Daniel Alejandro Baltazar Alaniz", "Cofundador", "🤝"], ["Lisbeth Andalón Álvarez", "Colaboradora Experta", "🔬"], ["Apolonio Navarro Paredes", "Colaborador de Desarrollos", "⚙️"], ["Rocío Calderón García", "Colaboradora Experta", "🔬"], ["Lucio Guzmán Mares", "Colaborador de Vinculación", "🌐"], ["María Soledad Castellanos Villarruel", "Colaboradora de Revisión Ortográfica", "✒️"], ["Carlos Vázquez Cid de León", "Colaborador de Vinculación Nacional", "🇲🇽"], ["Adán Yáñez Larios", "Colaborador Internacional", "🌎"], ["Sergio Roberto Dávalos García", "Colaborador Tecnológico", "💡"], ["Marlene Alejandra Pérez Villalpando", "Colaboradora Revisora", "📘"], ["Martha Alicia González Palacios", "Colaboradora de Vinculación Académica", "🎓"], ["Baltazar Ruiz Jesús Alejandro", "Colaborador Gráfico", "🎨"]];
+    window.COINVENTORS = [{"name": "Alanis Pérez Jezrael Abraham", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Aguilar Molina Yehoshua", "city": "San Pedro Tlaquepaque", "state": "Jalisco"}, {"name": "Alanis Mijares Antonia Leticia", "city": "San Nicolás de la Garza", "state": "Nuevo León"}, {"name": "Alanis Mijares Jesús", "city": "García", "state": "Nuevo León"}, {"name": "Alanis Mijares Minerva", "city": "San Nicolás de los Garza", "state": "Nuevo León"}, {"name": "Alanis Pérez José Eduardo", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Alanis Pérez María Elvia Edith", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Alaniz Casillas Christian Eduardo", "city": "Zapopan", "state": "Jalisco"}, {"name": "Alaniz Partida Ignacio Ricardo", "city": "Zapopan", "state": "Jalisco"}, {"name": "Alaniz Pérez Ignacio Ricardo", "city": "Zapopan", "state": "Jalisco"}, {"name": "Alaniz Pérez María Ivett Janett", "city": "Zapopan", "state": "Jalisco"}, {"name": "Andalón Álvarez Lisbeth", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Aragón Ríos Elba Karina", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Baltazar Alaniz Daniel Alejandro", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Baltazar Alaniz Elsy Susana Edith", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Baltazar Montes Lorenzo", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Bautista González Jorge Gregorio", "city": "Zapopan", "state": "Jalisco"}, {"name": "Bayardo González Rubén Alberto", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Becerra González Rubén Armando", "city": "Jamay", "state": "Jalisco"}, {"name": "Calderón García Rocío", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Carazo Luna José Alfredo", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Carrión Castillo Luz Ovillada", "city": "Cosoleacaque", "state": "Veracruz"}, {"name": "Ma. Soledad Castellanos Villarruel", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Castillo Medina Diana Iztacihuatl", "city": "Zapopan", "state": "Jalisco"}, {"name": "Chama Mora Héctor Adán", "city": "Fortín", "state": "Veracruz"}, {"name": "Claustro Bobadilla Javier", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Cortés Camacho Araceli", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Cruz Alanis Ariana Leticia", "city": "San Nicolás de la Garza", "state": "Nuevo León"}, {"name": "Cruz del Ángel Jesús Adrián", "city": "San Nicolás de la Garza", "state": "Nuevo León"}, {"name": "Dávalos García Sergio Roberto", "city": "Zapopan", "state": "Jalisco"}, {"name": "Dávila Torres José Ignacio", "city": "Orizaba", "state": "Veracruz"}, {"name": "Delgadillo Preciado Zaira América", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Domínguez García Rodolfo Omar", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Durán Padilla José Arturo", "city": "Zapopan", "state": "Jalisco"}, {"name": "Escutia Gutiérrez Raymundo", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Gazpar Castellanos José Luis", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Gómez Contreras Flor Alejandra", "city": "Guadalajara", "state": "Jalisco"}, {"name": "González Fajardo Alma Delia", "city": "San Gabriel", "state": "Jalisco"}, {"name": "Gutiérrez Gómez Alejandra", "city": "Zapopan", "state": "Jalisco"}, {"name": "Guzmán Castellanos Karen Berenice", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Guzmán Mares Lucio", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Guzmán Villarruel Jesús Fernando", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Hernández Abreu Karina Esther", "city": "Villahermosa", "state": "Tabasco"}, {"name": "Hernández Cortés Rigoberto", "city": "Izhuatlancillo", "state": "Veracruz"}, {"name": "Hernández García Anabella", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Hernández Landeros Edgar Miguel Raúl", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Hernández Méndez Arturo", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Hernández Santa María José Guadalupe", "city": "Zapopan", "state": "Jalisco"}, {"name": "Iñiguez Carrillo Adriana Lorena", "city": "Zapotlán el Grande", "state": "Jalisco"}, {"name": "Jiménez Torres Jorge Alfredo", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Kristyan Felype Luis Navarro", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Lehmann Mendoza José Miguel", "city": "Villahermosa", "state": "Tabasco"}, {"name": "Lino Gamiño Juan Alfredo", "city": "Colima", "state": "Colima"}, {"name": "López Alvarado Miguel Ángel", "city": "Comalcalco", "state": "Tabasco"}, {"name": "López Chávez Gilberto", "city": "Guanajuato", "state": "Guanajuato"}, {"name": "Lozoya Arandia Jorge", "city": "Zapopan", "state": "Jalisco"}, {"name": "Luna Rizo Marisol", "city": "Zapopan", "state": "Jalisco"}, {"name": "Maciel Ruelas Estefany Teresa", "city": "Villa Corona", "state": "Jalisco"}, {"name": "Manzo Palomera Olga Rocío", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Montalvo Núñez Jorge Antonio", "city": "Zapopan", "state": "Jalisco"}, {"name": "Montesinos González Salvador", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Morán Martínez Francisco", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Nápoles Salas Luz Elena", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Ortiz Cruz Fabiola", "city": "Minatitlán", "state": "Veracruz"}, {"name": "Ortiz Palafox Karla Haydeee", "city": "Zapopan", "state": "Jalisco"}, {"name": "Pérez Villalpando Marlene Alejandra", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Ramírez Castillo Eric Amin", "city": "Oaxaca de Juárez", "state": "Oaxaca"}, {"name": "Ramírez Torres Miguel Ángel", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Rivas Paz Mariana", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Rivera Alaniz Chamir Darinka", "city": "Zapopan", "state": "Jalisco"}, {"name": "Rivera Alaniz Xiomara Hatzydy", "city": "Zapopan", "state": "Jalisco"}, {"name": "Robles González Vania Shuhua", "city": "Coyoacán", "state": "Ciudad de México"}, {"name": "Rodríguez Nieves Blanca", "city": "Zapopan", "state": "Jalisco"}, {"name": "Salas Coronado Raúl", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Solorio González Carolina", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Soto Chávez Alicia", "city": "Minatitlán", "state": "Veracruz"}, {"name": "Trujillo Mata Amín", "city": "Camerino Z. Mendoza", "state": "Veracruz"}, {"name": "Vargas Lares Oscar Alejandro", "city": "Zapopan", "state": "Jalisco"}, {"name": "Vázquez Arango María de Lourdes", "city": "Oaxaca de Juárez", "state": "Oaxaca"}, {"name": "Vázquez Cid de León Carlos", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Villegas Alcantar Benjamín", "city": "Tepatitlán de Morelos", "state": "Jalisco"}, {"name": "Yáñez Larios Adán", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Zepeda Valle Gustavo", "city": "Zacatecas", "state": "Zacatecas"}];
+    window.PATENTS = [{"kind": "Patente", "number": "324844", "status": "Concedida", "location": "Jalisco, México", "inventors": ["María Elvia Edith Alanis Pérez", "Mario Eduardo Cano González", "Ernesto Edgar Mazón Valadez", "Alfonso Hernández Samano"]}, {"kind": "Patente", "number": "330235", "status": "Concedida", "location": "Jalisco, México", "inventors": ["María Elvia Edith Alanis Pérez", "Mario Eduardo Cano González", "Ernesto Edgar Mazón Valadez", "Alfonso Hernández Samano"]}, {"kind": "Patente", "number": "337707", "status": "Concedida", "location": "Jalisco, México", "inventors": ["María Elvia Edith Alanis Pérez", "Mario Eduardo Cano González", "Ernesto Edgar Mazón Valadez", "Eri Atahualpa Mena Barbosa", "Esteban Mauricio Tavares Herrera", "Juan Carlos Estrada Gutiérrez"]}, {"kind": "Modelo de Utilidad", "number": "3811", "status": "Concedido", "location": "Jalisco, México", "inventors": ["Christopher Javier García Torres", "Raúl García Becerra", "Mario Eduardo Cano González", "Lucio Guzmán Mares", "María Elvia Edith Alanis Pérez"]}, {"kind": "Patente", "number": "392662", "status": "Concedida", "location": "Jalisco, México", "inventors": ["Antonio Ramírez García", "María Elvia Edith Alanis Pérez"]}, {"kind": "Patente", "number": "427287", "status": "Concedida", "location": "Jalisco, México", "inventors": ["María Elvia Edith Alanis Pérez", "Elsy Susana Edith Baltazar Alaniz", "Daniel Alejandro Baltazar Alaniz", "Ma. Soledad Castellanos Villarruel", "Lucio Guzmán Mares", "Rocío Calderón García", "Gustavo Olague Caballero †"]}, {"kind": "Patente", "number": "En proceso", "status": "En proceso", "location": "Jalisco, México", "inventors": ["María Elvia Edith Alanis Pérez", "Christian Eduardo Alaniz Casillas", "Elsy Susana Edith Baltazar Alaniz"]}];
+    window.PORTFOLIO = [{"id": "324844", "area": "Patente", "status": "Concedida", "badge": "🏆", "group": "otorgada"}, {"id": "330235", "area": "Patente", "status": "Concedida", "badge": "🏆", "group": "otorgada"}, {"id": "337707", "area": "Patente", "status": "Concedida", "badge": "🏆", "group": "otorgada"}, {"id": "3811", "area": "Modelo de Utilidad", "status": "Concedido", "badge": "🏆", "group": "otorgada"}, {"id": "392662", "area": "Patente", "status": "Concedida", "badge": "🏆", "group": "otorgada"}, {"id": "427287", "area": "Patente", "status": "Concedida", "badge": "🏆", "group": "otorgada"}, {"id": "En proceso", "area": "Patente", "status": "En proceso", "badge": "📄", "group": "presentada"}, {"id": "S-01", "area": "Medicina regenerativa", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-02", "area": "Biomateriales bioelectrocarbonosos", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-03", "area": "Ingeniería biomédica", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-04", "area": "Bioelectrónica médica", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-05", "area": "Diagnóstico funcional", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-06", "area": "Monitoreo fisiológico", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-07", "area": "Liberación controlada de agentes terapéuticos", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-08", "area": "Regeneración cutánea", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-09", "area": "Regeneración ósea", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-10", "area": "Regeneración neural", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-11", "area": "Regeneración cardiovascular", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-12", "area": "Regeneración maxilofacial", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-13", "area": "Regeneración periodontal", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-14", "area": "Regeneración corneal", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-15", "area": "Regeneración cartilaginosa", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-16", "area": "Regeneración de tejidos blandos", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-17", "area": "Oncología", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-18", "area": "Plataformas biosféricas regenerativas", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-19", "area": "Arquitecturas biosféricas universales", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-20", "area": "Sistemas autónomos inteligentes", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-21", "area": "Sistemas de transferencia biosistémica", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-22", "area": "Tecnologías extraplanetarias", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-23", "area": "Innovación tecnológica interdisciplinaria", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}];
+    window.COURSES = ["¿Qué es la investigación?", "Cómo elegir un tema de investigación", "Cómo formular un problema de investigación", "Cómo hacer una búsqueda bibliográfica", "Google Académico desde cero", "Referencias bibliográficas desde cero", "Normas APA desde cero", "Cómo evitar el plagio", "Cómo elaborar un índice académico", "Redacción académica desde cero", "Uso básico de Word para trabajos académicos", "Uso básico de Excel para investigación", "Introducción a la Investigación", "Metodología de la Investigación", "Seminario de Investigación", "Diseño de Proyectos de Investigación", "Elaboración de Protocolos de Investigación", "Planteamiento del Problema de Investigación", "Objetivos, preguntas e hipótesis", "Variables e indicadores", "Justificación de la investigación", "Marco teórico", "Marco metodológico", "Diseño de instrumentos", "Muestreo desde cero", "Estadística descriptiva desde cero", "Estadística aplicada a la investigación", "Análisis e interpretación de resultados", "Elaboración de tesis de licenciatura", "Elaboración de tesis de maestría", "Elaboración de tesis doctoral", "Redacción científica", "Elaboración de artículos científicos", "Planeación de proyectos de investigación", "Prospectiva e innovación tecnológica", "Propiedad intelectual desde cero", "Introducción a las patentes", "Modelos de utilidad", "Redacción inicial de solicitudes de patente", "Figuras técnicas para patentes", "Formación de inventores y coinventores", "Desarrollo de proyectos tecnológicos", "FileMaker Pro desde cero", "Diseño de bases de datos desde cero", "Automatización de procesos administrativos", "Gestión de la calidad ISO 9001", "Gestión ambiental ISO 14001", "Gestión documental", "Inteligencia Artificial para investigación", "Inteligencia Artificial para docentes", "Inteligencia Artificial para tesis", "Inteligencia Artificial para innovación tecnológica"];
   </script>
+  <script src="script.js"></script>
 </body>
 </html>
