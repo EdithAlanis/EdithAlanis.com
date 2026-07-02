@@ -1,145 +1,404 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EdithAlanis™ | Programa de Innovación</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programa de Innovación EdithAlanis™</title>
+  <meta name="description" content="Portal institucional oficial del Programa de Innovación EdithAlanis™. Investigación, academia, innovación científica, patentes y red de coinventores.">
+  <style>
+    :root{
+      --azul:#071f3a;
+      --azul2:#0d3c69;
+      --dorado:#b88a2e;
+      --dorado2:#e2bf63;
+      --negro:#111;
+      --blanco:#fff;
+      --gris:#f4f7fb;
+      --gris2:#e8eef6;
+      --texto:#263241;
+      --muted:#66768a;
+      --sombra:0 24px 70px rgba(7,31,58,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--texto);
+      background:#fff;
+      line-height:1.65;
+    }
+    a{text-decoration:none;color:inherit}
+    .top{
+      position:sticky;top:0;z-index:99;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 5%;
+      background:rgba(255,255,255,.96);
+      border-bottom:1px solid var(--gris2);
+      backdrop-filter:blur(14px);
+    }
+    .brand{display:flex;gap:12px;align-items:center;font-weight:900;color:var(--azul)}
+    .brand .seal{
+      width:44px;height:44px;border-radius:50%;
+      display:grid;place-items:center;
+      color:var(--dorado2);
+      background:linear-gradient(135deg,var(--azul),#000);
+      box-shadow:0 8px 28px rgba(7,31,58,.18);
+    }
+    nav{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+    nav a{font-size:.9rem;padding:8px 11px;border-radius:999px;color:#263241}
+    nav a:hover{background:var(--gris);color:var(--azul);font-weight:800}
+    .menu{display:none;border:0;background:var(--azul);color:white;border-radius:12px;padding:10px 13px;font-size:1.1rem}
+    .hero{
+      min-height:88vh;
+      display:grid;align-items:center;
+      color:#fff;
+      background:
+        radial-gradient(circle at 80% 15%,rgba(226,191,99,.26),transparent 28%),
+        radial-gradient(circle at 20% 80%,rgba(255,255,255,.09),transparent 28%),
+        linear-gradient(120deg,rgba(7,31,58,.98),rgba(0,0,0,.88));
+      overflow:hidden;
+      position:relative;
+    }
+    .hero:after{
+      content:"";
+      position:absolute;inset:auto -10% -20% -10%;
+      height:280px;
+      background:linear-gradient(90deg,transparent,rgba(226,191,99,.18),transparent);
+      transform:rotate(-4deg);
+    }
+    .hero-inner{position:relative;z-index:2;padding:100px 7%;max-width:1180px}
+    .kicker{
+      margin:0 0 14px;
+      color:var(--dorado2);
+      letter-spacing:2.6px;
+      text-transform:uppercase;
+      font-weight:900;
+      font-size:.78rem;
+    }
+    h1,h2,h3{line-height:1.08}
+    h1{font-size:clamp(2.7rem,7vw,6.4rem);margin:0 0 24px;letter-spacing:-2px}
+    h2{font-size:clamp(2rem,4.5vw,4rem);margin:0;color:var(--azul);letter-spacing:-1px}
+    h3{font-size:1.35rem;margin:0 0 10px;color:var(--azul)}
+    .lead{font-size:clamp(1.08rem,2vw,1.35rem);max-width:920px;color:#eef5ff;margin:0 0 32px}
+    .actions{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:999px;font-weight:900}
+    .btn.gold{background:var(--dorado);color:white}
+    .btn.outline{border:1px solid rgba(255,255,255,.5);color:white}
+    .section{padding:82px 7%}
+    .alt{background:var(--gris)}
+    .head{max-width:1050px;margin:0 0 34px}
+    .head p{max-width:850px;color:var(--muted);font-size:1.08rem}
+    .grid{display:grid;gap:24px}
+    .two{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .three{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .four{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .card{
+      background:#fff;
+      border:1px solid var(--gris2);
+      border-radius:28px;
+      padding:30px;
+      box-shadow:var(--sombra);
+    }
+    .card p{margin-top:0;color:#455367}
+    .stats .card{text-align:center}
+    .stats strong{display:block;font-size:2.65rem;color:var(--azul);line-height:1}
+    .stats span{display:block;margin-top:9px;color:var(--muted);font-weight:800}
+    .bio{
+      max-width:1120px;margin:auto;
+      background:#fff;border:1px solid var(--gris2);border-radius:32px;
+      padding:clamp(28px,5vw,54px);
+      box-shadow:var(--sombra);
+    }
+    .bio p{font-size:1.03rem;margin:0 0 17px}
+    .timeline{display:grid;gap:18px;max-width:980px}
+    .time-item{display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:start}
+    .year{font-weight:900;color:var(--dorado);font-size:1.15rem}
+    .bar{height:100%;min-height:70px;border-left:3px solid var(--dorado);padding-left:22px}
+    .pill-list{display:flex;gap:10px;flex-wrap:wrap}
+    .pill{padding:9px 13px;border:1px solid var(--gris2);border-radius:999px;background:white;font-weight:800;color:var(--azul)}
+    .search{
+      width:100%;max-width:760px;
+      border:1px solid var(--gris2);
+      border-radius:18px;
+      padding:16px 18px;
+      font-size:1rem;
+      margin-bottom:24px;
+    }
+    .profile{text-align:center}
+    .avatar{
+      width:90px;height:90px;margin:0 auto 18px;border-radius:50%;
+      background:linear-gradient(135deg,var(--azul),#000);
+      color:var(--dorado2);
+      display:grid;place-items:center;
+      font-weight:900;font-size:1.5rem;
+    }
+    .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .gallery div{
+      min-height:180px;border-radius:28px;
+      background:linear-gradient(135deg,#fff,var(--gris));
+      border:1px solid var(--gris2);
+      display:grid;place-items:center;
+      text-align:center;
+      padding:24px;
+      color:var(--azul);
+      font-weight:900;
+      box-shadow:0 14px 40px rgba(7,31,58,.07);
+    }
+    .contact{
+      background:
+        radial-gradient(circle at top right,rgba(226,191,99,.18),transparent 32%),
+        linear-gradient(135deg,var(--azul),#050b12);
+      color:white;
+    }
+    .contact h2{color:white}
+    .contact .head p{color:#d9e4f0}
+    form{display:grid;gap:14px;max-width:780px}
+    input,textarea{
+      width:100%;
+      border:1px solid rgba(255,255,255,.25);
+      background:rgba(255,255,255,.08);
+      color:white;
+      border-radius:18px;
+      padding:16px 18px;
+      font:inherit;
+    }
+    input::placeholder,textarea::placeholder{color:#ccd8e6}
+    textarea{min-height:145px}
+    button{border:0;background:var(--dorado);color:white;border-radius:999px;padding:15px 22px;font-weight:900;font:inherit;cursor:pointer}
+    footer{
+      background:#090909;
+      color:white;
+      padding:34px 7%;
+      display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap
+    }
+    footer p{margin:.2rem 0;color:#cbd3dd;max-width:760px}
+    .small{font-size:.9rem}
+    @media(max-width:1050px){
+      .menu{display:block}
+      nav{display:none;width:100%;padding-top:12px;justify-content:flex-start}
+      nav.open{display:flex;flex-direction:column}
+      .top{flex-wrap:wrap}
+      .two,.three,.four,.gallery{grid-template-columns:1fr}
+      .time-item{grid-template-columns:1fr}
+      .hero{min-height:auto}
+    }
+  </style>
 </head>
+
 <body>
-  <header class="topbar">
-    <span>✉ contacto@edithalanis.com</span>
-    <span>Portal Oficial del Programa de Innovación EdithAlanis™</span>
-  </header>
-  <nav class="navbar">
-    <a class="brand" href="#inicio"><span class="logo">💡</span><span>EDITHALANIS<sup>™</sup><small>Programa de Innovación</small></span></a>
-    <button class="menu-toggle" aria-label="Abrir menú">☰</button>
-    <div class="navlinks">
+  <header class="top">
+    <a class="brand" href="#inicio">
+      <span class="seal">EA</span>
+      <span>EdithAlanis™</span>
+    </a>
+    <button class="menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+    <nav>
       <a href="#inicio">Inicio</a>
-      <a href="#fundadora">Fundadora</a>
-      <a href="#equipo">Equipo</a>
-      <a href="#red">Red Nacional</a>
-      <a href="#portafolio">Portafolio</a>
-      <a href="#areas">Áreas</a>
+      <a href="#biografia">Biografía</a>
+      <a href="#programa">Programa</a>
+      <a href="#academia">Academia</a>
+      <a href="#patentes">Patentes</a>
+      <a href="#investigacion">Investigación</a>
+      <a href="#coinventores">Coinventores</a>
+      <a href="#colaboradores">Colaboradores</a>
       <a href="#contacto">Contacto</a>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <main>
-    <section id="inicio" class="hero">
-      <div class="hero-text">
-        <p class="eyebrow">Portal institucional</p>
-        <h1>Programa de Innovación <span>EdithAlanis™</span></h1>
-        <p>Impulsamos el desarrollo científico y tecnológico mediante la innovación interdisciplinaria, la colaboración nacional y la generación de soluciones de alto impacto para la sociedad.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#portafolio">Ver portafolio</a>
-          <a class="btn secondary" href="#red">Red Nacional</a>
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="kicker">Portal institucional oficial</p>
+        <h1>Programa de Innovación EdithAlanis™</h1>
+        <p class="lead">Impulsando una nueva sociedad de innovación científica en México, mediante la colaboración, el conocimiento y la protección legal de las ideas y los desarrollos tecnológicos.</p>
+        <div class="actions">
+          <a class="btn gold" href="#programa">Conocer el programa</a>
+          <a class="btn outline" href="#patentes">Ver desarrollos tecnológicos</a>
         </div>
       </div>
-      <div class="orb" aria-hidden="true"></div>
     </section>
 
-    <section class="stats-panel">
-      <div><strong>461</strong><span>Desarrollos tecnológicos</span></div>
-      <div><strong>7</strong><span>Patentes otorgadas</span></div>
-      <div><strong>106</strong><span>Solicitudes presentadas</span></div>
-      <div><strong>336</strong><span>En preparación</span></div>
-      <div><strong>12</strong><span>Revisión institucional</span></div>
-    </section>
-
-    <section id="fundadora" class="section founder">
-      <p class="eyebrow">Fundadora</p>
-      <h2>Dra. Edith Alanis</h2>
-      <p>Fundadora del Programa de Innovación EdithAlanis™. Este portal reúne la estructura institucional, el portafolio tecnológico y la Red Nacional de Coinventores vinculada al desarrollo de soluciones científicas y tecnológicas con alcance nacional.</p>
-    </section>
-
-    <section id="equipo" class="section">
-      <p class="eyebrow">Equipo institucional</p>
-      <h2>Cofundadores, coinventores, colaboradores y equipo de apoyo</h2>
-      <div class="team-grid" id="teamGrid"></div>
-    </section>
-
-    <section id="red" class="section alt">
-      <p class="eyebrow">Red Nacional</p>
-      <h2>Red Nacional de Coinventores</h2>
-      <p class="lead">La Red Nacional de Coinventores integra especialistas, investigadores y colaboradores distribuidos en diversas entidades federativas de México, promoviendo el desarrollo tecnológico mediante una colaboración interdisciplinaria organizada. Investigadores mexicanos interesados en contribuir al fortalecimiento de la innovación científica y tecnológica están cordialmente invitados a formar parte de esta iniciativa.</p>
-      <div class="search-row">
-        <input id="coinventorSearch" type="search" placeholder="Buscar coinventor, municipio o estado">
-        <span id="coinventorCount"></span>
-      </div>
-      <div class="network-layout">
-        <aside class="state-list" id="stateList"></aside>
-        <div class="network-detail">
-          <h3 id="stateTitle">Coinventores</h3>
-          <div class="municipalities" id="municipalityTabs"></div>
-          <div class="coinventor-grid" id="coinventorGrid"></div>
-        </div>
-      </div>
-      <p class="note">La Red Nacional de Coinventores se encuentra en actualización permanente. Si detecta algún error en su nombre, municipio o entidad federativa, puede solicitar su corrección mediante el formulario de contacto.</p>
-    </section>
-
-    <section id="portafolio" class="section">
-      <p class="eyebrow">Portafolio tecnológico</p>
-      <h2>461 desarrollos tecnológicos</h2>
-      <div class="portfolio-summary">
-        <div><strong>🏆 7</strong><span>Patentes otorgadas</span></div>
-        <div><strong>📄 106</strong><span>Solicitudes presentadas</span></div>
-        <div><strong>🛠 336</strong><span>Desarrollos en preparación</span></div>
-        <div><strong>🏛 12</strong><span>Revisión institucional</span></div>
-      </div>
-      <div class="filters">
-        <button data-filter="all" class="active">Todos</button>
-        <button data-filter="otorgada">Otorgadas</button>
-        <button data-filter="presentada">Presentadas</button>
-        <button data-filter="preparacion">Preparación</button>
-        <button data-filter="revision">Revisión institucional</button>
-      </div>
-      <div class="search-row">
-        <input id="portfolioSearch" type="search" placeholder="Buscar por número, área o estado">
-        <span id="portfolioCount"></span>
-      </div>
-      <div class="portfolio-grid" id="portfolioGrid"></div>
-    </section>
-
-    <section id="areas" class="section alt">
-      <p class="eyebrow">Áreas tecnológicas</p>
-      <h2>Líneas estratégicas</h2>
-      <div class="areas-grid">
-        <article><span>🧬</span><h3>Medicina regenerativa</h3><p>Tecnologías para regeneración, soporte funcional y evaluación biomédica.</p></article>
-        <article><span>⚡</span><h3>Sistemas bioelectrocarbonosos</h3><p>Arquitecturas funcionales para integración biomédica, energética y fisiológica.</p></article>
-        <article><span>🏛</span><h3>Infraestructura universal</h3><p>Modelos autónomos para educación, salud, cultura, vivienda y logística.</p></article>
-        <article><span>🔋</span><h3>Energía y continuidad</h3><p>Transporte, recuperación, regulación y continuidad operativa energética.</p></article>
+    <section class="section alt">
+      <div class="grid four stats">
+        <div class="card"><strong>38</strong><span>años de trayectoria en la Universidad de Guadalajara</span></div>
+        <div class="card"><strong>7</strong><span>patentes concedidas</span></div>
+        <div class="card"><strong>+3,000</strong><span>diseños computacionales</span></div>
+        <div class="card"><strong>+80,000</strong><span>estudiantes analizados en investigación</span></div>
       </div>
     </section>
 
-    <section class="section" id="alcance">
-      <p class="eyebrow">Alcance del portal</p>
-      <h2>Visitantes y ubicación</h2>
-      <div class="visitor-box">
-        <div><strong>👥 Visitantes</strong><span id="visitorNumber">En actualización</span></div>
-        <div><strong>🌍 Ubicación de visitantes</strong><span>Disponible mediante contador externo</span></div>
+    <section id="biografia" class="section">
+      <div class="head">
+        <p class="kicker">Biografía institucional</p>
+        <h2>Dra. María Elvia Edith Alanis Pérez</h2>
+        <p>El nombre completo se presenta únicamente en esta sección institucional.</p>
+      </div>
+      <article class="bio">
+        <p>La Dra. María Elvia Edith Alanis Pérez es profesora-investigadora de la Universidad de Guadalajara, con 38 años de trayectoria académica, reconocida por sus contribuciones en investigación científica, innovación tecnológica, educación superior, gestión universitaria y desarrollo de propiedad intelectual.</p>
+        <p>Es Doctora en Ciencias, en Cooperación y Bienestar Social, por la Universidad de Oviedo, España, con mención Cum Laude; Doctorante del Doctorado en Ciencias de la Ingeniería con orientación en Administración de la Tecnología por el Centro Universitario de la Ciénega de la Universidad de Guadalajara; ambos doctorados con promedio de 100.</p>
+        <p>Cuenta con Especialidad como Experta en Exclusión Social por la Universidad de Oviedo, España; reconocimiento como Perfil PRODEP; pertenece al Sistema Nacional de Investigadoras e Investigadores, SNII Nivel I, México, periodo 2023-2028; es Coordinadora Líder en ISO 9001 e ISO 14001; Maestra en Planeación de la Educación Superior por el CUCEA de la Universidad de Guadalajara; Ingeniera en Comunicaciones y Electrónica y Auxiliar de Contador.</p>
+        <p>Fue ganadora a nivel estatal con el primer lugar a la mejor tesis del año en Educación por la Cámara de Comercio de Guadalajara; recibió la Presea Enrique Díaz de León al Mérito Académico 2018 y el Premio Colibrí 2018 al trabajo en defensa del medio ambiente, en modalidad de investigación aplicada.</p>
+        <p>Es inventora, ha obtenido siete patentes y tiene en proceso varias solicitudes más. Durante 2023-2024 fue Presidenta de la Comisión 2 del Área XI Interdisciplinarias del Sistema Nacional de Investigadores del Conahcyt. Durante 2024-2025 fue Secretaria de la Comisión 2 del Área XI Interdisciplinarias, participando en evaluación de proyectos de postdoctorado, ingreso y reconsideraciones del SNII.</p>
+        <p>Cuenta con autoría de varios libros. Su especialidad docente comprende Seminario de Investigación, Introducción a la Investigación, Metodología de la Investigación y Tópicos Selectos. Ha dirigido más de cuarenta tesis como directora y participado como asesora, lectora o profesora en más de dos mil quinientas tesis de nivel maestría, además de direcciones a nivel doctorado y seminarios para doctorado en México y España.</p>
+        <p>Ha sido Coordinadora de Planeación, Programación y Presupuestación de la Coordinación General de Internacionalización de UdeG; Coordinadora de Calidad ISO 9001:2008 e ISO 14001:2004; Coordinadora de Posgrados de cuatro maestrías y dos doctorados en el Centro Universitario de la Ciénega, y ha apoyado la tramitología de cuatro programas reconocidos como de calidad PNPC por CONACYT.</p>
+        <p>Diseña sistemas computacionales para la optimización de áreas administrativas, con más de 3,000 diseños de su autoría en FileMaker Pro. Sus líneas de investigación incluyen trayectorias escolares por cohortes reales, con estudios que comprenden a más de 80,000 estudiantes de diversas universidades, así como estudios prospectivos de innovaciones y tecnologías en México.</p>
+      </article>
+    </section>
+
+    <section id="programa" class="section alt">
+      <div class="head">
+        <p class="kicker">Innovación científica</p>
+        <h2>Programa de Innovación EdithAlanis™</h2>
+        <p>Un ecosistema académico para articular investigación, formación, desarrollo tecnológico, colaboración y protección legal de ideas.</p>
+      </div>
+      <div class="grid three">
+        <article class="card"><h3>Misión</h3><p>Promover capacidades de investigación, formación, innovación y protección legal de desarrollos tecnológicos mediante una plataforma colaborativa.</p></article>
+        <article class="card"><h3>Visión</h3><p>Consolidar una comunidad nacional orientada a la innovación científica, la transferencia del conocimiento y la defensa de la propiedad intelectual.</p></article>
+        <article class="card"><h3>Valores</h3><p>Colaboración, legalidad, rigor científico, creatividad tecnológica, responsabilidad social, inclusión académica y protección de las ideas.</p></article>
+      </div>
+    </section>
+
+    <section id="academia" class="section">
+      <div class="head">
+        <p class="kicker">Formación</p>
+        <h2>Academia EdithAlanis™</h2>
+        <p>Cursos, seminarios y acompañamiento académico para fortalecer capacidades metodológicas, científicas y tecnológicas.</p>
+      </div>
+      <div class="grid two">
+        <article class="card"><h3>Cursos</h3><p>Costo general: $500 MXN.</p></article>
+        <article class="card"><h3>Constancia</h3><p>Costo de constancia: $300 MXN, independiente de descuentos o condonación del curso.</p></article>
+        <article class="card"><h3>Apoyos</h3><p>Edith Alanis podrá autorizar descuentos o condonación cuando una persona presente evidencia que le impida pagar.</p></article>
+        <article class="card"><h3>Grupos</h3><p>Para grupos de 20 personas se entregarán 23 accesos. La constancia se cubre por separado cuando sea requerida.</p></article>
+      </div>
+    </section>
+
+    <section id="patentes" class="section alt">
+      <div class="head">
+        <p class="kicker">Propiedad intelectual</p>
+        <h2>Patentes y desarrollos tecnológicos</h2>
+        <p>Archivo institucional de patentes concedidas, solicitudes, familias tecnológicas, figuras técnicas, evidencia visual y documentación de soporte.</p>
+      </div>
+      <input class="search" id="buscar" onkeyup="filtrar()" placeholder="Buscar en patentes, investigación, academia o red...">
+      <div class="grid three" id="tarjetas">
+        <article class="card item"><h3>Patentes concedidas</h3><p>Siete patentes concedidas y múltiples solicitudes en proceso.</p></article>
+        <article class="card item"><h3>Familias tecnológicas</h3><p>Desarrollos bioelectrocarbonosos, biomédicos, regenerativos, biosféricos y de innovación avanzada.</p></article>
+        <article class="card item"><h3>Figuras técnicas</h3><p>Ilustraciones técnicas con referencias numéricas, fondo blanco y estilo de patente.</p></article>
+        <article class="card item"><h3>Evidencia documental</h3><p>Documentos de viabilidad, anexos, descripciones técnicas, solicitudes y archivos históricos.</p></article>
+        <article class="card item"><h3>Protección legal</h3><p>Organización de ideas, familias de invención, reivindicaciones y soportes institucionales.</p></article>
+        <article class="card item"><h3>Innovación interdisciplinaria</h3><p>Proyectos orientados a salud, educación, sostenibilidad, infraestructura y tecnologías del futuro.</p></article>
+      </div>
+    </section>
+
+    <section id="investigacion" class="section">
+      <div class="head">
+        <p class="kicker">Investigación</p>
+        <h2>Líneas de investigación</h2>
+      </div>
+      <div class="timeline">
+        <div class="time-item"><div class="year">Línea 1</div><div class="bar"><h3>Trayectorias escolares</h3><p>Investigaciones por cohortes reales con más de 80,000 estudiantes de diversas universidades.</p></div></div>
+        <div class="time-item"><div class="year">Línea 2</div><div class="bar"><h3>Prospectiva tecnológica</h3><p>Estudios del futuro sobre innovaciones, tecnologías y transformación institucional en México.</p></div></div>
+        <div class="time-item"><div class="year">Línea 3</div><div class="bar"><h3>Educación y nuevas tecnologías</h3><p>Transformación digital, diseño de bases de datos, gestión universitaria y optimización administrativa.</p></div></div>
+        <div class="time-item"><div class="year">Línea 4</div><div class="bar"><h3>Innovación protegida</h3><p>Diseño de sistemas, plataformas, familias de invención y documentación para propiedad intelectual.</p></div></div>
+      </div>
+    </section>
+
+    <section id="publicaciones" class="section alt">
+      <div class="head">
+        <p class="kicker">Producción académica</p>
+        <h2>Publicaciones y archivo académico</h2>
+        <p>Libros, artículos, capítulos, documentos técnicos, materiales docentes, constancias, reconocimientos y recursos institucionales.</p>
+      </div>
+      <div class="pill-list">
+        <span class="pill">Libros</span>
+        <span class="pill">Artículos</span>
+        <span class="pill">Capítulos</span>
+        <span class="pill">Documentos técnicos</span>
+        <span class="pill">Material docente</span>
+        <span class="pill">Reconocimientos</span>
+      </div>
+    </section>
+
+    <section id="coinventores" class="section">
+      <div class="head">
+        <p class="kicker">Colaboración nacional</p>
+        <h2>Red Nacional de Coinventores</h2>
+        <p>Red organizada por entidad federativa, registro interno, listado alfabético y fotografías cuando estén disponibles.</p>
+      </div>
+      <div class="grid three">
+        <article class="card"><h3>Jalisco</h3><p>Integración inicial de registros de coinventores y colaboradores.</p></article>
+        <article class="card"><h3>Veracruz</h3><p>Integración inicial de registros de coinventores y colaboradores.</p></article>
+        <article class="card"><h3>Red nacional</h3><p>La estructura crecerá por estados, registros internos, orden alfabético y perfiles institucionales.</p></article>
+      </div>
+    </section>
+
+    <section id="colaboradores" class="section alt">
+      <div class="head">
+        <p class="kicker">Equipo</p>
+        <h2>Colaboradores</h2>
+      </div>
+      <div class="grid two">
+        <article class="card profile">
+          <div class="avatar">EA</div>
+          <h3>Edith Alanis</h3>
+          <p>Dirección del Programa de Innovación EdithAlanis™</p>
+        </article>
+        <article class="card profile">
+          <div class="avatar">BR</div>
+          <h3>Baltazar Ruiz Jesús Alejandro</h3>
+          <p>Colaborador Gráfico</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="galeria" class="section">
+      <div class="head">
+        <p class="kicker">Memoria visual</p>
+        <h2>Galería, videos y archivo histórico</h2>
+        <p>Espacio para fotografías institucionales, eventos, reconocimientos, figuras técnicas, videos, entrevistas, clases y documentos históricos.</p>
+      </div>
+      <div class="gallery">
+        <div>Fotografía institucional</div>
+        <div>Eventos académicos</div>
+        <div>Reconocimientos</div>
+        <div>Figuras técnicas</div>
+        <div>Videos y clases</div>
+        <div>Archivo histórico</div>
       </div>
     </section>
 
     <section id="contacto" class="section contact">
-      <p class="eyebrow">Contacto</p>
-      <h2>Únete a la Red Nacional de Coinventores</h2>
-      <p>Investigadores, académicos y especialistas mexicanos interesados en colaborar pueden comunicarse para integrarse a esta iniciativa.</p>
-      <a class="btn primary" href="mailto:contacto@edithalanis.com">contacto@edithalanis.com</a>
+      <div class="head">
+        <p class="kicker">Contacto</p>
+        <h2>Solicita información</h2>
+        <p>Contacto institucional para cursos, colaboración, academia, red de coinventores, patentes y proyectos de innovación.</p>
+      </div>
+      <form onsubmit="return false;">
+        <input type="text" placeholder="Nombre completo">
+        <input type="email" placeholder="Correo electrónico">
+        <input type="text" placeholder="Asunto">
+        <textarea placeholder="Mensaje"></textarea>
+        <button onclick="alert('Formulario de presentación. Se puede conectar posteriormente a correo institucional.')">Enviar solicitud</button>
+      </form>
     </section>
   </main>
 
   <footer>
-    <strong>Programa de Innovación EdithAlanis™</strong>
-    <span>Innovación • Ciencia • Tecnología • Colaboración</span>
-    <small>© 2026 Portal Oficial del Programa de Innovación EdithAlanis™</small>
+    <div>
+      <strong>Programa de Innovación EdithAlanis™</strong>
+      <p>Impulsando una nueva sociedad de innovación científica en México, mediante la colaboración, el conocimiento y la protección legal de las ideas y los desarrollos tecnológicos.</p>
+    </div>
+    <p class="small">© 2026 EdithAlanis™. Portal institucional oficial.</p>
   </footer>
 
   <script>
-    window.PORTAL_TEAM = [["Elsy Susana Edith Baltazar Alaniz", "Cofundadora · Coinventora", "🤝"], ["Daniel Alejandro Baltazar Alaniz", "Cofundador · Coinventor", "🤝"], ["Lisbeth Andalón Álvarez", "Asesoría Experta", "🔬"], ["Apolonio Navarro Paredes", "Desarrollo Tecnológico", "⚙️"], ["Lorenzo Baltazar Montes", "Desarrollo Tecnológico", "⚙️"], ["Rocío Calderón García", "Vinculación Experta", "🌐"], ["Lucio Guzmán Mares", "Vinculación Experta", "🌐"], ["Carlos Vázquez Cid de León", "Vinculación Nacional", "🇲🇽"], ["Ma. Soledad Castellanos Villarruel", "Vinculación y Ortografía", "✒️"], ["Adán Yáñez Larios", "Vinculación Internacional", "🌎"], ["Sergio Roberto Dávalos García", "Innovación Tecnológica", "💡"], ["Martha Alicia González Palacios", "Coordinación Académica", "🎓"]];
-    window.COINVENTORS = [{"name": "Alanis Pérez Jezrael Abraham", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Aguilar Molina Yehoshua", "city": "San Pedro Tlaquepaque", "state": "Jalisco"}, {"name": "Alanis Mijares Antonia Leticia", "city": "San Nicolás de la Garza", "state": "Nuevo León"}, {"name": "Alanis Mijares Jesús", "city": "García", "state": "Nuevo León"}, {"name": "Alanis Mijares Minerva", "city": "San Nicolás de los Garza", "state": "Nuevo León"}, {"name": "Alanis Pérez José Eduardo", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Alanis Pérez María Elvia Edith", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Alaniz Casillas Christian Eduardo", "city": "Zapopan", "state": "Jalisco"}, {"name": "Alaniz Partida Ignacio Ricardo", "city": "Zapopan", "state": "Jalisco"}, {"name": "Alaniz Pérez Ignacio Ricardo", "city": "Zapopan", "state": "Jalisco"}, {"name": "Alaniz Pérez María Ivett Janett", "city": "Zapopan", "state": "Jalisco"}, {"name": "Andalón Álvarez Lisbeth", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Aragón Ríos Elba Karina", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Baltazar Alaniz Daniel Alejandro", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Baltazar Alaniz Elsy Susana Edith", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Baltazar Montes Lorenzo", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Bautista González Jorge Gregorio", "city": "Zapopan", "state": "Jalisco"}, {"name": "Bayardo González Rubén Alberto", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Becerra González Rubén Armando", "city": "Jamay", "state": "Jalisco"}, {"name": "Calderón García Rocío", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Carazo Luna José Alfredo", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Carrión Castillo Luz Ovillada", "city": "Cosoleacaque", "state": "Veracruz"}, {"name": "Ma. Soledad Castellanos Villarruel", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Castillo Medina Diana Iztacihuatl", "city": "Zapopan", "state": "Jalisco"}, {"name": "Chama Mora Héctor Adán", "city": "Fortín", "state": "Veracruz"}, {"name": "Claustro Bobadilla Javier", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Cortés Camacho Araceli", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Cruz Alanis Ariana Leticia", "city": "San Nicolás de la Garza", "state": "Nuevo León"}, {"name": "Cruz del Ángel Jesús Adrián", "city": "San Nicolás de la Garza", "state": "Nuevo León"}, {"name": "Dávalos García Sergio Roberto", "city": "Zapopan", "state": "Jalisco"}, {"name": "Dávila Torres José Ignacio", "city": "Orizaba", "state": "Veracruz"}, {"name": "Delgadillo Preciado Zaira América", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Domínguez García Rodolfo Omar", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Durán Padilla José Arturo", "city": "Zapopan", "state": "Jalisco"}, {"name": "Escutia Gutiérrez Raymundo", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Gazpar Castellanos José Luis", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Gómez Contreras Flor Alejandra", "city": "Guadalajara", "state": "Jalisco"}, {"name": "González Fajardo Alma Delia", "city": "San Gabriel", "state": "Jalisco"}, {"name": "Gutiérrez Gómez Alejandra", "city": "Zapopan", "state": "Jalisco"}, {"name": "Guzmán Castellanos Karen Berenice", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Guzmán Mares Lucio", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Guzmán Villarruel Jesús Fernando", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Hernández Abreu Karina Esther", "city": "Villahermosa", "state": "Tabasco"}, {"name": "Hernández Cortés Rigoberto", "city": "Izhuatlancillo", "state": "Veracruz"}, {"name": "Hernández García Anabella", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Hernández Landeros Edgar Miguel Raúl", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Hernández Méndez Arturo", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Hernández Santa María José Guadalupe", "city": "Zapopan", "state": "Jalisco"}, {"name": "Iñiguez Carrillo Adriana Lorena", "city": "Zapotlán el Grande", "state": "Jalisco"}, {"name": "Jiménez Torres Jorge Alfredo", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Kristyan Felype Luis Navarro", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Lehmann Mendoza José Miguel", "city": "Villahermosa", "state": "Tabasco"}, {"name": "Lino Gamiño Juan Alfredo", "city": "Colima", "state": "Colima"}, {"name": "López Alvarado Miguel Ángel", "city": "Comalcalco", "state": "Tabasco"}, {"name": "López Chávez Gilberto", "city": "Guanajuato", "state": "Guanajuato"}, {"name": "Lozoya Arandia Jorge", "city": "Zapopan", "state": "Jalisco"}, {"name": "Luna Rizo Marisol", "city": "Zapopan", "state": "Jalisco"}, {"name": "Maciel Ruelas Estefany Teresa", "city": "Villa Corona", "state": "Jalisco"}, {"name": "Manzo Palomera Olga Rocío", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Montalvo Núñez Jorge Antonio", "city": "Zapopan", "state": "Jalisco"}, {"name": "Montesinos González Salvador", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Morán Martínez Francisco", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Nápoles Salas Luz Elena", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Ortiz Cruz Fabiola", "city": "Minatitlán", "state": "Veracruz"}, {"name": "Ortiz Palafox Karla Haydeee", "city": "Zapopan", "state": "Jalisco"}, {"name": "Pérez Villalpando Marlene Alejandra", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Ramírez Castillo Eric Amin", "city": "Oaxaca de Juárez", "state": "Oaxaca"}, {"name": "Ramírez Torres Miguel Ángel", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Rivas Paz Mariana", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Rivera Alaniz Chamir Darinka", "city": "Zapopan", "state": "Jalisco"}, {"name": "Rivera Alaniz Xiomara Hatzydy", "city": "Zapopan", "state": "Jalisco"}, {"name": "Robles González Vania Shuhua", "city": "Coyoacán", "state": "Ciudad de México"}, {"name": "Rodríguez Nieves Blanca", "city": "Zapopan", "state": "Jalisco"}, {"name": "Salas Coronado Raúl", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Solorio González Carolina", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Soto Chávez Alicia", "city": "Minatitlán", "state": "Veracruz"}, {"name": "Trujillo Mata Amín", "city": "Camerino Z. Mendoza", "state": "Veracruz"}, {"name": "Vargas Lares Oscar Alejandro", "city": "Zapopan", "state": "Jalisco"}, {"name": "Vázquez Arango María de Lourdes", "city": "Oaxaca de Juárez", "state": "Oaxaca"}, {"name": "Vázquez Cid de León Carlos", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Villegas Alcantar Benjamín", "city": "Tepatitlán de Morelos", "state": "Jalisco"}, {"name": "Yáñez Larios Adán", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Zepeda Valle Gustavo", "city": "Zacatecas", "state": "Zacatecas"}];
-    window.PORTFOLIO = [{"id": "0001", "area": "Electrónica aplicada", "status": "Patente otorgada", "badge": "🏆", "group": "otorgada"}, {"id": "0002", "area": "Biotecnología", "status": "Patente otorgada", "badge": "🏆", "group": "otorgada"}, {"id": "0003", "area": "Medicina regenerativa", "status": "Patente otorgada", "badge": "🏆", "group": "otorgada"}, {"id": "0004", "area": "Sistemas bioelectrocarbonosos", "status": "Patente otorgada", "badge": "🏆", "group": "otorgada"}, {"id": "0005", "area": "Infraestructura universal", "status": "Patente otorgada", "badge": "🏆", "group": "otorgada"}, {"id": "0006", "area": "Energía y continuidad", "status": "Patente otorgada", "badge": "🏆", "group": "otorgada"}, {"id": "0007", "area": "Evaluación biomédica", "status": "Patente otorgada", "badge": "🏆", "group": "otorgada"}, {"id": "0008", "area": "Educación universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0009", "area": "Salud universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0010", "area": "Cultura universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0011", "area": "Logística universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0012", "area": "Habitacional universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0013", "area": "Inteligencia fisiológica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0014", "area": "Manufactura avanzada", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0015", "area": "Agricultura y medio ambiente", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0016", "area": "Arquitectura biosférica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0017", "area": "Gestión estratégica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0018", "area": "Infraestructura civilizatoria", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0019", "area": "Electrónica aplicada", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0020", "area": "Biotecnología", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0021", "area": "Medicina regenerativa", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0022", "area": "Sistemas bioelectrocarbonosos", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0023", "area": "Infraestructura universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0024", "area": "Energía y continuidad", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0025", "area": "Evaluación biomédica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0026", "area": "Educación universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0027", "area": "Salud universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0028", "area": "Cultura universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0029", "area": "Logística universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0030", "area": "Habitacional universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0031", "area": "Inteligencia fisiológica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0032", "area": "Manufactura avanzada", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0033", "area": "Agricultura y medio ambiente", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0034", "area": "Arquitectura biosférica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0035", "area": "Gestión estratégica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0036", "area": "Infraestructura civilizatoria", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0037", "area": "Electrónica aplicada", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0038", "area": "Biotecnología", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0039", "area": "Medicina regenerativa", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0040", "area": "Sistemas bioelectrocarbonosos", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0041", "area": "Infraestructura universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0042", "area": "Energía y continuidad", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0043", "area": "Evaluación biomédica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0044", "area": "Educación universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0045", "area": "Salud universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0046", "area": "Cultura universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0047", "area": "Logística universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0048", "area": "Habitacional universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0049", "area": "Inteligencia fisiológica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0050", "area": "Manufactura avanzada", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0051", "area": "Agricultura y medio ambiente", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0052", "area": "Arquitectura biosférica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0053", "area": "Gestión estratégica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0054", "area": "Infraestructura civilizatoria", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0055", "area": "Electrónica aplicada", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0056", "area": "Biotecnología", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0057", "area": "Medicina regenerativa", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0058", "area": "Sistemas bioelectrocarbonosos", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0059", "area": "Infraestructura universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0060", "area": "Energía y continuidad", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0061", "area": "Evaluación biomédica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0062", "area": "Educación universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0063", "area": "Salud universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0064", "area": "Cultura universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0065", "area": "Logística universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0066", "area": "Habitacional universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0067", "area": "Inteligencia fisiológica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0068", "area": "Manufactura avanzada", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0069", "area": "Agricultura y medio ambiente", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0070", "area": "Arquitectura biosférica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0071", "area": "Gestión estratégica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0072", "area": "Infraestructura civilizatoria", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0073", "area": "Electrónica aplicada", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0074", "area": "Biotecnología", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0075", "area": "Medicina regenerativa", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0076", "area": "Sistemas bioelectrocarbonosos", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0077", "area": "Infraestructura universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0078", "area": "Energía y continuidad", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0079", "area": "Evaluación biomédica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0080", "area": "Educación universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0081", "area": "Salud universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0082", "area": "Cultura universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0083", "area": "Logística universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0084", "area": "Habitacional universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0085", "area": "Inteligencia fisiológica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0086", "area": "Manufactura avanzada", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0087", "area": "Agricultura y medio ambiente", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0088", "area": "Arquitectura biosférica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0089", "area": "Gestión estratégica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0090", "area": "Infraestructura civilizatoria", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0091", "area": "Electrónica aplicada", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0092", "area": "Biotecnología", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0093", "area": "Medicina regenerativa", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0094", "area": "Sistemas bioelectrocarbonosos", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0095", "area": "Infraestructura universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0096", "area": "Energía y continuidad", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0097", "area": "Evaluación biomédica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0098", "area": "Educación universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0099", "area": "Salud universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0100", "area": "Cultura universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0101", "area": "Logística universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0102", "area": "Habitacional universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0103", "area": "Inteligencia fisiológica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0104", "area": "Manufactura avanzada", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0105", "area": "Agricultura y medio ambiente", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0106", "area": "Arquitectura biosférica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0107", "area": "Gestión estratégica", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0108", "area": "Infraestructura civilizatoria", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0109", "area": "Electrónica aplicada", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0110", "area": "Biotecnología", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0111", "area": "Medicina regenerativa", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0112", "area": "Sistemas bioelectrocarbonosos", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0113", "area": "Infraestructura universal", "status": "Solicitud presentada", "badge": "📄", "group": "presentada"}, {"id": "0114", "area": "Energía y continuidad", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0115", "area": "Evaluación biomédica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0116", "area": "Educación universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0117", "area": "Salud universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0118", "area": "Cultura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0119", "area": "Logística universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0120", "area": "Habitacional universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0121", "area": "Inteligencia fisiológica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0122", "area": "Manufactura avanzada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0123", "area": "Agricultura y medio ambiente", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0124", "area": "Arquitectura biosférica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0125", "area": "Gestión estratégica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0126", "area": "Infraestructura civilizatoria", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0127", "area": "Electrónica aplicada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0128", "area": "Biotecnología", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0129", "area": "Medicina regenerativa", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0130", "area": "Sistemas bioelectrocarbonosos", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0131", "area": "Infraestructura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0132", "area": "Energía y continuidad", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0133", "area": "Evaluación biomédica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0134", "area": "Educación universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0135", "area": "Salud universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0136", "area": "Cultura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0137", "area": "Logística universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0138", "area": "Habitacional universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0139", "area": "Inteligencia fisiológica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0140", "area": "Manufactura avanzada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0141", "area": "Agricultura y medio ambiente", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0142", "area": "Arquitectura biosférica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0143", "area": "Gestión estratégica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0144", "area": "Infraestructura civilizatoria", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0145", "area": "Electrónica aplicada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0146", "area": "Biotecnología", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0147", "area": "Medicina regenerativa", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0148", "area": "Sistemas bioelectrocarbonosos", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0149", "area": "Infraestructura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0150", "area": "Energía y continuidad", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0151", "area": "Evaluación biomédica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0152", "area": "Educación universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0153", "area": "Salud universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0154", "area": "Cultura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0155", "area": "Logística universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0156", "area": "Habitacional universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0157", "area": "Inteligencia fisiológica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0158", "area": "Manufactura avanzada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0159", "area": "Agricultura y medio ambiente", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0160", "area": "Arquitectura biosférica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0161", "area": "Gestión estratégica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0162", "area": "Infraestructura civilizatoria", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0163", "area": "Electrónica aplicada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0164", "area": "Biotecnología", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0165", "area": "Medicina regenerativa", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0166", "area": "Sistemas bioelectrocarbonosos", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0167", "area": "Infraestructura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0168", "area": "Energía y continuidad", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0169", "area": "Evaluación biomédica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0170", "area": "Educación universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0171", "area": "Salud universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0172", "area": "Cultura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0173", "area": "Logística universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0174", "area": "Habitacional universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0175", "area": "Inteligencia fisiológica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0176", "area": "Manufactura avanzada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0177", "area": "Agricultura y medio ambiente", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0178", "area": "Arquitectura biosférica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0179", "area": "Gestión estratégica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0180", "area": "Infraestructura civilizatoria", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0181", "area": "Electrónica aplicada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0182", "area": "Biotecnología", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0183", "area": "Medicina regenerativa", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0184", "area": "Sistemas bioelectrocarbonosos", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0185", "area": "Infraestructura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0186", "area": "Energía y continuidad", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0187", "area": "Evaluación biomédica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0188", "area": "Educación universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0189", "area": "Salud universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0190", "area": "Cultura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0191", "area": "Logística universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0192", "area": "Habitacional universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0193", "area": "Inteligencia fisiológica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0194", "area": "Manufactura avanzada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0195", "area": "Agricultura y medio ambiente", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0196", "area": "Arquitectura biosférica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0197", "area": "Gestión estratégica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0198", "area": "Infraestructura civilizatoria", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0199", "area": "Electrónica aplicada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0200", "area": "Biotecnología", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0201", "area": "Medicina regenerativa", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0202", "area": "Sistemas bioelectrocarbonosos", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0203", "area": "Infraestructura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0204", "area": "Energía y continuidad", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0205", "area": "Evaluación biomédica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0206", "area": "Educación universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0207", "area": "Salud universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0208", "area": "Cultura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0209", "area": "Logística universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0210", "area": "Habitacional universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0211", "area": "Inteligencia fisiológica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0212", "area": "Manufactura avanzada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0213", "area": "Agricultura y medio ambiente", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0214", "area": "Arquitectura biosférica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0215", "area": "Gestión estratégica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0216", "area": "Infraestructura civilizatoria", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0217", "area": "Electrónica aplicada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0218", "area": "Biotecnología", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0219", "area": "Medicina regenerativa", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0220", "area": "Sistemas bioelectrocarbonosos", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0221", "area": "Infraestructura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0222", "area": "Energía y continuidad", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0223", "area": "Evaluación biomédica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0224", "area": "Educación universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0225", "area": "Salud universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0226", "area": "Cultura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0227", "area": "Logística universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0228", "area": "Habitacional universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0229", "area": "Inteligencia fisiológica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0230", "area": "Manufactura avanzada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0231", "area": "Agricultura y medio ambiente", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0232", "area": "Arquitectura biosférica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0233", "area": "Gestión estratégica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0234", "area": "Infraestructura civilizatoria", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0235", "area": "Electrónica aplicada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0236", "area": "Biotecnología", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0237", "area": "Medicina regenerativa", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0238", "area": "Sistemas bioelectrocarbonosos", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0239", "area": "Infraestructura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0240", "area": "Energía y continuidad", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0241", "area": "Evaluación biomédica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0242", "area": "Educación universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0243", "area": "Salud universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0244", "area": "Cultura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0245", "area": "Logística universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0246", "area": "Habitacional universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0247", "area": "Inteligencia fisiológica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0248", "area": "Manufactura avanzada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0249", "area": "Agricultura y medio ambiente", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0250", "area": "Arquitectura biosférica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0251", "area": "Gestión estratégica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0252", "area": "Infraestructura civilizatoria", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0253", "area": "Electrónica aplicada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0254", "area": "Biotecnología", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0255", "area": "Medicina regenerativa", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0256", "area": "Sistemas bioelectrocarbonosos", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0257", "area": "Infraestructura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0258", "area": "Energía y continuidad", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0259", "area": "Evaluación biomédica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0260", "area": "Educación universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0261", "area": "Salud universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0262", "area": "Cultura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0263", "area": "Logística universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0264", "area": "Habitacional universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0265", "area": "Inteligencia fisiológica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0266", "area": "Manufactura avanzada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0267", "area": "Agricultura y medio ambiente", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0268", "area": "Arquitectura biosférica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0269", "area": "Gestión estratégica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0270", "area": "Infraestructura civilizatoria", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0271", "area": "Electrónica aplicada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0272", "area": "Biotecnología", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0273", "area": "Medicina regenerativa", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0274", "area": "Sistemas bioelectrocarbonosos", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0275", "area": "Infraestructura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0276", "area": "Energía y continuidad", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0277", "area": "Evaluación biomédica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0278", "area": "Educación universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0279", "area": "Salud universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0280", "area": "Cultura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0281", "area": "Logística universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0282", "area": "Habitacional universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0283", "area": "Inteligencia fisiológica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0284", "area": "Manufactura avanzada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0285", "area": "Agricultura y medio ambiente", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0286", "area": "Arquitectura biosférica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0287", "area": "Gestión estratégica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0288", "area": "Infraestructura civilizatoria", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0289", "area": "Electrónica aplicada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0290", "area": "Biotecnología", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0291", "area": "Medicina regenerativa", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0292", "area": "Sistemas bioelectrocarbonosos", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0293", "area": "Infraestructura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0294", "area": "Energía y continuidad", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0295", "area": "Evaluación biomédica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0296", "area": "Educación universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0297", "area": "Salud universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0298", "area": "Cultura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0299", "area": "Logística universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0300", "area": "Habitacional universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0301", "area": "Inteligencia fisiológica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0302", "area": "Manufactura avanzada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0303", "area": "Agricultura y medio ambiente", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0304", "area": "Arquitectura biosférica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0305", "area": "Gestión estratégica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0306", "area": "Infraestructura civilizatoria", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0307", "area": "Electrónica aplicada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0308", "area": "Biotecnología", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0309", "area": "Medicina regenerativa", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0310", "area": "Sistemas bioelectrocarbonosos", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0311", "area": "Infraestructura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0312", "area": "Energía y continuidad", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0313", "area": "Evaluación biomédica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0314", "area": "Educación universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0315", "area": "Salud universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0316", "area": "Cultura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0317", "area": "Logística universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0318", "area": "Habitacional universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0319", "area": "Inteligencia fisiológica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0320", "area": "Manufactura avanzada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0321", "area": "Agricultura y medio ambiente", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0322", "area": "Arquitectura biosférica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0323", "area": "Gestión estratégica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0324", "area": "Infraestructura civilizatoria", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0325", "area": "Electrónica aplicada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0326", "area": "Biotecnología", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0327", "area": "Medicina regenerativa", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0328", "area": "Sistemas bioelectrocarbonosos", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0329", "area": "Infraestructura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0330", "area": "Energía y continuidad", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0331", "area": "Evaluación biomédica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0332", "area": "Educación universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0333", "area": "Salud universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0334", "area": "Cultura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0335", "area": "Logística universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0336", "area": "Habitacional universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0337", "area": "Inteligencia fisiológica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0338", "area": "Manufactura avanzada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0339", "area": "Agricultura y medio ambiente", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0340", "area": "Arquitectura biosférica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0341", "area": "Gestión estratégica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0342", "area": "Infraestructura civilizatoria", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0343", "area": "Electrónica aplicada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0344", "area": "Biotecnología", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0345", "area": "Medicina regenerativa", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0346", "area": "Sistemas bioelectrocarbonosos", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0347", "area": "Infraestructura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0348", "area": "Energía y continuidad", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0349", "area": "Evaluación biomédica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0350", "area": "Educación universal", "status": "Revisión institucional", "badge": "🏛", "group": "revision"}, {"id": "0351", "area": "Salud universal", "status": "Revisión institucional", "badge": "🏛", "group": "revision"}, {"id": "0352", "area": "Cultura universal", "status": "Revisión institucional", "badge": "🏛", "group": "revision"}, {"id": "0353", "area": "Logística universal", "status": "Revisión institucional", "badge": "🏛", "group": "revision"}, {"id": "0354", "area": "Habitacional universal", "status": "Revisión institucional", "badge": "🏛", "group": "revision"}, {"id": "0355", "area": "Inteligencia fisiológica", "status": "Revisión institucional", "badge": "🏛", "group": "revision"}, {"id": "0356", "area": "Manufactura avanzada", "status": "Revisión institucional", "badge": "🏛", "group": "revision"}, {"id": "0357", "area": "Agricultura y medio ambiente", "status": "Revisión institucional", "badge": "🏛", "group": "revision"}, {"id": "0358", "area": "Arquitectura biosférica", "status": "Revisión institucional", "badge": "🏛", "group": "revision"}, {"id": "0359", "area": "Gestión estratégica", "status": "Revisión institucional", "badge": "🏛", "group": "revision"}, {"id": "0360", "area": "Infraestructura civilizatoria", "status": "Revisión institucional", "badge": "🏛", "group": "revision"}, {"id": "0361", "area": "Electrónica aplicada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0362", "area": "Biotecnología", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0363", "area": "Medicina regenerativa", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0364", "area": "Sistemas bioelectrocarbonosos", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0365", "area": "Infraestructura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0366", "area": "Energía y continuidad", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0367", "area": "Evaluación biomédica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0368", "area": "Educación universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0369", "area": "Salud universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0370", "area": "Cultura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0371", "area": "Logística universal", "status": "Revisión institucional", "badge": "🏛", "group": "revision"}, {"id": "0372", "area": "Habitacional universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0373", "area": "Inteligencia fisiológica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0374", "area": "Manufactura avanzada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0375", "area": "Agricultura y medio ambiente", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0376", "area": "Arquitectura biosférica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0377", "area": "Gestión estratégica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0378", "area": "Infraestructura civilizatoria", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0379", "area": "Electrónica aplicada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0380", "area": "Biotecnología", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0381", "area": "Medicina regenerativa", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0382", "area": "Sistemas bioelectrocarbonosos", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0383", "area": "Infraestructura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0384", "area": "Energía y continuidad", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0385", "area": "Evaluación biomédica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0386", "area": "Educación universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0387", "area": "Salud universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0388", "area": "Cultura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0389", "area": "Logística universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0390", "area": "Habitacional universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0391", "area": "Inteligencia fisiológica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0392", "area": "Manufactura avanzada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0393", "area": "Agricultura y medio ambiente", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0394", "area": "Arquitectura biosférica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0395", "area": "Gestión estratégica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0396", "area": "Infraestructura civilizatoria", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0397", "area": "Electrónica aplicada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0398", "area": "Biotecnología", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0399", "area": "Medicina regenerativa", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0400", "area": "Sistemas bioelectrocarbonosos", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0401", "area": "Infraestructura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0402", "area": "Energía y continuidad", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0403", "area": "Evaluación biomédica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0404", "area": "Educación universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0405", "area": "Salud universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0406", "area": "Cultura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0407", "area": "Logística universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0408", "area": "Habitacional universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0409", "area": "Inteligencia fisiológica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0410", "area": "Manufactura avanzada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0411", "area": "Agricultura y medio ambiente", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0412", "area": "Arquitectura biosférica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0413", "area": "Gestión estratégica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0414", "area": "Infraestructura civilizatoria", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0415", "area": "Electrónica aplicada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0416", "area": "Biotecnología", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0417", "area": "Medicina regenerativa", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0418", "area": "Sistemas bioelectrocarbonosos", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0419", "area": "Infraestructura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0420", "area": "Energía y continuidad", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0421", "area": "Evaluación biomédica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0422", "area": "Educación universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0423", "area": "Salud universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0424", "area": "Cultura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0425", "area": "Logística universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0426", "area": "Habitacional universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0427", "area": "Inteligencia fisiológica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0428", "area": "Manufactura avanzada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0429", "area": "Agricultura y medio ambiente", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0430", "area": "Arquitectura biosférica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0431", "area": "Gestión estratégica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0432", "area": "Infraestructura civilizatoria", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0433", "area": "Electrónica aplicada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0434", "area": "Biotecnología", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0435", "area": "Medicina regenerativa", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0436", "area": "Sistemas bioelectrocarbonosos", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0437", "area": "Infraestructura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0438", "area": "Energía y continuidad", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0439", "area": "Evaluación biomédica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0440", "area": "Educación universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0441", "area": "Salud universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0442", "area": "Cultura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0443", "area": "Logística universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0444", "area": "Habitacional universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0445", "area": "Inteligencia fisiológica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0446", "area": "Manufactura avanzada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0447", "area": "Agricultura y medio ambiente", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0448", "area": "Arquitectura biosférica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0449", "area": "Gestión estratégica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0450", "area": "Infraestructura civilizatoria", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0451", "area": "Electrónica aplicada", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0452", "area": "Biotecnología", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0453", "area": "Medicina regenerativa", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0454", "area": "Sistemas bioelectrocarbonosos", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0455", "area": "Infraestructura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0456", "area": "Energía y continuidad", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0457", "area": "Evaluación biomédica", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0458", "area": "Educación universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0459", "area": "Salud universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0460", "area": "Cultura universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}, {"id": "0461", "area": "Logística universal", "status": "En preparación", "badge": "🛠", "group": "preparacion"}];
+    function filtrar(){
+      const q = document.getElementById('buscar').value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+      document.querySelectorAll('.item').forEach(card=>{
+        const t = card.innerText.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+        card.style.display = t.includes(q) ? 'block' : 'none';
+      });
+    }
   </script>
-  <script src="script.js"></script>
 </body>
 </html>
