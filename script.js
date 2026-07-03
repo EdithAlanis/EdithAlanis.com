@@ -30,12 +30,26 @@ function renderPatents(){
 
 function renderCourses(){
   const list=$("courseList"); if(!list) return;
-  const select=$("cursoSeleccionado");
-  list.innerHTML = courses.map((c,i)=>`<div class="course-item"><span><strong>${String(i+1).padStart(2,"0")}.</strong> ${c}</span><a class="course-btn" href="#inscripcion-cursos" data-course="${c}">Inscribirme</a></div>`).join("");
-  if(select){
-    select.innerHTML = `<option value="">Seleccione un curso</option>` + courses.map(c=>`<option value="${c}">${c}</option>`).join("");
-  }
-  document.querySelectorAll("[data-course]").forEach(btn=>btn.onclick=()=>{ if(select) select.value=btn.dataset.course; });
+  list.innerHTML = courses.map((c,i)=>`
+    <div class="course-item course-item-action">
+      <span><strong>${String(i+1).padStart(2,"0")}.</strong> ${c}</span>
+      <button class="course-enroll-btn" type="button" data-course="${c}">Inscribirme</button>
+    </div>`).join("");
+
+  list.querySelectorAll(".course-enroll-btn").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      const course = btn.dataset.course;
+      const panel = $("inscripcionPanel");
+      const select = $("cursoSeleccionado");
+      const selectedName = $("selectedCourseName");
+      if(select) select.value = course;
+      if(selectedName) selectedName.textContent = course;
+      if(panel){
+        panel.hidden = false;
+        panel.scrollIntoView({behavior:"smooth", block:"start"});
+      }
+    });
+  });
 }
 
 function groupByState(list){
@@ -82,6 +96,10 @@ document.addEventListener("DOMContentLoaded",()=>{
   renderPortfolio();
   $("coinventorSearch")?.addEventListener("input",e=>{activeState="";activeCity="all";renderNetwork(e.target.value);});
   $("portfolioSearch")?.addEventListener("input",renderPortfolio);
+  $("cursoSeleccionado")?.addEventListener("change",e=>{
+    const selectedName = $("selectedCourseName");
+    if(selectedName) selectedName.textContent = e.target.value || "Seleccione un curso";
+  });
   document.querySelectorAll(".filters button").forEach(btn=>btn.onclick=()=>{document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));btn.classList.add("active");activePortfolioFilter=btn.dataset.filter;renderPortfolio();});
   document.querySelector(".menu-toggle")?.addEventListener("click",()=>document.querySelector(".navlinks").classList.toggle("open"));
 });
