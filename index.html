@@ -1,269 +1,227 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Programa de Innovación EdithAlanis™</title>
-  <meta name="description" content="Sitio oficial del Programa de Innovación EdithAlanis™, cursos, investigación, propiedad intelectual, patentes e innovación científica en México." />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EdithAlanis™ | Programa de Innovación</title>
+  <meta name="description" content="Portal oficial del Programa de Innovación EdithAlanis™: investigación, academia, patentes, solicitudes en proceso, red nacional de coinventores y colaboradores.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <nav class="navbar">
-      <a class="brand" href="#inicio">EdithAlanis™</a>
-      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
-      <div class="nav-links">
-        <a href="#programa">Programa</a>
-        <a href="#cursos">Cursos</a>
-        <a href="#inscripcion">Inscripción</a>
-        <a href="#patentes">Patentes</a>
-        <a href="#contacto">Contacto</a>
-      </div>
-    </nav>
+  <header class="topbar">
+    <span>✉ contacto@edithalanis.com</span>
+    <span>Portal Oficial del Programa de Innovación EdithAlanis™</span>
   </header>
+
+  <nav class="navbar">
+    <a class="brand" href="#inicio"><span class="logo">💡</span><span>EDITHALANIS<sup>™</sup><small>Programa de Innovación</small></span></a>
+    <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+    <div class="navlinks">
+      <a href="#inicio">Inicio</a>
+      <a href="#fundadora">Fundadora</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#inventores">Inventores</a>
+      <a href="#red">Red Nacional</a>
+      <a href="#portafolio">Patentes</a>
+      <a href="#academia">Academia</a>
+      <a href="#areas">Áreas</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
 
   <main>
     <section id="inicio" class="hero">
-      <div class="hero-content">
-        <p class="eyebrow">Portal oficial</p>
-        <h1>Programa de Innovación EdithAlanis™</h1>
-        <p class="lead">Impulsando una nueva sociedad de innovación científica en México mediante la colaboración, el conocimiento y la protección legal de las ideas y los desarrollos tecnológicos.</p>
+      <div class="hero-text">
+        <p class="eyebrow">Portal institucional</p>
+        <h1>Programa de Innovación <span>EdithAlanis™</span></h1>
+        <p>Impulsando una nueva sociedad de innovación científica en México, mediante la colaboración, el conocimiento y la protección legal de las ideas y los desarrollos tecnológicos.</p>
         <div class="hero-actions">
-          <a class="btn" href="#cursos">Ver cursos</a>
-          <a class="btn btn-secondary" href="#inscripcion">Inscribirme</a>
+          <a class="btn primary" href="#academia">Academia</a>
+          <a class="btn secondary" href="#portafolio">Propiedad intelectual</a>
         </div>
       </div>
+      <div class="orb" aria-hidden="true"></div>
     </section>
 
-    <section id="programa" class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Institucional</p>
-        <h2>Creando una nueva sociedad de innovación científica</h2>
-        <p>El Programa de Innovación EdithAlanis™ promueve la formación académica, la investigación, la innovación tecnológica y la protección legal de ideas y desarrollos.</p>
+    <section class="stats-panel">
+      <div><strong>7</strong><span>Patentes y modelo de utilidad</span></div>
+      <div><strong>113</strong><span>Solicitudes de patente en proceso</span></div>
+      <div><strong>23</strong><span>Áreas tecnológicas</span></div>
+      <div><strong>21</strong><span>Cursos disponibles</span></div>
+      <div><strong>83</strong><span>Coinventores registrados</span></div>
+    </section>
+
+    <section id="fundadora" class="section founder">
+      <p class="eyebrow">Fundadora</p>
+      <h2>Dra. María Elvia Edith Alanis Pérez</h2>
+      <p>Profesora-investigadora de la Universidad de Guadalajara, inventora y fundadora del Programa de Innovación EdithAlanis™. Este portal reúne la estructura institucional, la Academia, el portafolio tecnológico y la Red Nacional de Coinventores vinculada al desarrollo de soluciones científicas y tecnológicas con alcance nacional.</p>
+    </section>
+
+    <section id="biografia" class="section alt">
+      <p class="eyebrow">Biografía institucional</p>
+      <h2>Trayectoria académica y científica</h2>
+      <div class="bio-box">
+        <p>La Dra. María Elvia Edith Alanis Pérez es profesora-investigadora de la Universidad de Guadalajara, con 38 años de trayectoria académica, reconocida por sus contribuciones en investigación científica, innovación tecnológica, educación superior, gestión universitaria y desarrollo de propiedad intelectual.</p>
+        <p>Es Doctora en Ciencias, en Cooperación y Bienestar Social, por la Universidad de Oviedo, España, con mención Cum Laude; Doctorante del Doctorado en Ciencias de la Ingeniería con orientación en Administración de la Tecnología por la Universidad de Guadalajara; Maestra en Planeación de la Educación Superior por el CUCEA; Ingeniera en Comunicaciones y Electrónica; integrante del SNII Nivel I y Perfil PRODEP.</p>
+        <p>Ha recibido la Presea Enrique Díaz de León al Mérito Académico 2018 y el Premio Colibrí 2018 por investigación aplicada en defensa del medio ambiente. Es inventora, ha obtenido siete patentes y tiene en proceso diversas solicitudes de patente.</p>
       </div>
-      <div class="feature-grid">
+    </section>
+
+    <section id="equipo" class="section">
+      <p class="eyebrow">Equipo institucional</p>
+      <h2>Fundadora, cofundadores, colaboradores y equipo de apoyo</h2>
+      <div class="team-grid" id="teamGrid"></div>
+    </section>
+
+    <section id="inventores" class="section alt">
+      <p class="eyebrow">Inventores</p>
+      <h2>Inventores en patentes concedidas y en proceso</h2>
+      <p class="lead">Registro institucional de inventores participantes en patentes, modelo de utilidad y patente en proceso, todas en el Estado de Jalisco, México.</p>
+      <div class="patent-grid" id="patentGrid"></div>
+    </section>
+
+    <section id="red" class="section">
+      <p class="eyebrow">Red Nacional</p>
+      <h2>Red Nacional de Coinventores</h2>
+      <p class="lead">La Red Nacional de Coinventores integra especialistas, investigadores y colaboradores distribuidos en diversas entidades federativas de México, promoviendo el desarrollo tecnológico mediante colaboración interdisciplinaria organizada.</p>
+      <div class="search-row">
+        <input id="coinventorSearch" type="search" placeholder="Buscar coinventor, municipio o estado">
+        <span id="coinventorCount"></span>
+      </div>
+      <div class="network-layout">
+        <aside class="state-list" id="stateList"></aside>
+        <div class="network-detail">
+          <h3 id="stateTitle">Coinventores</h3>
+          <div class="municipalities" id="municipalityTabs"></div>
+          <div class="coinventor-grid" id="coinventorGrid"></div>
+        </div>
+      </div>
+      <p class="note">La Red Nacional de Coinventores se encuentra en actualización permanente. Si detecta algún error en su nombre, municipio o entidad federativa, puede solicitar su corrección mediante el formulario de contacto.</p>
+    </section>
+
+    <section id="portafolio" class="section alt">
+      <p class="eyebrow">Propiedad intelectual</p>
+      <h2>Patentes concedidas y solicitudes en proceso</h2>
+      <div class="portfolio-summary">
+        <div><strong>🏆 6</strong><span>Patentes concedidas</span></div>
+        <div><strong>🏅 1</strong><span>Modelo de utilidad concedido</span></div>
+        <div><strong>📄 113</strong><span>Solicitudes de patente en proceso</span></div>
+        <div><strong>🧭 23</strong><span>Áreas de desarrollo tecnológico</span></div>
+      </div>
+      <div class="filters">
+        <button data-filter="all" class="active">Todos</button>
+        <button data-filter="otorgada">Patentes y modelo de utilidad</button>
+        <button data-filter="presentada">Solicitudes en proceso</button>
+      </div>
+      <div class="search-row">
+        <input id="portfolioSearch" type="search" placeholder="Buscar por número, área o estatus">
+        <span id="portfolioCount"></span>
+      </div>
+      <div class="portfolio-grid" id="portfolioGrid"></div>
+    </section>
+
+    <section id="academia" class="section">
+      <p class="eyebrow">Academia EdithAlanis™</p>
+      <h2>Formación desde cero, con acompañamiento progresivo</h2>
+      <p class="lead">Todos los cursos tienen una duración de <strong>20 horas</strong>, están diseñados para personas sin conocimientos previos y cuentan con botón de inscripción junto al nombre del curso.</p>
+      <div class="academy-cards">
         <article>
-          <h3>Formación</h3>
-          <p>Cursos de 20 horas, diseñados para personas sin conocimientos previos.</p>
+          <h3>Oferta académica</h3>
+          <div class="course-list" id="courseList"></div>
         </article>
         <article>
-          <h3>Investigación</h3>
-          <p>Herramientas para tesis, protocolos, análisis de resultados y proyectos de investigación.</p>
+          <h3>Modalidades</h3>
+          <p>Cursos en línea, talleres, seminarios, conferencias y asesorías especializadas.</p>
+          <h3>Dirigido a</h3>
+          <p>Estudiantes, profesores, investigadores, profesionistas, empresas, instituciones públicas y privadas, y público en general interesado en aprender desde cero.</p>
+          <h3>Costos</h3>
+          <p><strong>Curso:</strong> $500.00 MXN. Incluye constancia de participación.</p>
+          <p><strong>Constancias:</strong> $300.00 MXN cuando el curso sea gratuito o condonado.</p>
+          <h3>Apoyos</h3>
+          <p>La Dirección del Programa podrá autorizar descuentos o condonación del curso cuando el solicitante presente evidencia que justifique la imposibilidad de cubrir el pago.</p>
+          <h3>Inscripciones grupales</h3>
+          <p>Descuento del 25% al inscribirse 5 personas en un solo trámite. Descuento del 35% al inscribirse 15 personas o más en un solo trámite. Cada participante recibirá su identificador personal.</p>
         </article>
-        <article>
-          <h3>Innovación</h3>
-          <p>Desarrollo de proyectos tecnológicos, propiedad intelectual, patentes e inteligencia artificial aplicada.</p>
-        </article>
+      </div>
+
+      <div class="registration-box" id="inscripcion-cursos">
+        <h3>Formulario de inscripción</h3>
+        <p>Seleccione el curso de su interés o presione el botón <strong>Inscribirme</strong> junto al curso para llenar automáticamente el campo correspondiente.</p>
+        <form class="registration-form" action="mailto:prosecogdl@gmail.com" method="post" enctype="text/plain">
+          <label>Nombre completo
+            <input type="text" name="Nombre completo" required>
+          </label>
+          <label>Correo electrónico
+            <input type="email" name="Correo electrónico" required>
+          </label>
+          <label>Teléfono
+            <input type="tel" name="Teléfono" required>
+          </label>
+          <label>Estado y municipio
+            <input type="text" name="Estado y municipio">
+          </label>
+          <label>Curso seleccionado
+            <select id="cursoSeleccionado" name="Curso seleccionado" required>
+              <option value="">Seleccione un curso</option>
+            </select>
+          </label>
+          <label>Modalidad
+            <select name="Modalidad" required>
+              <option value="">Seleccione modalidad</option>
+              <option value="Individual">Individual</option>
+              <option value="Grupo">Grupo</option>
+            </select>
+          </label>
+          <label>Comentarios
+            <textarea name="Comentarios" rows="5"></textarea>
+          </label>
+          <button class="btn primary" type="submit">Enviar solicitud de inscripción</button>
+        </form>
+        <p class="note">Al enviar el formulario, se abrirá el correo del dispositivo para remitir la solicitud a prosecogdl@gmail.com.</p>
       </div>
     </section>
 
-    <section id="cursos" class="section section-alt">
-      <div class="section-heading">
-        <p class="eyebrow">Oferta académica</p>
-        <h2>Cursos disponibles</h2>
-        <p>Todos los cursos tienen una duración de <strong>20 horas</strong>, modalidad en línea y están dirigidos al público en general, sin conocimientos previos.</p>
-      </div>
-
-      <div class="course-grid">
-          <article class="course-card">
-            <h3>1. Seminario de Investigación</h3>
-            <p>Duración: 20 horas · Modalidad en línea · Sin conocimientos previos.</p>
-            <a class="btn btn-small" href="#inscripcion" data-course="Seminario de Investigación">Inscribirme</a>
-          </article>
-          <article class="course-card">
-            <h3>2. Diseño de Proyectos de Investigación</h3>
-            <p>Duración: 20 horas · Modalidad en línea · Sin conocimientos previos.</p>
-            <a class="btn btn-small" href="#inscripcion" data-course="Diseño de Proyectos de Investigación">Inscribirme</a>
-          </article>
-          <article class="course-card">
-            <h3>3. Elaboración de Protocolos de Investigación</h3>
-            <p>Duración: 20 horas · Modalidad en línea · Sin conocimientos previos.</p>
-            <a class="btn btn-small" href="#inscripcion" data-course="Elaboración de Protocolos de Investigación">Inscribirme</a>
-          </article>
-          <article class="course-card">
-            <h3>4. Planteamiento del Problema de Investigación</h3>
-            <p>Duración: 20 horas · Modalidad en línea · Sin conocimientos previos.</p>
-            <a class="btn btn-small" href="#inscripcion" data-course="Planteamiento del Problema de Investigación">Inscribirme</a>
-          </article>
-          <article class="course-card">
-            <h3>5. Estadística aplicada a la investigación</h3>
-            <p>Duración: 20 horas · Modalidad en línea · Sin conocimientos previos.</p>
-            <a class="btn btn-small" href="#inscripcion" data-course="Estadística aplicada a la investigación">Inscribirme</a>
-          </article>
-          <article class="course-card">
-            <h3>6. Análisis e interpretación de resultados</h3>
-            <p>Duración: 20 horas · Modalidad en línea · Sin conocimientos previos.</p>
-            <a class="btn btn-small" href="#inscripcion" data-course="Análisis e interpretación de resultados">Inscribirme</a>
-          </article>
-          <article class="course-card">
-            <h3>7. Elaboración de tesis de licenciatura</h3>
-            <p>Duración: 20 horas · Modalidad en línea · Sin conocimientos previos.</p>
-            <a class="btn btn-small" href="#inscripcion" data-course="Elaboración de tesis de licenciatura">Inscribirme</a>
-          </article>
-          <article class="course-card">
-            <h3>8. Elaboración de tesis de maestría</h3>
-            <p>Duración: 20 horas · Modalidad en línea · Sin conocimientos previos.</p>
-            <a class="btn btn-small" href="#inscripcion" data-course="Elaboración de tesis de maestría">Inscribirme</a>
-          </article>
-          <article class="course-card">
-            <h3>9. Elaboración de tesis doctoral</h3>
-            <p>Duración: 20 horas · Modalidad en línea · Sin conocimientos previos.</p>
-            <a class="btn btn-small" href="#inscripcion" data-course="Elaboración de tesis doctoral">Inscribirme</a>
-          </article>
-          <article class="course-card">
-            <h3>10. Planeación de proyectos de investigación</h3>
-            <p>Duración: 20 horas · Modalidad en línea · Sin conocimientos previos.</p>
-            <a class="btn btn-small" href="#inscripcion" data-course="Planeación de proyectos de investigación">Inscribirme</a>
-          </article>
-          <article class="course-card">
-            <h3>11. Prospectiva e innovación tecnológica</h3>
-            <p>Duración: 20 horas · Modalidad en línea · Sin conocimientos previos.</p>
-            <a class="btn btn-small" href="#inscripcion" data-course="Prospectiva e innovación tecnológica">Inscribirme</a>
-          </article>
-          <article class="course-card">
-            <h3>12. Propiedad intelectual desde cero</h3>
-            <p>Duración: 20 horas · Modalidad en línea · Sin conocimientos previos.</p>
-            <a class="btn btn-small" href="#inscripcion" data-course="Propiedad intelectual desde cero">Inscribirme</a>
-          </article>
-          <article class="course-card">
-            <h3>13. Introducción a las patentes</h3>
-            <p>Duración: 20 horas · Modalidad en línea · Sin conocimientos previos.</p>
-            <a class="btn btn-small" href="#inscripcion" data-course="Introducción a las patentes">Inscribirme</a>
-          </article>
-          <article class="course-card">
-            <h3>14. Figuras técnicas para patentes</h3>
-            <p>Duración: 20 horas · Modalidad en línea · Sin conocimientos previos.</p>
-            <a class="btn btn-small" href="#inscripcion" data-course="Figuras técnicas para patentes">Inscribirme</a>
-          </article>
-          <article class="course-card">
-            <h3>15. Desarrollo de proyectos tecnológicos</h3>
-            <p>Duración: 20 horas · Modalidad en línea · Sin conocimientos previos.</p>
-            <a class="btn btn-small" href="#inscripcion" data-course="Desarrollo de proyectos tecnológicos">Inscribirme</a>
-          </article>
-          <article class="course-card">
-            <h3>16. Diseño de bases de datos desde cero</h3>
-            <p>Duración: 20 horas · Modalidad en línea · Sin conocimientos previos.</p>
-            <a class="btn btn-small" href="#inscripcion" data-course="Diseño de bases de datos desde cero">Inscribirme</a>
-          </article>
-          <article class="course-card">
-            <h3>17. Automatización de procesos administrativos</h3>
-            <p>Duración: 20 horas · Modalidad en línea · Sin conocimientos previos.</p>
-            <a class="btn btn-small" href="#inscripcion" data-course="Automatización de procesos administrativos">Inscribirme</a>
-          </article>
-          <article class="course-card">
-            <h3>18. Inteligencia Artificial para investigación</h3>
-            <p>Duración: 20 horas · Modalidad en línea · Sin conocimientos previos.</p>
-            <a class="btn btn-small" href="#inscripcion" data-course="Inteligencia Artificial para investigación">Inscribirme</a>
-          </article>
-          <article class="course-card">
-            <h3>19. Inteligencia Artificial para docentes</h3>
-            <p>Duración: 20 horas · Modalidad en línea · Sin conocimientos previos.</p>
-            <a class="btn btn-small" href="#inscripcion" data-course="Inteligencia Artificial para docentes">Inscribirme</a>
-          </article>
-          <article class="course-card">
-            <h3>20. Inteligencia Artificial para tesis</h3>
-            <p>Duración: 20 horas · Modalidad en línea · Sin conocimientos previos.</p>
-            <a class="btn btn-small" href="#inscripcion" data-course="Inteligencia Artificial para tesis">Inscribirme</a>
-          </article>
-          <article class="course-card">
-            <h3>21. Inteligencia Artificial para innovación tecnológica</h3>
-            <p>Duración: 20 horas · Modalidad en línea · Sin conocimientos previos.</p>
-            <a class="btn btn-small" href="#inscripcion" data-course="Inteligencia Artificial para innovación tecnológica">Inscribirme</a>
-          </article>
+    <section id="areas" class="section alt">
+      <p class="eyebrow">Áreas tecnológicas</p>
+      <h2>Líneas estratégicas</h2>
+      <div class="areas-grid">
+        <article><span>🧬</span><h3>Medicina regenerativa</h3><p>Tecnologías para regeneración, soporte funcional y evaluación biomédica.</p></article>
+        <article><span>⚡</span><h3>Sistemas bioelectrocarbonosos</h3><p>Arquitecturas funcionales para integración biomédica, energética y fisiológica.</p></article>
+        <article><span>🏛</span><h3>Infraestructura universal</h3><p>Modelos autónomos para educación, salud, cultura, vivienda y logística.</p></article>
+        <article><span>🔋</span><h3>Energía y continuidad</h3><p>Transporte, recuperación, regulación y continuidad operativa energética.</p></article>
       </div>
     </section>
 
-    <section id="inscripcion" class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Registro</p>
-        <h2>Formulario de inscripción</h2>
-        <p>Selecciona el curso de tu interés o utiliza el botón “Inscribirme” junto al curso para completar automáticamente el campo correspondiente.</p>
-      </div>
-
-      <form class="registration-form" action="mailto:prosecogdl@gmail.com" method="post" enctype="text/plain">
-        <label>Nombre completo
-          <input type="text" name="Nombre completo" required />
-        </label>
-
-        <label>Correo electrónico
-          <input type="email" name="Correo electrónico" required />
-        </label>
-
-        <label>Teléfono
-          <input type="tel" name="Teléfono" required />
-        </label>
-
-        <label>Estado y municipio
-          <input type="text" name="Estado y municipio" />
-        </label>
-
-        <label>Curso seleccionado
-          <select id="cursoSeleccionado" name="Curso seleccionado" required>
-            <option value="">Seleccione un curso</option>
-              <option value="Seminario de Investigación">Seminario de Investigación</option>
-              <option value="Diseño de Proyectos de Investigación">Diseño de Proyectos de Investigación</option>
-              <option value="Elaboración de Protocolos de Investigación">Elaboración de Protocolos de Investigación</option>
-              <option value="Planteamiento del Problema de Investigación">Planteamiento del Problema de Investigación</option>
-              <option value="Estadística aplicada a la investigación">Estadística aplicada a la investigación</option>
-              <option value="Análisis e interpretación de resultados">Análisis e interpretación de resultados</option>
-              <option value="Elaboración de tesis de licenciatura">Elaboración de tesis de licenciatura</option>
-              <option value="Elaboración de tesis de maestría">Elaboración de tesis de maestría</option>
-              <option value="Elaboración de tesis doctoral">Elaboración de tesis doctoral</option>
-              <option value="Planeación de proyectos de investigación">Planeación de proyectos de investigación</option>
-              <option value="Prospectiva e innovación tecnológica">Prospectiva e innovación tecnológica</option>
-              <option value="Propiedad intelectual desde cero">Propiedad intelectual desde cero</option>
-              <option value="Introducción a las patentes">Introducción a las patentes</option>
-              <option value="Figuras técnicas para patentes">Figuras técnicas para patentes</option>
-              <option value="Desarrollo de proyectos tecnológicos">Desarrollo de proyectos tecnológicos</option>
-              <option value="Diseño de bases de datos desde cero">Diseño de bases de datos desde cero</option>
-              <option value="Automatización de procesos administrativos">Automatización de procesos administrativos</option>
-              <option value="Inteligencia Artificial para investigación">Inteligencia Artificial para investigación</option>
-              <option value="Inteligencia Artificial para docentes">Inteligencia Artificial para docentes</option>
-              <option value="Inteligencia Artificial para tesis">Inteligencia Artificial para tesis</option>
-              <option value="Inteligencia Artificial para innovación tecnológica">Inteligencia Artificial para innovación tecnológica</option>
-          </select>
-        </label>
-
-        <label>Modalidad
-          <select name="Modalidad" required>
-            <option value="">Seleccione modalidad</option>
-            <option value="Individual">Individual</option>
-            <option value="Grupo">Grupo</option>
-          </select>
-        </label>
-
-        <label>Comentarios
-          <textarea name="Comentarios" rows="5"></textarea>
-        </label>
-
-        <button class="btn" type="submit">Enviar solicitud de inscripción</button>
-        <p class="form-note">Al enviar el formulario, se abrirá el correo configurado en el dispositivo para remitir la solicitud a prosecogdl@gmail.com.</p>
-      </form>
-    </section>
-
-    <section id="patentes" class="section section-alt">
-      <div class="section-heading">
-        <p class="eyebrow">Innovación y protección legal</p>
-        <h2>Patentes, investigación y desarrollo tecnológico</h2>
-        <p>Este espacio integra información institucional sobre investigación, innovación científica, propiedad intelectual y desarrollos tecnológicos protegidos conforme a la estrategia del programa.</p>
+    <section class="section" id="alcance">
+      <p class="eyebrow">Alcance del portal</p>
+      <h2>Visitantes y ubicación</h2>
+      <div class="visitor-box">
+        <div><strong>👥 Visitantes</strong><span id="visitorNumber">En actualización</span></div>
+        <div><strong>🌍 Ubicación de visitantes</strong><span>Disponible mediante contador externo</span></div>
       </div>
     </section>
 
-    <section id="contacto" class="section contact-section">
-      <div>
-        <p class="eyebrow">Contacto</p>
-        <h2>Información y solicitudes</h2>
-        <p>Para mayor información sobre cursos, constancias, descuentos grupales o proyectos de innovación, comunícate por correo electrónico.</p>
-      </div>
-      <a class="btn" href="mailto:prosecogdl@gmail.com">prosecogdl@gmail.com</a>
+    <section id="contacto" class="section contact">
+      <p class="eyebrow">Contacto</p>
+      <h2>Únete a la Red Nacional de Coinventores</h2>
+      <p>Investigadores, académicos y especialistas mexicanos interesados en colaborar pueden comunicarse para integrarse a esta iniciativa.</p>
+      <a class="btn primary" href="mailto:contacto@edithalanis.com">contacto@edithalanis.com</a>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© Programa de Innovación EdithAlanis™. Todos los derechos reservados.</p>
-    <p>Creando una nueva sociedad de innovación científica, más colaborativa y protegiendo con legalidad las ideas y desarrollos.</p>
+  <footer>
+    <strong>Programa de Innovación EdithAlanis™</strong>
+    <span>Innovación • Ciencia • Tecnología • Colaboración</span>
+    <small>© 2026 Portal Oficial del Programa de Innovación EdithAlanis™</small>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script>
+    window.PORTAL_TEAM = [["Dra. María Elvia Edith Alanis Pérez", "Fundadora", "💡"], ["Elsy Susana Edith Baltazar Alaniz", "Cofundadora", "🤝"], ["Daniel Alejandro Baltazar Alaniz", "Cofundador", "🤝"], ["Lisbeth Andalón Álvarez", "Colaboradora Experta", "🔬"], ["Apolonio Navarro Paredes", "Colaborador de Desarrollos", "⚙️"], ["Rocío Calderón García", "Colaboradora Experta", "🔬"], ["Lucio Guzmán Mares", "Colaborador de Vinculación", "🌐"], ["María Soledad Castellanos Villarruel", "Colaboradora de Revisión Ortográfica", "✒️"], ["Carlos Vázquez Cid de León", "Colaborador de Vinculación Nacional", "🇲🇽"], ["Adán Yáñez Larios", "Colaborador Internacional", "🌎"], ["Sergio Roberto Dávalos García", "Colaborador Tecnológico", "💡"], ["Marlene Alejandra Pérez Villalpando", "Colaboradora Revisora", "📘"], ["Martha Alicia González Palacios", "Colaboradora de Vinculación Académica", "🎓"], ["Baltazar Ruiz Jesús Alejandro", "Colaborador Gráfico", "🎨"]];
+    window.COINVENTORS = [{"name": "Alanis Pérez Jezrael Abraham", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Aguilar Molina Yehoshua", "city": "San Pedro Tlaquepaque", "state": "Jalisco"}, {"name": "Alanis Mijares Antonia Leticia", "city": "San Nicolás de la Garza", "state": "Nuevo León"}, {"name": "Alanis Mijares Jesús", "city": "García", "state": "Nuevo León"}, {"name": "Alanis Mijares Minerva", "city": "San Nicolás de los Garza", "state": "Nuevo León"}, {"name": "Alanis Pérez José Eduardo", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Alanis Pérez María Elvia Edith", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Alaniz Casillas Christian Eduardo", "city": "Zapopan", "state": "Jalisco"}, {"name": "Alaniz Partida Ignacio Ricardo", "city": "Zapopan", "state": "Jalisco"}, {"name": "Alaniz Pérez Ignacio Ricardo", "city": "Zapopan", "state": "Jalisco"}, {"name": "Alaniz Pérez María Ivett Janett", "city": "Zapopan", "state": "Jalisco"}, {"name": "Andalón Álvarez Lisbeth", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Aragón Ríos Elba Karina", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Baltazar Alaniz Daniel Alejandro", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Baltazar Alaniz Elsy Susana Edith", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Baltazar Montes Lorenzo", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Bautista González Jorge Gregorio", "city": "Zapopan", "state": "Jalisco"}, {"name": "Bayardo González Rubén Alberto", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Becerra González Rubén Armando", "city": "Jamay", "state": "Jalisco"}, {"name": "Calderón García Rocío", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Carazo Luna José Alfredo", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Carrión Castillo Luz Ovillada", "city": "Cosoleacaque", "state": "Veracruz"}, {"name": "Ma. Soledad Castellanos Villarruel", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Castillo Medina Diana Iztacihuatl", "city": "Zapopan", "state": "Jalisco"}, {"name": "Chama Mora Héctor Adán", "city": "Fortín", "state": "Veracruz"}, {"name": "Claustro Bobadilla Javier", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Cortés Camacho Araceli", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Cruz Alanis Ariana Leticia", "city": "San Nicolás de la Garza", "state": "Nuevo León"}, {"name": "Cruz del Ángel Jesús Adrián", "city": "San Nicolás de la Garza", "state": "Nuevo León"}, {"name": "Dávalos García Sergio Roberto", "city": "Zapopan", "state": "Jalisco"}, {"name": "Dávila Torres José Ignacio", "city": "Orizaba", "state": "Veracruz"}, {"name": "Delgadillo Preciado Zaira América", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Domínguez García Rodolfo Omar", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Durán Padilla José Arturo", "city": "Zapopan", "state": "Jalisco"}, {"name": "Escutia Gutiérrez Raymundo", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Gazpar Castellanos José Luis", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Gómez Contreras Flor Alejandra", "city": "Guadalajara", "state": "Jalisco"}, {"name": "González Fajardo Alma Delia", "city": "San Gabriel", "state": "Jalisco"}, {"name": "Gutiérrez Gómez Alejandra", "city": "Zapopan", "state": "Jalisco"}, {"name": "Guzmán Castellanos Karen Berenice", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Guzmán Mares Lucio", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Guzmán Villarruel Jesús Fernando", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Hernández Abreu Karina Esther", "city": "Villahermosa", "state": "Tabasco"}, {"name": "Hernández Cortés Rigoberto", "city": "Izhuatlancillo", "state": "Veracruz"}, {"name": "Hernández García Anabella", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Hernández Landeros Edgar Miguel Raúl", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Hernández Méndez Arturo", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Hernández Santa María José Guadalupe", "city": "Zapopan", "state": "Jalisco"}, {"name": "Iñiguez Carrillo Adriana Lorena", "city": "Zapotlán el Grande", "state": "Jalisco"}, {"name": "Jiménez Torres Jorge Alfredo", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Kristyan Felype Luis Navarro", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Lehmann Mendoza José Miguel", "city": "Villahermosa", "state": "Tabasco"}, {"name": "Lino Gamiño Juan Alfredo", "city": "Colima", "state": "Colima"}, {"name": "López Alvarado Miguel Ángel", "city": "Comalcalco", "state": "Tabasco"}, {"name": "López Chávez Gilberto", "city": "Guanajuato", "state": "Guanajuato"}, {"name": "Lozoya Arandia Jorge", "city": "Zapopan", "state": "Jalisco"}, {"name": "Luna Rizo Marisol", "city": "Zapopan", "state": "Jalisco"}, {"name": "Maciel Ruelas Estefany Teresa", "city": "Villa Corona", "state": "Jalisco"}, {"name": "Manzo Palomera Olga Rocío", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Montalvo Núñez Jorge Antonio", "city": "Zapopan", "state": "Jalisco"}, {"name": "Montesinos González Salvador", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Morán Martínez Francisco", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Nápoles Salas Luz Elena", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Ortiz Cruz Fabiola", "city": "Minatitlán", "state": "Veracruz"}, {"name": "Ortiz Palafox Karla Haydeee", "city": "Zapopan", "state": "Jalisco"}, {"name": "Pérez Villalpando Marlene Alejandra", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Ramírez Castillo Eric Amin", "city": "Oaxaca de Juárez", "state": "Oaxaca"}, {"name": "Ramírez Torres Miguel Ángel", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Rivas Paz Mariana", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Rivera Alaniz Chamir Darinka", "city": "Zapopan", "state": "Jalisco"}, {"name": "Rivera Alaniz Xiomara Hatzydy", "city": "Zapopan", "state": "Jalisco"}, {"name": "Robles González Vania Shuhua", "city": "Coyoacán", "state": "Ciudad de México"}, {"name": "Rodríguez Nieves Blanca", "city": "Zapopan", "state": "Jalisco"}, {"name": "Salas Coronado Raúl", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Solorio González Carolina", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Soto Chávez Alicia", "city": "Minatitlán", "state": "Veracruz"}, {"name": "Trujillo Mata Amín", "city": "Camerino Z. Mendoza", "state": "Veracruz"}, {"name": "Vargas Lares Oscar Alejandro", "city": "Zapopan", "state": "Jalisco"}, {"name": "Vázquez Arango María de Lourdes", "city": "Oaxaca de Juárez", "state": "Oaxaca"}, {"name": "Vázquez Cid de León Carlos", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Villegas Alcantar Benjamín", "city": "Tepatitlán de Morelos", "state": "Jalisco"}, {"name": "Yáñez Larios Adán", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Zepeda Valle Gustavo", "city": "Zacatecas", "state": "Zacatecas"}];
+    window.PATENTS = [{"kind": "Patente", "number": "324844", "status": "Concedida", "location": "Jalisco, México", "inventors": ["María Elvia Edith Alanis Pérez", "Mario Eduardo Cano González", "Ernesto Edgar Mazón Valadez", "Alfonso Hernández Samano"]}, {"kind": "Patente", "number": "330235", "status": "Concedida", "location": "Jalisco, México", "inventors": ["María Elvia Edith Alanis Pérez", "Mario Eduardo Cano González", "Ernesto Edgar Mazón Valadez", "Alfonso Hernández Samano"]}, {"kind": "Patente", "number": "337707", "status": "Concedida", "location": "Jalisco, México", "inventors": ["María Elvia Edith Alanis Pérez", "Mario Eduardo Cano González", "Ernesto Edgar Mazón Valadez", "Eri Atahualpa Mena Barbosa", "Esteban Mauricio Tavares Herrera", "Juan Carlos Estrada Gutiérrez"]}, {"kind": "Modelo de Utilidad", "number": "3811", "status": "Concedido", "location": "Jalisco, México", "inventors": ["Christopher Javier García Torres", "Raúl García Becerra", "Mario Eduardo Cano González", "Lucio Guzmán Mares", "María Elvia Edith Alanis Pérez"]}, {"kind": "Patente", "number": "392662", "status": "Concedida", "location": "Jalisco, México", "inventors": ["Antonio Ramírez García", "María Elvia Edith Alanis Pérez"]}, {"kind": "Patente", "number": "427287", "status": "Concedida", "location": "Jalisco, México", "inventors": ["María Elvia Edith Alanis Pérez", "Elsy Susana Edith Baltazar Alaniz", "Daniel Alejandro Baltazar Alaniz", "Ma. Soledad Castellanos Villarruel", "Lucio Guzmán Mares", "Rocío Calderón García", "Gustavo Olague Caballero †"]}, {"kind": "Patente", "number": "En proceso", "status": "En proceso", "location": "Jalisco, México", "inventors": ["María Elvia Edith Alanis Pérez", "Christian Eduardo Alaniz Casillas", "Elsy Susana Edith Baltazar Alaniz"]}];
+    window.PORTFOLIO = [{"id": "324844", "area": "Patente", "status": "Concedida", "badge": "🏆", "group": "otorgada"}, {"id": "330235", "area": "Patente", "status": "Concedida", "badge": "🏆", "group": "otorgada"}, {"id": "337707", "area": "Patente", "status": "Concedida", "badge": "🏆", "group": "otorgada"}, {"id": "3811", "area": "Modelo de Utilidad", "status": "Concedido", "badge": "🏆", "group": "otorgada"}, {"id": "392662", "area": "Patente", "status": "Concedida", "badge": "🏆", "group": "otorgada"}, {"id": "427287", "area": "Patente", "status": "Concedida", "badge": "🏆", "group": "otorgada"}, {"id": "En proceso", "area": "Patente", "status": "En proceso", "badge": "📄", "group": "presentada"}, {"id": "S-01", "area": "Medicina regenerativa", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-02", "area": "Biomateriales bioelectrocarbonosos", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-03", "area": "Ingeniería biomédica", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-04", "area": "Bioelectrónica médica", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-05", "area": "Diagnóstico funcional", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-06", "area": "Monitoreo fisiológico", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-07", "area": "Liberación controlada de agentes terapéuticos", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-08", "area": "Regeneración cutánea", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-09", "area": "Regeneración ósea", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-10", "area": "Regeneración neural", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-11", "area": "Regeneración cardiovascular", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-12", "area": "Regeneración maxilofacial", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-13", "area": "Regeneración periodontal", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-14", "area": "Regeneración corneal", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-15", "area": "Regeneración cartilaginosa", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-16", "area": "Regeneración de tejidos blandos", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-17", "area": "Oncología", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-18", "area": "Plataformas biosféricas regenerativas", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-19", "area": "Arquitecturas biosféricas universales", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-20", "area": "Sistemas autónomos inteligentes", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-21", "area": "Sistemas de transferencia biosistémica", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-22", "area": "Tecnologías extraplanetarias", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}, {"id": "S-23", "area": "Innovación tecnológica interdisciplinaria", "status": "113 solicitudes en proceso", "badge": "📄", "group": "presentada"}];
+    window.COURSES = ["Seminario de Investigación", "Diseño de Proyectos de Investigación", "Elaboración de Protocolos de Investigación", "Planteamiento del Problema de Investigación", "Estadística aplicada a la investigación", "Análisis e interpretación de resultados", "Elaboración de tesis de licenciatura", "Elaboración de tesis de maestría", "Elaboración de tesis doctoral", "Planeación de proyectos de investigación", "Prospectiva e innovación tecnológica", "Propiedad intelectual desde cero", "Introducción a las patentes", "Figuras técnicas para patentes", "Desarrollo de proyectos tecnológicos", "Diseño de bases de datos desde cero", "Automatización de procesos administrativos", "Inteligencia Artificial para investigación", "Inteligencia Artificial para docentes", "Inteligencia Artificial para tesis", "Inteligencia Artificial para innovación tecnológica"];
+  </script>
+  <script src="script.js"></script>
 </body>
 </html>

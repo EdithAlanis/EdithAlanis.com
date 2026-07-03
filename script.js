@@ -30,7 +30,12 @@ function renderPatents(){
 
 function renderCourses(){
   const list=$("courseList"); if(!list) return;
-  list.innerHTML = courses.map((c,i)=>`<div class="course-item"><strong>${String(i+1).padStart(2,"0")}.</strong> ${c}</div>`).join("");
+  const select=$("cursoSeleccionado");
+  list.innerHTML = courses.map((c,i)=>`<div class="course-item"><span><strong>${String(i+1).padStart(2,"0")}.</strong> ${c}</span><a class="course-btn" href="#inscripcion-cursos" data-course="${c}">Inscribirme</a></div>`).join("");
+  if(select){
+    select.innerHTML = `<option value="">Seleccione un curso</option>` + courses.map(c=>`<option value="${c}">${c}</option>`).join("");
+  }
+  document.querySelectorAll("[data-course]").forEach(btn=>btn.onclick=()=>{ if(select) select.value=btn.dataset.course; });
 }
 
 function groupByState(list){
