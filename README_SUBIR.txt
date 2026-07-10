@@ -1,25 +1,15 @@
-INSTRUCCIONES PARA SUBIR A GITHUB
+VERSIÓN ACTUALIZADA DEL PORTAL EDITHALANIS.COM
 
-1. Descomprime este ZIP.
-2. En GitHub entra al repositorio EdithAlanis.com.
-3. Usa Add file > Upload files.
-4. Sube TODO el contenido descomprimido:
-   - index.html
-   - script.js
-   - styles.css
-   - style.css
-   - README_SUBIR.txt
-5. Haz Commit changes.
-6. Espera unos minutos y abre https://edithalanis.com
+Cambios integrados:
+- Se incorporó un Portafolio Tecnológico con 10 familias.
+- Cada familia incluye una imagen conceptual abstracta relacionada con su nombre.
+- Las imágenes no reproducen figuras, planos ni componentes técnicos de los proyectos.
+- Se corrigieron los indicadores a 5 patentes concedidas y 3 modelos de utilidad concedidos.
+- Diseño adaptable para computadora, tableta y teléfono.
+- No requiere carpetas de imágenes ni recursos externos.
 
-Contenido integrado:
-- Conserva la última versión buena de la página.
-- Mantiene estructura, menú, diseño, secciones y datos existentes.
-- Actualiza Academia EdithAlanis™ a 21 cursos definitivos.
-- Agrega botón Inscribirme junto a cada curso.
-- Los datos bancarios NO se muestran en la página principal.
-- Los datos de pago aparecen únicamente al presionar Inscribirme y abrir el panel de inscripción.
-- El curso seleccionado se llena automáticamente en el formulario.
-
-- Agrega campo para número de referencia, folio o autorización del pago.
-- Incluye aviso: una vez confirmado el pago, el participante recibirá los accesos al curso en su email.
+PARA SUBIR:
+1. Descomprime el ZIP.
+2. En el repositorio de GitHub Pages, reemplaza index.html, styles.css, style.css y script.js.
+3. Haz Commit changes.
+4. Abre edithalanis.com y actualiza con Ctrl + F5.
