@@ -12,7 +12,7 @@ CAMBIOS INTEGRADOS:
 - No se muestran nombres de invenciones, expedientes, reivindicaciones ni figuras técnicas.
 - Todas las familias conservan precio de $1,300,000 MXN y 13 solicitudes.
 - Se añadió contador de visitantes.
-- Se añadió ubicación aproximada del visitante actual por ciudad, estado y país.
+- Se añadió un planeta interactivo que marca con puntos la procedencia aproximada de los visitantes, sin mostrar nombres de ubicaciones.
 - El contador y la ubicación usan servicios externos gratuitos; existe respaldo local para el conteo si el servicio externo no responde.
 
 PARA SUBIR A GITHUB PAGES:
@@ -30,3 +30,9 @@ PARA SUBIR A GITHUB PAGES:
 IMPORTANTE:
 - Sube los cinco archivos juntos.
 - styles.css y style.css son idénticos para evitar incompatibilidades con versiones anteriores.
+
+CAMBIO DE VISUALIZACIÓN:
+- El contador muestra únicamente el número total de visitas.
+- La procedencia se representa mediante puntos sobre un planeta interactivo.
+- No se escribe públicamente la ciudad, el estado ni el país del visitante.
+- Las coordenadas se redondean para evitar mostrar una ubicación exacta.

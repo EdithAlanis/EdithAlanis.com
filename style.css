@@ -94,3 +94,54 @@ footer{display:flex;flex-direction:column;gap:5px;text-align:center;padding:28px
 .heat{background:linear-gradient(135deg,#5b2718,#c87528)}.climate{background:linear-gradient(135deg,#15345b,#3f8b84)}
 @media(max-width:850px){.network-layout{grid-template-columns:1fr}.state-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.visitor-grid{grid-template-columns:1fr}.search-row{align-items:stretch;flex-direction:column}.state-list{grid-template-columns:1fr}}
+
+
+/* Contador y planeta de visitantes */
+.visitor-globe-grid{
+  grid-template-columns:minmax(240px,.75fr) minmax(340px,1.4fr);
+  align-items:stretch;
+}
+.visitor-counter-card{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-height:390px;
+}
+.visitor-counter-card strong{
+  font-size:clamp(3rem,8vw,6rem);
+  line-height:1;
+}
+.visitor-globe-card{
+  overflow:hidden;
+  min-height:390px;
+  padding:18px 18px 12px;
+}
+#visitorGlobe{
+  width:100%;
+  height:350px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  border-radius:50%;
+  background:radial-gradient(circle at center,rgba(23,77,134,.22),rgba(3,18,45,.04) 62%,transparent 63%);
+}
+#visitorGlobe canvas{display:block;max-width:100%}
+.globe-fallback{
+  display:grid;
+  place-items:center;
+  width:280px;
+  height:280px;
+  border-radius:50%;
+  font-size:9rem;
+  background:radial-gradient(circle at 35% 30%,#3c83b9,#08284f 72%);
+  box-shadow:0 0 45px rgba(45,126,190,.35);
+}
+@media(max-width:850px){
+  .visitor-globe-grid{grid-template-columns:1fr}
+  .visitor-counter-card{min-height:220px}
+}
+@media(max-width:500px){
+  #visitorGlobe{height:310px}
+  .visitor-globe-card{padding:10px}
+}

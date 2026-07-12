@@ -362,14 +362,21 @@
 <article><span>⬡</span><h3>Infraestructura universal</h3><p>Modelos autónomos para educación, salud, cultura, vivienda y logística.</p></article>
 <article><span>↯</span><h3>Energía y continuidad</h3><p>Transporte, recuperación, regulación y continuidad operativa energética.</p></article></div></section>
 
+
 <section class="section visitors" id="visitantes">
 <p class="eyebrow">Alcance del portal</p>
-<h2>Visitantes y ubicación</h2>
-<div class="visitor-grid">
-<article><strong id="visitorNumber">Cargando…</strong><span>Visitas registradas</span></article>
-<article><strong id="visitorLocation">Consultando…</strong><span>Ubicación aproximada del visitante actual</span></article>
+<h2>Visitantes del portal</h2>
+<div class="visitor-grid visitor-globe-grid">
+<article class="visitor-counter-card">
+<strong id="visitorNumber">Cargando…</strong>
+<span>Visitas registradas</span>
+</article>
+<article class="visitor-globe-card">
+<div id="visitorGlobe" aria-label="Planeta con puntos que representan la ubicación aproximada de los visitantes"></div>
+<span>Procedencia aproximada de visitantes</span>
+</article>
 </div>
-<p class="privacy-note">La ubicación es aproximada y se obtiene a nivel de ciudad, estado y país. El portal no solicita ni publica domicilios, coordenadas exactas o datos personales.</p>
+<p class="privacy-note">Los puntos representan ubicaciones aproximadas. No se muestran nombres de ciudades, estados, países, domicilios ni coordenadas exactas.</p>
 </section>
 
 <section class="section contact" id="contacto"><p class="eyebrow">Contacto</p><h2>Información, licenciamiento y colaboración</h2>
@@ -377,6 +384,8 @@
 <a class="btn primary" href="mailto:contacto@edithalanis.com">contacto@edithalanis.com</a></section>
 </main>
 <footer><strong>Programa de Innovación EdithAlanis™</strong><span>Innovación • Ciencia • Tecnología • Colaboración</span><small>© 2026 Portal Oficial del Programa de Innovación EdithAlanis™</small></footer>
+<script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+<script src="https://unpkg.com/globe.gl@2.32.1/dist/globe.gl.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

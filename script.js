@@ -99,31 +99,83 @@ coinventorSearch?.addEventListener('input',event=>{
   renderCoinventorCards(results);
 });
 
+
 async function loadVisitors(){
   const number=document.getElementById('visitorNumber');
-  const location=document.getElementById('visitorLocation');
+  const globeContainer=document.getElementById('visitorGlobe');
 
   try{
-    const counterResponse=await fetch('https://api.countapi.xyz/hit/edithalanis.com/portal-visits',{cache:'no-store'});
+    const counterResponse=await fetch('https://countapi.mileshilliard.com/api/v1/hit/edithalanis.com/portal-visits',{cache:'no-store'});
     if(!counterResponse.ok) throw new Error('contador no disponible');
     const counterData=await counterResponse.json();
-    number.textContent=new Intl.NumberFormat('es-MX').format(counterData.value);
+    const value=counterData.value ?? counterData.count ?? counterData;
+    number.textContent=new Intl.NumberFormat('es-MX').format(Number(value));
   }catch(error){
     const localKey='edithalanis_local_visits';
     const value=Number(localStorage.getItem(localKey)||0)+1;
     localStorage.setItem(localKey,String(value));
     number.textContent=new Intl.NumberFormat('es-MX').format(value);
-    number.title='Conteo local de respaldo mientras el servicio externo no está disponible';
+    number.title='Conteo local de respaldo';
   }
+
+  if(!globeContainer || typeof Globe!=='function'){
+    if(globeContainer) globeContainer.innerHTML='<div class="globe-fallback">🌎</div>';
+    return;
+  }
+
+  const globe=Globe()(globeContainer)
+    .width(Math.min(globeContainer.clientWidth || 520, 620))
+    .height(390)
+    .backgroundColor('rgba(0,0,0,0)')
+    .showAtmosphere(true)
+    .atmosphereAltitude(0.18)
+    .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+    .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
+    .pointsData([])
+    .pointLat('lat')
+    .pointLng('lng')
+    .pointAltitude(0.04)
+    .pointRadius(0.38)
+    .pointColor(()=> '#f3c85f')
+    .pointLabel(()=> 'Visitante');
+
+  globe.controls().autoRotate=true;
+  globe.controls().autoRotateSpeed=0.7;
+  globe.controls().enableZoom=false;
 
   try{
     const locationResponse=await fetch('https://ipapi.co/json/',{cache:'no-store'});
     if(!locationResponse.ok) throw new Error('ubicación no disponible');
     const data=await locationResponse.json();
-    const parts=[data.city,data.region,data.country_name].filter(Boolean);
-    location.textContent=parts.length?parts.join(', '):'Ubicación no disponible';
+    const lat=Number(data.latitude);
+    const lng=Number(data.longitude);
+
+    if(Number.isFinite(lat) && Number.isFinite(lng)){
+      const storedKey='edithalanis_globe_points';
+      let points=[];
+      try{
+        points=JSON.parse(localStorage.getItem(storedKey)||'[]');
+        if(!Array.isArray(points)) points=[];
+      }catch{
+        points=[];
+      }
+
+      const rounded={lat:Math.round(lat*2)/2,lng:Math.round(lng*2)/2};
+      const exists=points.some(p=>Math.abs(p.lat-rounded.lat)<0.2 && Math.abs(p.lng-rounded.lng)<0.2);
+      if(!exists) points.push(rounded);
+      points=points.slice(-120);
+      localStorage.setItem(storedKey,JSON.stringify(points));
+
+      globe.pointsData(points);
+      globe.pointOfView({lat:rounded.lat,lng:rounded.lng,altitude:1.8},1200);
+    }
   }catch(error){
-    location.textContent='Ubicación no disponible';
+    // El globo permanece visible aunque no se pueda obtener la ubicación aproximada.
   }
+
+  const resize=()=>{
+    globe.width(Math.min(globeContainer.clientWidth || 520,620));
+  };
+  window.addEventListener('resize',resize,{passive:true});
 }
 loadVisitors();
