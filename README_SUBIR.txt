@@ -1,29 +1,32 @@
-VERSIÓN FINAL ACTUALIZADA DEL PORTAL EDITHALANIS.COM
+VERSIÓN FINAL DEL PORTAL EDITHALANIS.COM — ACTUALIZADA HASTA 670
 
 CAMBIOS INTEGRADOS:
-- Indicador actualizado a 644 Proyectos tecnológicos.
-- Se conserva el indicador de 5 patentes concedidas.
-- Se conserva el indicador de 3 modelos de utilidad concedidos.
-- Se conserva el indicador de 113 solicitudes en proceso.
-- Se eliminó la leyenda explicativa sobre las imágenes.
-- Portafolio ampliado a 15 familias tecnológicas.
-- Se integraron las familias estratégicas 580–592, 593–605, 606–618, 619–631 y 632–644.
-- Todas las tarjetas utilizan la misma estructura, tamaño, estilo y distribución.
-- Todas muestran 13 solicitudes.
-- Todas muestran $1,300,000 MXN.
-- Todas muestran la leyenda: "Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite."
-- Todos los botones dicen "Solicitar información".
-- No se muestran nombres de invenciones, inventores, resúmenes, figuras ni reivindicaciones en las nuevas familias.
-- Diseño adaptable para computadora, tableta y teléfono.
-- No requiere carpetas de imágenes ni recursos externos.
+- 5 patentes concedidas.
+- 3 modelos de utilidad concedidos.
+- 114 solicitudes en proceso.
+- 670 proyectos tecnológicos.
+- Se conservan 21 cursos disponibles.
+- Se restauró el equipo institucional completo con 14 integrantes.
+- Se restauró la Red Nacional de Coinventores con búsqueda por nombre, municipio y estado.
+- Se incorporaron las familias 645–657 y 658–670.
+- No se muestran nombres de invenciones, expedientes, reivindicaciones ni figuras técnicas.
+- Todas las familias conservan precio de $1,300,000 MXN y 13 solicitudes.
+- Se añadió contador de visitantes.
+- Se añadió ubicación aproximada del visitante actual por ciudad, estado y país.
+- El contador y la ubicación usan servicios externos gratuitos; existe respaldo local para el conteo si el servicio externo no responde.
 
-PARA SUBIR:
-1. Descomprime el archivo ZIP.
-2. En el repositorio de GitHub Pages, reemplaza:
+PARA SUBIR A GITHUB PAGES:
+1. Descomprime este archivo ZIP.
+2. En el repositorio de edithalanis.com reemplaza los archivos:
    - index.html
+   - script.js
    - styles.css
    - style.css
-   - script.js
+   - README_SUBIR.txt
 3. Haz clic en Commit changes.
-4. Espera uno o dos minutos.
+4. Espera de uno a tres minutos.
 5. Abre edithalanis.com y actualiza con Ctrl + F5.
+
+IMPORTANTE:
+- Sube los cinco archivos juntos.
+- styles.css y style.css son idénticos para evitar incompatibilidades con versiones anteriores.

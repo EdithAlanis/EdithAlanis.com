@@ -70,3 +70,27 @@ footer{display:flex;flex-direction:column;gap:5px;text-align:center;padding:28px
 @media(max-width:650px){
   .tech-card h3,.tech-area,.tech-card .meta,.tech-card .small{min-height:auto}
 }
+
+
+/* Equipo, Red Nacional y visitantes */
+.lead{max-width:980px;color:#536176}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:30px}
+.team-card,.coinventor-card,.visitor-grid article{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 12px 30px rgba(7,27,57,.07)}
+.team-card{text-align:center}.team-card h3{margin:.5rem 0 .2rem;color:var(--navy);font-size:1.05rem}.team-card p{margin:0;color:#64748b}.team-icon{font-size:2rem}
+.search-row{display:flex;align-items:center;gap:15px;justify-content:space-between;margin:25px 0}
+.search-row input{width:min(620px,100%);padding:13px 15px;border:1px solid #cbd5e1;border-radius:10px;font:inherit}
+.search-row span{font-weight:800;color:var(--navy)}
+.network-layout{display:grid;grid-template-columns:250px 1fr;gap:24px}
+.state-list{display:flex;flex-direction:column;gap:8px}
+.state-button,.municipality-button{border:1px solid #d8e0ea;background:#fff;color:var(--navy);border-radius:10px;padding:11px 13px;font-weight:800;cursor:pointer}
+.state-button{display:flex;justify-content:space-between;text-align:left}.state-button.active,.municipality-button.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.network-detail{min-width:0}.network-detail h3{margin-top:0;color:var(--navy)}
+.municipalities{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.coinventor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.coinventor-card h4{margin:0 0 7px;color:var(--navy)}.coinventor-card p{margin:0;color:#64748b}.coinventor-card span{display:block;margin-top:10px;font-size:.88rem;color:#536176}
+.empty-result{grid-column:1/-1;padding:22px;background:#fff;border-radius:12px}
+.visitors{background:var(--cream);text-align:center}.visitor-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:900px;margin:30px auto}
+.visitor-grid strong{display:block;font-size:clamp(1.6rem,4vw,2.7rem);color:var(--navy)}.visitor-grid span{color:#64748b}.privacy-note{max-width:850px;margin:auto;color:#64748b;font-size:.9rem}
+.heat{background:linear-gradient(135deg,#5b2718,#c87528)}.climate{background:linear-gradient(135deg,#15345b,#3f8b84)}
+@media(max-width:850px){.network-layout{grid-template-columns:1fr}.state-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.visitor-grid{grid-template-columns:1fr}.search-row{align-items:stretch;flex-direction:column}.state-list{grid-template-columns:1fr}}
