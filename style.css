@@ -21,3 +21,52 @@
 footer{display:flex;flex-direction:column;gap:5px;text-align:center;padding:28px;background:#020b1b;color:#dbe7f8}
 @media(max-width:1000px){.navlinks{display:none}.menu-toggle{display:block}.navlinks.open{display:flex;position:absolute;top:68px;left:0;right:0;background:white;padding:20px;flex-direction:column}.hero{flex-direction:column;text-align:center}.hero-visual{flex-basis:auto;width:310px;height:310px}.stats-panel,.summary-grid,.areas-grid,.academy-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:650px){.topbar{display:none}.hero{padding:70px 7vw 110px}.hero-actions{justify-content:center;flex-wrap:wrap}.stats-panel{grid-template-columns:1fr 1fr;width:92%}.stats-panel div:last-child{grid-column:1/-1}.summary-grid,.areas-grid,.academy-grid{grid-template-columns:1fr}.section{padding:64px 6vw}}
+
+/* Ajustes finales del portafolio tecnológico */
+.tech-grid{
+  align-items:stretch;
+}
+.tech-card{
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+}
+.tech-card .concept-art{
+  flex:0 0 205px;
+}
+.tech-card .card-body{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+.tech-card .status{
+  align-self:flex-start;
+  min-height:29px;
+}
+.tech-card h3{
+  min-height:3.2rem;
+}
+.tech-area{
+  min-height:4.9rem;
+  margin:.3rem 0 .4rem;
+}
+.tech-card .meta{
+  min-height:3.2rem;
+  align-items:center;
+}
+.tech-card .small{
+  min-height:4.3rem;
+  margin-top:.25rem;
+}
+.card-cta{
+  margin-top:auto;
+  align-self:flex-start;
+}
+.drought{background:linear-gradient(135deg,#6b4b1f,#b48a35)}
+.flood{background:linear-gradient(135deg,#083b66,#157ca4)}
+.fire{background:linear-gradient(135deg,#4a1d15,#b14e1f)}
+.coastal{background:linear-gradient(135deg,#06465a,#1e91a9)}
+.weather{background:linear-gradient(135deg,#27344e,#65789d)}
+@media(max-width:650px){
+  .tech-card h3,.tech-area,.tech-card .meta,.tech-card .small{min-height:auto}
+}
