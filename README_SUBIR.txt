@@ -1,30 +1,31 @@
-VERSIÓN ACTUALIZADA DEL PORTAL EDITHALANIS.COM
+VERSIÓN FINAL DEL PORTAL EDITHALANIS.COM — 670 PROYECTOS + ARCHIVO MULTIMEDIA
 
 CAMBIOS INTEGRADOS:
-- Se conserva el indicador de 644 proyectos tecnológicos.
-- Se conservan 5 patentes concedidas, 3 modelos de utilidad concedidos y 113 solicitudes en proceso.
-- Se integró la nueva sección Multimedia con tres apartados: Profesional, Institucional y Familiar.
-- Se incorporaron las fotografías entregadas y los enlaces directos a los videos de Facebook.
-- Se incluyeron los videos Curriculum Vitae I y II como contenidos principales del apartado Profesional.
-- Se integraron recuerdos académicos de París, La Sorbonne, el Louvre y titulaciones de posgrado.
-- Se incorporó el archivo familiar: infancia, padres, condolencias institucionales, Navidad y boda de su hijo.
-- Se conserva el portafolio con 15 familias tecnológicas, precio y condiciones uniformes.
-- Diseño adaptable para computadora, tableta y teléfono.
+- Se conservó íntegra la versión actualizada hasta 670 proyectos tecnológicos.
+- Se conservaron 5 patentes concedidas, 3 modelos de utilidad concedidos, 114 solicitudes en proceso y 21 cursos.
+- Se añadió al menú la sección Multimedia.
+- Se añadieron tres apartados: Institucional, Profesional y Familiar.
+- Se integraron físicamente 13 fotografías en la carpeta assets/multimedia.
+- Las fotografías ya no dependen de enlaces externos: quedan incluidas dentro del paquete y visibles en sus cuadros.
+- Se añadieron enlaces a los videos de Facebook de Currículum Vitae, homenaje familiar, Navidad y boda.
+- Se mantuvieron el equipo institucional, la Red Nacional de Coinventores, el portafolio tecnológico y el contador de visitantes.
 
 PARA SUBIR A GITHUB PAGES:
 1. Descomprime este archivo ZIP.
-2. Entra al repositorio de edithalanis.com.
-3. Usa Add file > Upload files.
-4. Reemplaza y sube TODO el contenido descomprimido:
+2. En el repositorio de edithalanis.com reemplaza los archivos:
    - index.html
+   - script.js
    - styles.css
    - style.css
-   - script.js
-   - carpeta assets completa
+   - README_SUBIR.txt
+3. Sube completa la carpeta:
+   - assets/multimedia
+4. No cambies los nombres de las fotografías ni la estructura de carpetas.
 5. Haz clic en Commit changes.
-6. Espera uno o dos minutos.
+6. Espera de uno a tres minutos.
 7. Abre edithalanis.com y actualiza con Ctrl + F5.
 
 IMPORTANTE:
-- No elimines la carpeta assets; contiene todas las fotografías nuevas.
-- Los videos permanecen alojados en Facebook y se abren mediante sus enlaces originales.
+- Debes subir todos los archivos y la carpeta assets al mismo tiempo.
+- Si se omite assets/multimedia, los cuadros aparecerán sin fotografías.
+- styles.css y style.css se entregan idénticos para evitar incompatibilidades.

@@ -1,33 +1,181 @@
-const menuButton=document.querySelector('.menu-toggle');
-const navLinks=document.querySelector('.navlinks');
-menuButton?.addEventListener('click',()=>navLinks.classList.toggle('open'));
-document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
 
-document.querySelectorAll('.tab').forEach(button=>{
-  button.addEventListener('click',()=>{
-    document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
-    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
-    button.classList.add('active');
-    document.getElementById(button.dataset.tab)?.classList.add('active');
+const toggle=document.querySelector('.menu-toggle');
+const links=document.querySelector('.navlinks');
+toggle?.addEventListener('click',()=>links.classList.toggle('open'));
+document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+const TEAM=[["Dra. María Elvia Edith Alanis Pérez", "Fundadora", "💡"], ["Elsy Susana Edith Baltazar Alaniz", "Cofundadora", "🤝"], ["Daniel Alejandro Baltazar Alaniz", "Cofundador", "🤝"], ["Lisbeth Andalón Álvarez", "Colaboradora Experta", "🔬"], ["Apolonio Navarro Paredes", "Colaborador de Desarrollos", "⚙️"], ["Rocío Calderón García", "Colaboradora Experta", "🔬"], ["Lucio Guzmán Mares", "Colaborador de Vinculación", "🌐"], ["María Soledad Castellanos Villarruel", "Colaboradora de Revisión Ortográfica", "✒️"], ["Carlos Vázquez Cid de León", "Colaborador de Vinculación Nacional", "🇲🇽"], ["Adán Yáñez Larios", "Colaborador Internacional", "🌎"], ["Sergio Roberto Dávalos García", "Colaborador Tecnológico", "💡"], ["Marlene Alejandra Pérez Villalpando", "Colaboradora Revisora", "📘"], ["Martha Alicia González Palacios", "Colaboradora de Vinculación Académica", "🎓"], ["Baltazar Ruiz Jesús Alejandro", "Colaborador Gráfico", "🎨"]];
+const COINVENTORS=[{"name": "Alanis Pérez Jezrael Abraham", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Aguilar Molina Yehoshua", "city": "San Pedro Tlaquepaque", "state": "Jalisco"}, {"name": "Alanis Mijares Antonia Leticia", "city": "San Nicolás de la Garza", "state": "Nuevo León"}, {"name": "Alanis Mijares Jesús", "city": "García", "state": "Nuevo León"}, {"name": "Alanis Mijares Minerva", "city": "San Nicolás de los Garza", "state": "Nuevo León"}, {"name": "Alanis Pérez José Eduardo", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Alanis Pérez María Elvia Edith", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Alaniz Casillas Christian Eduardo", "city": "Zapopan", "state": "Jalisco"}, {"name": "Alaniz Partida Ignacio Ricardo", "city": "Zapopan", "state": "Jalisco"}, {"name": "Alaniz Pérez Ignacio Ricardo", "city": "Zapopan", "state": "Jalisco"}, {"name": "Alaniz Pérez María Ivett Janett", "city": "Zapopan", "state": "Jalisco"}, {"name": "Andalón Álvarez Lisbeth", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Aragón Ríos Elba Karina", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Baltazar Alaniz Daniel Alejandro", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Baltazar Alaniz Elsy Susana Edith", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Baltazar Montes Lorenzo", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Bautista González Jorge Gregorio", "city": "Zapopan", "state": "Jalisco"}, {"name": "Bayardo González Rubén Alberto", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Becerra González Rubén Armando", "city": "Jamay", "state": "Jalisco"}, {"name": "Calderón García Rocío", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Carazo Luna José Alfredo", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Carrión Castillo Luz Ovillada", "city": "Cosoleacaque", "state": "Veracruz"}, {"name": "Ma. Soledad Castellanos Villarruel", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Castillo Medina Diana Iztacihuatl", "city": "Zapopan", "state": "Jalisco"}, {"name": "Chama Mora Héctor Adán", "city": "Fortín", "state": "Veracruz"}, {"name": "Claustro Bobadilla Javier", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Cortés Camacho Araceli", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Cruz Alanis Ariana Leticia", "city": "San Nicolás de la Garza", "state": "Nuevo León"}, {"name": "Cruz del Ángel Jesús Adrián", "city": "San Nicolás de la Garza", "state": "Nuevo León"}, {"name": "Dávalos García Sergio Roberto", "city": "Zapopan", "state": "Jalisco"}, {"name": "Dávila Torres José Ignacio", "city": "Orizaba", "state": "Veracruz"}, {"name": "Delgadillo Preciado Zaira América", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Domínguez García Rodolfo Omar", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Durán Padilla José Arturo", "city": "Zapopan", "state": "Jalisco"}, {"name": "Escutia Gutiérrez Raymundo", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Gazpar Castellanos José Luis", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Gómez Contreras Flor Alejandra", "city": "Guadalajara", "state": "Jalisco"}, {"name": "González Fajardo Alma Delia", "city": "San Gabriel", "state": "Jalisco"}, {"name": "Gutiérrez Gómez Alejandra", "city": "Zapopan", "state": "Jalisco"}, {"name": "Guzmán Castellanos Karen Berenice", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Guzmán Mares Lucio", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Guzmán Villarruel Jesús Fernando", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Hernández Abreu Karina Esther", "city": "Villahermosa", "state": "Tabasco"}, {"name": "Hernández Cortés Rigoberto", "city": "Ixtaczoquitlán", "state": "Veracruz"}, {"name": "Hernández García Anabella", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Hernández Landeros Edgar Miguel Raúl", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Hernández Méndez Arturo", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Hernández Santa María José Guadalupe", "city": "Zapopan", "state": "Jalisco"}, {"name": "Iñiguez Carrillo Adriana Lorena", "city": "Zapotlán el Grande", "state": "Jalisco"}, {"name": "Jiménez Torres Jorge Alfredo", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Kristyan Felype Luis Navarro", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Lehmann Mendoza José Miguel", "city": "Villahermosa", "state": "Tabasco"}, {"name": "Lino Gamiño Juan Alfredo", "city": "Colima", "state": "Colima"}, {"name": "López Alvarado Miguel Ángel", "city": "Comalcalco", "state": "Tabasco"}, {"name": "López Chávez Gilberto", "city": "Guanajuato", "state": "Guanajuato"}, {"name": "Lozoya Arandia Jorge", "city": "Zapopan", "state": "Jalisco"}, {"name": "Luna Rizo Marisol", "city": "Zapopan", "state": "Jalisco"}, {"name": "Maciel Ruelas Estefany Teresa", "city": "Villa Corona", "state": "Jalisco"}, {"name": "Manzo Palomera Olga Rocío", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Montalvo Núñez Jorge Antonio", "city": "Zapopan", "state": "Jalisco"}, {"name": "Montesinos González Salvador", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Morán Martínez Francisco", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Nápoles Salas Luz Elena", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Ortiz Cruz Fabiola", "city": "Minatitlán", "state": "Veracruz"}, {"name": "Ortiz Palafox Karla Haydeee", "city": "Zapopan", "state": "Jalisco"}, {"name": "Pérez Villalpando Marlene Alejandra", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Ramírez Castillo Eric Amin", "city": "Oaxaca de Juárez", "state": "Oaxaca"}, {"name": "Ramírez Torres Miguel Ángel", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Rivas Paz Mariana", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Rivera Alaniz Chamir Darinka", "city": "Zapopan", "state": "Jalisco"}, {"name": "Rivera Alaniz Xiomara Hatzydy", "city": "Zapopan", "state": "Jalisco"}, {"name": "Robles González Vania Shuhua", "city": "Coyoacán", "state": "Ciudad de México"}, {"name": "Rodríguez Nieves Blanca", "city": "Zapopan", "state": "Jalisco"}, {"name": "Salas Coronado Raúl", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Solorio González Carolina", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Soto Chávez Alicia", "city": "Minatitlán", "state": "Veracruz"}, {"name": "Trujillo Mata Armin", "city": "Camerino Z. Mendoza", "state": "Veracruz"}, {"name": "Vargas Lares Oscar Alejandro", "city": "Zapopan", "state": "Jalisco"}, {"name": "Vázquez Arango María de Lourdes", "city": "Oaxaca de Juárez", "state": "Oaxaca"}, {"name": "Vázquez Cid de León Carlos", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Villegas Alcantar Benjamín", "city": "Tepatitlán de Morelos", "state": "Jalisco"}, {"name": "Yáñez Larios Adán", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Zepeda Valle Gustavo", "city": "Zacatecas", "state": "Zacatecas"}];
+
+const escapeHtml=(value)=>String(value).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch]));
+
+const teamGrid=document.getElementById('teamGrid');
+if(teamGrid){
+  teamGrid.innerHTML=TEAM.map(([name,role,icon])=>`
+    <article class="team-card">
+      <div class="team-icon">${escapeHtml(icon)}</div>
+      <h3>${escapeHtml(name)}</h3>
+      <p>${escapeHtml(role)}</p>
+    </article>`).join('');
+}
+
+const stateList=document.getElementById('stateList');
+const stateTitle=document.getElementById('stateTitle');
+const municipalityTabs=document.getElementById('municipalityTabs');
+const coinventorGrid=document.getElementById('coinventorGrid');
+const coinventorSearch=document.getElementById('coinventorSearch');
+const coinventorCount=document.getElementById('coinventorCount');
+
+const normalizeText=(text)=>String(text).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+
+function renderCoinventorCards(items){
+  if(!coinventorGrid) return;
+  coinventorGrid.innerHTML=items.length?items.map(item=>`
+    <article class="coinventor-card">
+      <h4>${escapeHtml(item.name)}</h4>
+      <p>Coinventor</p>
+      <span>📍 ${escapeHtml(item.city)}, ${escapeHtml(item.state)}</span>
+    </article>`).join(''):'<p class="empty-result">No se encontraron coincidencias.</p>';
+  if(coinventorCount) coinventorCount.textContent=`${items.length} coinventor${items.length===1?'':'es'}`;
+}
+
+function renderState(state){
+  document.querySelectorAll('.state-button').forEach(btn=>btn.classList.toggle('active',btn.dataset.state===state));
+  const stateItems=COINVENTORS.filter(item=>item.state===state);
+  if(stateTitle) stateTitle.textContent=state;
+  const cities=[...new Set(stateItems.map(item=>item.city))].sort((a,b)=>a.localeCompare(b,'es'));
+  if(municipalityTabs){
+    municipalityTabs.innerHTML='';
+    const all=document.createElement('button');
+    all.textContent=`Todos (${stateItems.length})`;
+    all.className='municipality-button active';
+    all.addEventListener('click',()=>{
+      document.querySelectorAll('.municipality-button').forEach(b=>b.classList.remove('active'));
+      all.classList.add('active');
+      renderCoinventorCards(stateItems);
+    });
+    municipalityTabs.appendChild(all);
+    cities.forEach(city=>{
+      const cityItems=stateItems.filter(item=>item.city===city);
+      const btn=document.createElement('button');
+      btn.className='municipality-button';
+      btn.textContent=`${city} (${cityItems.length})`;
+      btn.addEventListener('click',()=>{
+        document.querySelectorAll('.municipality-button').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        renderCoinventorCards(cityItems);
+      });
+      municipalityTabs.appendChild(btn);
+    });
+  }
+  renderCoinventorCards(stateItems);
+}
+
+if(stateList){
+  const states=[...new Set(COINVENTORS.map(item=>item.state))].sort((a,b)=>a.localeCompare(b,'es'));
+  states.forEach((state,index)=>{
+    const total=COINVENTORS.filter(item=>item.state===state).length;
+    const btn=document.createElement('button');
+    btn.className='state-button'+(index===0?' active':'');
+    btn.dataset.state=state;
+    btn.innerHTML=`<span>${escapeHtml(state)}</span><strong>${total}</strong>`;
+    btn.addEventListener('click',()=>renderState(state));
+    stateList.appendChild(btn);
   });
+  if(states.length) renderState(states[0]);
+}
+
+coinventorSearch?.addEventListener('input',event=>{
+  const query=normalizeText(event.target.value.trim());
+  if(!query){
+    const active=document.querySelector('.state-button.active');
+    if(active) renderState(active.dataset.state);
+    return;
+  }
+  const results=COINVENTORS.filter(item=>normalizeText(`${item.name} ${item.city} ${item.state}`).includes(query));
+  if(stateTitle) stateTitle.textContent='Resultados de búsqueda';
+  if(municipalityTabs) municipalityTabs.innerHTML='';
+  document.querySelectorAll('.state-button').forEach(btn=>btn.classList.remove('active'));
+  renderCoinventorCards(results);
 });
 
-const techFamilies=[
-['Integración Biosférica','Interconexión de ecosistemas, infraestructura y redes regenerativas.','Disponible para transferencia tecnológica'],
-['Energía Regenerativa','Flujos energéticos limpios, continuidad y recuperación funcional.','Disponible para transferencia tecnológica'],
-['Producción Biosférica','Producción inteligente, sostenible y distribuida.','Disponible para transferencia tecnológica'],
-['Recuperación Circular','Ciclos de recuperación, reutilización y reintegración de recursos.','Disponible para transferencia tecnológica'],
-['Distribución Biosférica','Redes logísticas y distribución coordinada de recursos.','Disponible para transferencia tecnológica'],
-['Gestión Hídrica','Administración, conservación y circulación inteligente del agua.','Disponible para transferencia tecnológica'],
-['Conservación Biosférica','Protección y mantenimiento de ecosistemas y recursos estratégicos.','Disponible para transferencia tecnológica'],
-['Protección Biosférica','Sistemas de vigilancia, resiliencia y protección ambiental.','Disponible para transferencia tecnológica'],
-['Regeneración Territorial','Restauración de territorios mediante infraestructura regenerativa.','Disponible para transferencia tecnológica'],
-['Expansión Biosférica','Crecimiento de redes biosféricas hacia nuevos entornos.','Disponible para transferencia tecnológica'],
-['Familia Estratégica 580–592','Adaptación climática y resiliencia frente a sequías.','En preparación para protección intelectual'],
-['Familia Estratégica 593–605','Gestión integral de inundaciones.','En preparación para protección intelectual'],
-['Familia Estratégica 606–618','Prevención y control de incendios forestales.','En preparación para protección intelectual'],
-['Familia Estratégica 619–631','Infraestructura y resiliencia costera.','En preparación para protección intelectual'],
-['Familia Estratégica 632–644','Protección frente a fenómenos meteorológicos extremos.','En preparación para protección intelectual']
-];
-const grid=document.getElementById('techGrid');
-if(grid){grid.innerHTML=techFamilies.map(([name,area,status])=>`<article class="tech-card"><div class="concept-art" role="img" aria-label="Representación conceptual de ${name}"></div><div class="card-body"><span class="status">${status}</span><h3>${name}</h3><p><strong>Área tecnológica:</strong> ${area}</p><div class="meta"><span>13 solicitudes</span><span>$1,300,000 MXN</span></div><p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p><a class="btn primary" href="mailto:contacto@edithalanis.com?subject=${encodeURIComponent('Solicitar información sobre '+name)}">Solicitar información</a></div></article>`).join('');}
+
+async function loadVisitors(){
+  const number=document.getElementById('visitorNumber');
+  const globeContainer=document.getElementById('visitorGlobe');
+
+  try{
+    const counterResponse=await fetch('https://countapi.mileshilliard.com/api/v1/hit/edithalanis.com/portal-visits',{cache:'no-store'});
+    if(!counterResponse.ok) throw new Error('contador no disponible');
+    const counterData=await counterResponse.json();
+    const value=counterData.value ?? counterData.count ?? counterData;
+    number.textContent=new Intl.NumberFormat('es-MX').format(Number(value));
+  }catch(error){
+    const localKey='edithalanis_local_visits';
+    const value=Number(localStorage.getItem(localKey)||0)+1;
+    localStorage.setItem(localKey,String(value));
+    number.textContent=new Intl.NumberFormat('es-MX').format(value);
+    number.title='Conteo local de respaldo';
+  }
+
+  if(!globeContainer || typeof Globe!=='function'){
+    if(globeContainer) globeContainer.innerHTML='<div class="globe-fallback">🌎</div>';
+    return;
+  }
+
+  const globe=Globe()(globeContainer)
+    .width(Math.min(globeContainer.clientWidth || 520, 620))
+    .height(390)
+    .backgroundColor('rgba(0,0,0,0)')
+    .showAtmosphere(true)
+    .atmosphereAltitude(0.18)
+    .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+    .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
+    .pointsData([])
+    .pointLat('lat')
+    .pointLng('lng')
+    .pointAltitude(0.04)
+    .pointRadius(0.38)
+    .pointColor(()=> '#f3c85f')
+    .pointLabel(()=> 'Visitante');
+
+  globe.controls().autoRotate=true;
+  globe.controls().autoRotateSpeed=0.7;
+  globe.controls().enableZoom=false;
+
+  try{
+    const locationResponse=await fetch('https://ipapi.co/json/',{cache:'no-store'});
+    if(!locationResponse.ok) throw new Error('ubicación no disponible');
+    const data=await locationResponse.json();
+    const lat=Number(data.latitude);
+    const lng=Number(data.longitude);
+
+    if(Number.isFinite(lat) && Number.isFinite(lng)){
+      const storedKey='edithalanis_globe_points';
+      let points=[];
+      try{
+        points=JSON.parse(localStorage.getItem(storedKey)||'[]');
+        if(!Array.isArray(points)) points=[];
+      }catch{
+        points=[];
+      }
+
+      const rounded={lat:Math.round(lat*2)/2,lng:Math.round(lng*2)/2};
+      const exists=points.some(p=>Math.abs(p.lat-rounded.lat)<0.2 && Math.abs(p.lng-rounded.lng)<0.2);
+      if(!exists) points.push(rounded);
+      points=points.slice(-120);
+      localStorage.setItem(storedKey,JSON.stringify(points));
+
+      globe.pointsData(points);
+      globe.pointOfView({lat:rounded.lat,lng:rounded.lng,altitude:1.8},1200);
+    }
+  }catch(error){
+    // El globo permanece visible aunque no se pueda obtener la ubicación aproximada.
+  }
+
+  const resize=()=>{
+    globe.width(Math.min(globeContainer.clientWidth || 520,620));
+  };
+  window.addEventListener('resize',resize,{passive:true});
+}
+loadVisitors();
