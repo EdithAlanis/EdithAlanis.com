@@ -1,31 +1,19 @@
-VERSIÓN FINAL DEL PORTAL EDITHALANIS.COM — 670 PROYECTOS + ARCHIVO MULTIMEDIA
+VERSIÓN FINAL DEL PORTAL EDITHALANIS.COM — ARCHIVO MULTIMEDIA CRONOLÓGICO
 
 CAMBIOS INTEGRADOS:
-- Se conservó íntegra la versión actualizada hasta 670 proyectos tecnológicos.
-- Se conservaron 5 patentes concedidas, 3 modelos de utilidad concedidos, 114 solicitudes en proceso y 21 cursos.
-- Se añadió al menú la sección Multimedia.
-- Se añadieron tres apartados: Institucional, Profesional y Familiar.
-- Se integraron físicamente 13 fotografías en la carpeta assets/multimedia.
-- Las fotografías ya no dependen de enlaces externos: quedan incluidas dentro del paquete y visibles en sus cuadros.
-- Se añadieron enlaces a los videos de Facebook de Currículum Vitae, homenaje familiar, Navidad y boda.
-- Se mantuvieron el equipo institucional, la Red Nacional de Coinventores, el portafolio tecnológico y el contador de visitantes.
+- Se conservó una fotografía representativa por año.
+- Las demás fotografías y videos aparecen como descripciones breves enlazadas a Facebook.
+- Se agregó una sola indicación al inicio: “Presione para ver las fotos o videos.”
+- Los contenidos quedaron organizados cronológicamente por año.
+- Se conservaron las demás secciones, el portafolio, la red de coinventores y las funciones del sitio.
 
 PARA SUBIR A GITHUB PAGES:
 1. Descomprime este archivo ZIP.
-2. En el repositorio de edithalanis.com reemplaza los archivos:
-   - index.html
-   - script.js
-   - styles.css
-   - style.css
-   - README_SUBIR.txt
-3. Sube completa la carpeta:
-   - assets/multimedia
-4. No cambies los nombres de las fotografías ni la estructura de carpetas.
-5. Haz clic en Commit changes.
-6. Espera de uno a tres minutos.
-7. Abre edithalanis.com y actualiza con Ctrl + F5.
+2. Sustituye en el repositorio: index.html, script.js, styles.css, style.css y README_SUBIR.txt.
+3. Sube completa la carpeta assets/multimedia.
+4. Confirma los cambios con Commit changes.
+5. Espera de uno a tres minutos y actualiza edithalanis.com con Ctrl + F5.
 
 IMPORTANTE:
-- Debes subir todos los archivos y la carpeta assets al mismo tiempo.
-- Si se omite assets/multimedia, los cuadros aparecerán sin fotografías.
-- styles.css y style.css se entregan idénticos para evitar incompatibilidades.
+- No cambies los nombres ni la estructura de carpetas.
+- Cada descripción enlazada abre la publicación correspondiente en Facebook.
