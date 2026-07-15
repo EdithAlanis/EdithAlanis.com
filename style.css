@@ -174,26 +174,29 @@ footer{display:flex;flex-direction:column;gap:5px;text-align:center;padding:28px
 .video-card strong{display:inline-block;margin-top:12px;color:#f3cc73;font-size:.9rem}
 @media(max-width:650px){.media-category.alt-media{padding:22px 16px}.media-card img{height:220px}.media-heading{gap:12px}.video-card{padding:18px}}
 
-/* Integración al grupo de coinventores */
-.join-section{background:linear-gradient(135deg,#fffaf0 0%,#f3f7fc 100%)}
-.join-shell{max-width:1200px;margin:auto;border:1px solid var(--line);border-radius:24px;padding:clamp(28px,5vw,58px);background:#fff;box-shadow:0 22px 55px rgba(6,27,63,.10)}
-.join-intro{text-align:center;max-width:900px;margin:0 auto 34px}
-.join-intro .lead{margin:0 auto 24px}
-.join-open{border:0;cursor:pointer;font:inherit}
-.join-columns{display:grid;grid-template-columns:.8fr 1.2fr;gap:22px}
-.join-card{border:1px solid #e6dfca;border-radius:18px;padding:25px;background:linear-gradient(180deg,#fff,#fffaf1)}
-.join-card h3{margin:0 0 16px;color:var(--navy);font-size:1.3rem}
-.join-card ul,.join-card ol{margin:0;padding-left:22px}
-.join-card li{margin:9px 0}
-.join-options li{padding-left:5px}
-.join-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:20px}
+
+
+/* Inscripción al Grupo Nacional de Coinventores */
+.join-section{background:linear-gradient(180deg,#fff 0%,#f7f9fc 100%)}
+.join-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin:30px 0}
+.join-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:25px;box-shadow:0 12px 30px rgba(7,27,57,.07)}
+.join-card h3{margin:.5rem 0;color:var(--navy)}
+.join-card p{color:#536176}
+.join-letter{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;font-weight:900}
+.join-note{font-size:.9rem}
+.requirements-box{max-width:900px;margin:34px auto 0;padding:28px;text-align:center;border:1px solid var(--line);border-radius:18px;background:var(--cream)}
+.requirements-box h3{margin-top:0;color:var(--navy)}
+.join-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(2,11,27,.76)}
 .join-modal.open{display:flex}
-.join-modal-backdrop{position:absolute;inset:0;background:rgba(1,10,27,.76);backdrop-filter:blur(5px)}
-.join-modal-dialog{position:relative;z-index:1;width:min(620px,100%);max-height:90vh;overflow:auto;background:#fff;border-radius:22px;padding:clamp(26px,5vw,46px);box-shadow:0 30px 90px rgba(0,0,0,.35)}
-.join-modal-dialog h2{color:var(--navy);font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.1;margin:.25rem 0 1rem}
-.join-modal-dialog ul{padding-left:22px;margin:16px 0 24px}
-.join-modal-dialog li{margin:8px 0}
-.join-modal-close{position:absolute;right:15px;top:12px;width:42px;height:42px;border:0;border-radius:50%;background:#eef2f7;color:var(--navy);font-size:1.8rem;line-height:1;cursor:pointer}
-.join-whatsapp{display:inline-block}
-body.modal-open{overflow:hidden}
-@media(max-width:800px){.join-columns{grid-template-columns:1fr}}
+.join-modal-panel{position:relative;width:min(650px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:20px;padding:30px;box-shadow:0 30px 90px rgba(0,0,0,.35)}
+.join-modal-panel h2{margin:.2rem 0 1rem;color:var(--navy)}
+.join-modal-close{position:absolute;right:16px;top:12px;border:0;background:transparent;font-size:2rem;line-height:1;cursor:pointer;color:var(--navy)}
+.join-modal form{display:grid;gap:9px;margin-top:22px}
+.join-modal label{font-weight:800;color:var(--navy)}
+.join-modal input,.join-modal select{width:100%;padding:13px 14px;border:1px solid #cbd5e1;border-radius:10px;font:inherit;background:#fff}
+.join-modal input:focus,.join-modal select:focus{outline:3px solid rgba(12,79,138,.16);border-color:var(--blue)}
+.whatsapp-submit{margin-top:12px;border:0;cursor:pointer;font-size:1rem}
+.modal-open{overflow:hidden}
+.contact button{border:0;cursor:pointer}
+@media(max-width:1000px){.join-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.join-grid{grid-template-columns:1fr}.join-modal-panel{padding:25px 20px}.join-modal{padding:12px}}

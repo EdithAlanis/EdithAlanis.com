@@ -9,12 +9,12 @@
 <link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
-<header class="topbar"><span>Programa de Innovación EdithAlanis™</span><span>Portal Oficial de Innovación Científica y Tecnológica</span></header>
+<header class="topbar"><span>🤝 Red Nacional de Coinventores</span><span>Portal Oficial del Programa de Innovación EdithAlanis™</span></header>
 <nav class="navbar">
 <a class="brand" href="#inicio"><span class="logo">✦</span><span>EDITHALANIS<sup>™</sup><small>Programa de Innovación</small></span></a>
 <button aria-label="Abrir menú" class="menu-toggle">☰</button>
 <div class="navlinks">
-<a href="#inicio">Inicio</a><a href="#fundadora">Fundadora</a><a href="#equipo">Colaboradores</a><a href="#integrate">Integrarte</a><a href="#red">Coinventores</a><a href="#portafolio">Patentes</a><a href="#academia">Academia</a><a href="#areas">Áreas</a><a href="#portafolio-tecnologico">Proyectos tecnológicos</a><a href="#multimedia">Multimedia</a><a href="#visitantes">Visitantes</a><a href="#contacto">Contacto</a>
+<a href="#inicio">Inicio</a><a href="#fundadora">Fundadora</a><a href="#equipo">Colaboradores</a><a href="#integrarse">Inscripción</a><a href="#red">Coinventores</a><a href="#portafolio">Patentes</a><a href="#academia">Academia</a><a href="#areas">Áreas</a><a href="#portafolio-tecnologico">Proyectos tecnológicos</a><a href="#multimedia">Multimedia</a><a href="#visitantes">Visitantes</a><a href="#contacto">Contacto</a>
 </div>
 </nav>
 <main>
@@ -42,52 +42,70 @@
 </section>
 
 
-<section class="section join-section" id="integrate">
-<div class="join-shell">
-<div class="join-intro">
-<p class="eyebrow">Participación nacional</p>
-<h2>¿Quieres integrarte al grupo de coinventores?</h2>
-<p class="lead">Participa en el Programa de Innovación EdithAlanis™ mediante alguna de las modalidades disponibles y contribuye al desarrollo de nuevas solicitudes de propiedad intelectual.</p>
-<button class="btn primary join-open" id="openJoinModal" type="button">Inscripción</button>
-</div>
-<div class="join-columns">
+<section class="section join-section" id="integrarse">
+<p class="eyebrow">Participación</p>
+<h2>¿Quieres integrarte al Grupo Nacional de Coinventores?</h2>
+<p class="lead">Conoce las modalidades de participación y registra tus datos para iniciar el proceso de incorporación.</p>
+
+<div class="join-grid">
 <article class="join-card">
-<h3>Requisitos</h3>
-<ul>
-<li>INE por ambos lados.</li>
-<li>Comprobante de domicilio.</li>
-<li>CURP.</li>
-<li>Correo electrónico.</li>
-<li>Teléfono.</li>
-</ul>
+<span class="join-letter">A</span>
+<h3>Apoyo para inscripción</h3>
+<p>Apoyo económico de <strong>$2,400.00 MXN</strong> para la inscripción de una solicitud.</p>
+<p class="join-note">Esta modalidad no otorga derechos de regalías, titularidad ni derechos sobre el modelo de utilidad o patente.</p>
 </article>
 <article class="join-card">
-<h3>Modalidades de colaboración</h3>
-<ol class="join-options">
-<li><strong>Apoyo económico para la inscripción de la solicitud:</strong> $2,400 MXN, sin derecho a regalías ni sobre el modelo de utilidad o patente.</li>
-<li><strong>Revisor.</strong></li>
-<li><strong>Coordinador estatal.</strong></li>
-<li><strong>Coordinador de vinculación con instituciones educativas.</strong></li>
-</ol>
+<span class="join-letter">B</span>
+<h3>Colaborador revisor</h3>
+<p>Participación en la revisión técnica, científica, documental u ortográfica de los proyectos.</p>
+</article>
+<article class="join-card">
+<span class="join-letter">C</span>
+<h3>Coordinador estatal</h3>
+<p>Apoyo para ampliar y organizar la Red Nacional de Coinventores dentro de una entidad federativa.</p>
+</article>
+<article class="join-card">
+<span class="join-letter">D</span>
+<h3>Coordinador de vinculación</h3>
+<p>Vinculación con universidades, centros de investigación, tecnológicos e instituciones educativas.</p>
 </article>
 </div>
+
+<div class="requirements-box">
+<h3>Documentación requerida</h3>
+<p>INE por ambos lados, comprobante de domicilio, CURP, correo electrónico y número telefónico.</p>
+<button class="btn primary" id="openJoinModal" type="button">Inscribirme</button>
 </div>
 </section>
 
-<div class="join-modal" id="joinModal" aria-hidden="true">
-<div class="join-modal-backdrop" data-close-join></div>
-<div class="join-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
-<button class="join-modal-close" type="button" aria-label="Cerrar" data-close-join>×</button>
+<div class="join-modal" id="joinModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
+<div class="join-modal-panel">
+<button class="join-modal-close" id="closeJoinModal" type="button" aria-label="Cerrar ventana">×</button>
 <p class="eyebrow">Inscripción</p>
-<h2 id="joinModalTitle">Integración al grupo de coinventores</h2>
-<p>Envía un mensaje de WhatsApp al <strong>333 119 1167</strong> y proporciona los siguientes datos:</p>
-<ul>
-<li>Nombre.</li>
-<li>Correo electrónico.</li>
-<li>Teléfono.</li>
-<li>Colaboración que pretende.</li>
-</ul>
-<a class="btn primary join-whatsapp" href="https://wa.me/523331191167?text=Hola%2C%20deseo%20integrarme%20al%20grupo%20de%20coinventores.%0A%0ANombre%3A%20%0ACorreo%20electr%C3%B3nico%3A%20%0ATel%C3%A9fono%3A%20%0AColaboraci%C3%B3n%20que%20pretendo%3A%20" target="_blank" rel="noopener">Enviar mensaje por WhatsApp</a>
+<h2 id="joinModalTitle">Envíanos un mensaje por WhatsApp</h2>
+<p>Llena los siguientes datos. Al finalizar se abrirá WhatsApp para enviar tu solicitud al <strong>33 3119 1167</strong>.</p>
+
+<form id="joinForm">
+<label for="joinName">Nombre completo</label>
+<input id="joinName" name="name" type="text" autocomplete="name" required>
+
+<label for="joinEmail">Correo electrónico</label>
+<input id="joinEmail" name="email" type="email" autocomplete="email" required>
+
+<label for="joinPhone">Teléfono</label>
+<input id="joinPhone" name="phone" type="tel" autocomplete="tel" required>
+
+<label for="joinType">Colaboración que pretende realizar</label>
+<select id="joinType" name="collaboration" required>
+<option value="">Selecciona una opción</option>
+<option>Apoyo económico para inscripción de solicitud ($2,400.00 MXN), sin derecho a regalías ni sobre el modelo de utilidad o patente</option>
+<option>Colaborador revisor</option>
+<option>Coordinador estatal</option>
+<option>Coordinador de vinculación con instituciones educativas</option>
+</select>
+
+<button class="btn primary whatsapp-submit" type="submit">Enviar solicitud por WhatsApp</button>
+</form>
 </div>
 </div>
 
@@ -129,7 +147,7 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Integraci%C3%B3n%20Biosf%C3%A9rica%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
+<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Integraci%C3%B3n%20Biosf%C3%A9rica">Solicitar información</a>
 </div>
 </article>
 
@@ -146,7 +164,7 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Energ%C3%ADa%20Regenerativa%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
+<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Energ%C3%ADa%20Regenerativa">Solicitar información</a>
 </div>
 </article>
 
@@ -163,7 +181,7 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Producci%C3%B3n%20Biosf%C3%A9rica%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
+<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Producci%C3%B3n%20Biosf%C3%A9rica">Solicitar información</a>
 </div>
 </article>
 
@@ -180,7 +198,7 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Recuperaci%C3%B3n%20Circular%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
+<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Recuperaci%C3%B3n%20Circular">Solicitar información</a>
 </div>
 </article>
 
@@ -197,7 +215,7 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Distribuci%C3%B3n%20Biosf%C3%A9rica%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
+<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Distribuci%C3%B3n%20Biosf%C3%A9rica">Solicitar información</a>
 </div>
 </article>
 
@@ -214,7 +232,7 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Gesti%C3%B3n%20H%C3%ADdrica%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
+<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Gesti%C3%B3n%20H%C3%ADdrica">Solicitar información</a>
 </div>
 </article>
 
@@ -231,7 +249,7 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Conservaci%C3%B3n%20Biosf%C3%A9rica%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
+<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Conservaci%C3%B3n%20Biosf%C3%A9rica">Solicitar información</a>
 </div>
 </article>
 
@@ -248,7 +266,7 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Protecci%C3%B3n%20Biosf%C3%A9rica%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
+<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Protecci%C3%B3n%20Biosf%C3%A9rica">Solicitar información</a>
 </div>
 </article>
 
@@ -265,7 +283,7 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Regeneraci%C3%B3n%20Territorial%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
+<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Regeneraci%C3%B3n%20Territorial">Solicitar información</a>
 </div>
 </article>
 
@@ -282,7 +300,7 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Expansi%C3%B3n%20Biosf%C3%A9rica%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
+<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Expansi%C3%B3n%20Biosf%C3%A9rica">Solicitar información</a>
 </div>
 </article>
 
@@ -299,7 +317,7 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Familia%20Estrat%C3%A9gica%20580-592%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
+<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Familia%20Estrat%C3%A9gica%20580-592">Solicitar información</a>
 </div>
 </article>
 
@@ -316,7 +334,7 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Familia%20Estrat%C3%A9gica%20593-605%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
+<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Familia%20Estrat%C3%A9gica%20593-605">Solicitar información</a>
 </div>
 </article>
 
@@ -333,7 +351,7 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Familia%20Estrat%C3%A9gica%20606-618%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
+<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Familia%20Estrat%C3%A9gica%20606-618">Solicitar información</a>
 </div>
 </article>
 
@@ -350,7 +368,7 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Familia%20Estrat%C3%A9gica%20619-631%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
+<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Familia%20Estrat%C3%A9gica%20619-631">Solicitar información</a>
 </div>
 </article>
 
@@ -367,7 +385,7 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Familia%20Estrat%C3%A9gica%20632-644%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
+<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Familia%20Estrat%C3%A9gica%20632-644">Solicitar información</a>
 </div>
 </article>
 
@@ -381,7 +399,7 @@
 <p class="tech-area"><strong>Área tecnológica:</strong> Adaptación climática, mitigación térmica y protección frente a olas de calor extremo.</p>
 <div class="meta"><span>13 solicitudes</span><span>$1,300,000 MXN</span></div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Familia%20Estrat%C3%A9gica%20645-657%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
+<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Familia%20Estrat%C3%A9gica%20645-657">Solicitar información</a>
 </div>
 </article>
 
@@ -395,7 +413,7 @@
 <p class="tech-area"><strong>Área tecnológica:</strong> Resiliencia climática integral y protección adaptativa de territorios e infraestructuras.</p>
 <div class="meta"><span>13 solicitudes</span><span>$1,300,000 MXN</span></div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Familia%20Estrat%C3%A9gica%20658-670%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
+<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Familia%20Estrat%C3%A9gica%20658-670">Solicitar información</a>
 </div>
 </article>
 </div>
@@ -478,8 +496,8 @@
 </section>
 
 <section class="section contact" id="contacto"><p class="eyebrow">Contacto</p><h2>Información, licenciamiento y colaboración</h2>
-<p>Para conocer condiciones de adquisición, licenciamiento, coinversión o desarrollo conjunto, comuníquese con el Programa de Innovación EdithAlanis™.</p>
-<a class="btn primary" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20el%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Contactar por WhatsApp</a></section>
+<p>Para solicitar información o integrarte al Grupo Nacional de Coinventores, utiliza el formulario de inscripción.</p>
+<button class="btn primary" id="openJoinModalContact" type="button">Abrir inscripción</button></section>
 </main>
 <footer><strong>Programa de Innovación EdithAlanis™</strong><span>Innovación • Ciencia • Tecnología • Colaboración</span><small>© 2026 Portal Oficial del Programa de Innovación EdithAlanis™</small></footer>
 <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>

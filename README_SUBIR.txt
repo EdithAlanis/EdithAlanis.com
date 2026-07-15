@@ -1,18 +1,39 @@
-VERSIÓN FINAL DEL PORTAL EDITHALANIS.COM — INTEGRACIÓN DE COINVENTORES
+VERSIÓN FINAL DEL PORTAL EDITHALANIS.COM — 670 PROYECTOS + ARCHIVO MULTIMEDIA
 
 CAMBIOS INTEGRADOS:
-- Se eliminó el correo electrónico visible del encabezado y de la sección de contacto.
-- Se añadió la sección “¿Quieres integrarte al grupo de coinventores?”.
-- Se incorporaron los requisitos: INE por ambos lados, comprobante de domicilio, CURP, correo electrónico y teléfono.
-- Se añadieron cuatro modalidades de colaboración.
-- Se añadió el botón Inscripción con ventana emergente.
-- La ventana dirige a WhatsApp al 333 119 1167 con datos prellenados.
-- Los botones “Solicitar información” del portafolio tecnológico ahora abren WhatsApp.
-- Se conservó el resto del portal.
+- Se conservó íntegra la versión actualizada hasta 670 proyectos tecnológicos.
+- Se conservaron 5 patentes concedidas, 3 modelos de utilidad concedidos, 114 solicitudes en proceso y 21 cursos.
+- Se añadió al menú la sección Multimedia.
+- Se añadieron tres apartados: Institucional, Profesional y Familiar.
+- Se integraron físicamente 13 fotografías en la carpeta assets/multimedia.
+- Las fotografías ya no dependen de enlaces externos: quedan incluidas dentro del paquete y visibles en sus cuadros.
+- Se añadieron enlaces a los videos de Facebook de Currículum Vitae, homenaje familiar, Navidad y boda.
+- Se mantuvieron el equipo institucional, la Red Nacional de Coinventores, el portafolio tecnológico y el contador de visitantes.
 
 PARA SUBIR A GITHUB PAGES:
-1. Descomprime el ZIP.
-2. Reemplaza index.html, script.js, styles.css, style.css y README_SUBIR.txt.
-3. Conserva la carpeta assets existente en el repositorio.
-4. Haz clic en Commit changes.
-5. Actualiza la página con Ctrl + F5.
+1. Descomprime este archivo ZIP.
+2. En el repositorio de edithalanis.com reemplaza los archivos:
+   - index.html
+   - script.js
+   - styles.css
+   - style.css
+   - README_SUBIR.txt
+3. Sube completa la carpeta:
+   - assets/multimedia
+4. No cambies los nombres de las fotografías ni la estructura de carpetas.
+5. Haz clic en Commit changes.
+6. Espera de uno a tres minutos.
+7. Abre edithalanis.com y actualiza con Ctrl + F5.
+
+IMPORTANTE:
+- Debes subir todos los archivos y la carpeta assets al mismo tiempo.
+- Si se omite assets/multimedia, los cuadros aparecerán sin fotografías.
+- styles.css y style.css se entregan idénticos para evitar incompatibilidades.
+
+
+ACTUALIZACIÓN DE INSCRIPCIÓN:
+- Se añadió la sección “¿Quieres integrarte al Grupo Nacional de Coinventores?”.
+- Se incorporaron cuatro modalidades de participación.
+- Se añadió una ventana de inscripción con nombre, correo electrónico, teléfono y colaboración pretendida.
+- El formulario abre WhatsApp con el mensaje preparado para el número 33 3119 1167.
+- Se retiró el correo electrónico visible de la barra superior y de la sección de contacto.

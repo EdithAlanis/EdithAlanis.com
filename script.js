@@ -1,32 +1,27 @@
 
-const joinModal=document.getElementById('joinModal');
-const openJoinModal=document.getElementById('openJoinModal');
-const closeJoinModal=()=>{
-  if(!joinModal) return;
-  joinModal.classList.remove('open');
-  joinModal.setAttribute('aria-hidden','true');
-  document.body.classList.remove('modal-open');
-};
-const showJoinModal=()=>{
-  if(!joinModal) return;
-  joinModal.classList.add('open');
-  joinModal.setAttribute('aria-hidden','false');
-  document.body.classList.add('modal-open');
-  joinModal.querySelector('.join-modal-close')?.focus();
-};
-openJoinModal?.addEventListener('click',showJoinModal);
-document.querySelectorAll('[data-close-join]').forEach(element=>element.addEventListener('click',closeJoinModal));
-document.addEventListener('keydown',event=>{
-  if(event.key==='Escape' && joinModal?.classList.contains('open')) closeJoinModal();
-});
-
-
 const toggle=document.querySelector('.menu-toggle');
 const links=document.querySelector('.navlinks');
 toggle?.addEventListener('click',()=>links.classList.toggle('open'));
 document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
 
-const TEAM=[["Dra. María Elvia Edith Alanis Pérez", "Fundadora", "💡"], ["Elsy Susana Edith Baltazar Alaniz", "Cofundadora", "🤝"], ["Daniel Alejandro Baltazar Alaniz", "Cofundador", "🤝"], ["Lisbeth Andalón Álvarez", "Colaboradora Experta", "🔬"], ["Apolonio Navarro Paredes", "Colaborador de Desarrollos", "⚙️"], ["Rocío Calderón García", "Colaboradora Experta", "🔬"], ["Lucio Guzmán Mares", "Colaborador de Vinculación", "🌐"], ["María Soledad Castellanos Villarruel", "Colaboradora de Revisión Ortográfica", "✒️"], ["Carlos Vázquez Cid de León", "Colaborador de Vinculación Nacional", "🇲🇽"], ["Adán Yáñez Larios", "Colaborador Internacional", "🌎"], ["Sergio Roberto Dávalos García", "Colaborador Tecnológico", "💡"], ["Marlene Alejandra Pérez Villalpando", "Colaboradora Revisora", "📘"], ["Martha Alicia González Palacios", "Colaboradora de Vinculación Académica", "🎓"], ["Baltazar Ruiz Jesús Alejandro", "Colaborador Gráfico", "🎨"]];
+const TEAM=[
+["Dra. María Elvia Edith Alanis Pérez","Fundadora","💡"],
+["Dra. Elsy Susana Edith Baltazar Alaniz","Cofundadora","🤝"],
+["Lic. Daniel Alejandro Baltazar Alaniz","Cofundador","🤝"],
+["Lic. Lisbeth Andalón Álvarez","Colaboradora Experta","🔬"],
+["Lic. Apolonio Navarro Paredes","Colaborador de Desarrollos","⚙️"],
+["Dra. Rocío Calderón García","Colaboradora Experta","🔬"],
+["Dr. Lucio Guzmán Mares","Colaborador de Vinculación","🌐"],
+["Dra. María Soledad Castellanos Villarruel","Colaboradora de Revisión Ortográfica","✒️"],
+["Dr. Carlos Vázquez Cid de León","Colaborador de Vinculación Nacional","🇲🇽"],
+["Dr. Adán Yáñez Larios","Colaborador Internacional","🌎"],
+["Dr. Sergio Roberto Dávalos García","Colaborador Tecnológico","💡"],
+["Dra. Marlene Alejandra Pérez Villalpando","Colaboradora Revisora","📘"],
+["Dra. Martha Alicia González Palacios","Colaboradora de Vinculación Académica","🎓"],
+["Ing. Jesús Alejandro Baltazar Ruiz","Colaborador Gráfico","🎨"],
+["Ing. Lorenzo Baltazar Montes","Colaborador de Vinculación Académica","🎓"],
+["Lic. Minerva Alanis Mijares","Coordinadora de Vinculación de Nuevo León","🏛️"]
+];
 const COINVENTORS=[{"name": "Alanis Pérez Jezrael Abraham", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Aguilar Molina Yehoshua", "city": "San Pedro Tlaquepaque", "state": "Jalisco"}, {"name": "Alanis Mijares Antonia Leticia", "city": "San Nicolás de la Garza", "state": "Nuevo León"}, {"name": "Alanis Mijares Jesús", "city": "García", "state": "Nuevo León"}, {"name": "Alanis Mijares Minerva", "city": "San Nicolás de los Garza", "state": "Nuevo León"}, {"name": "Alanis Pérez José Eduardo", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Alanis Pérez María Elvia Edith", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Alaniz Casillas Christian Eduardo", "city": "Zapopan", "state": "Jalisco"}, {"name": "Alaniz Partida Ignacio Ricardo", "city": "Zapopan", "state": "Jalisco"}, {"name": "Alaniz Pérez Ignacio Ricardo", "city": "Zapopan", "state": "Jalisco"}, {"name": "Alaniz Pérez María Ivett Janett", "city": "Zapopan", "state": "Jalisco"}, {"name": "Andalón Álvarez Lisbeth", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Aragón Ríos Elba Karina", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Baltazar Alaniz Daniel Alejandro", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Baltazar Alaniz Elsy Susana Edith", "city": "Tlajomulco de Zúñiga", "state": "Jalisco"}, {"name": "Baltazar Montes Lorenzo", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Bautista González Jorge Gregorio", "city": "Zapopan", "state": "Jalisco"}, {"name": "Bayardo González Rubén Alberto", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Becerra González Rubén Armando", "city": "Jamay", "state": "Jalisco"}, {"name": "Calderón García Rocío", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Carazo Luna José Alfredo", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Carrión Castillo Luz Ovillada", "city": "Cosoleacaque", "state": "Veracruz"}, {"name": "Ma. Soledad Castellanos Villarruel", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Castillo Medina Diana Iztacihuatl", "city": "Zapopan", "state": "Jalisco"}, {"name": "Chama Mora Héctor Adán", "city": "Fortín", "state": "Veracruz"}, {"name": "Claustro Bobadilla Javier", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Cortés Camacho Araceli", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Cruz Alanis Ariana Leticia", "city": "San Nicolás de la Garza", "state": "Nuevo León"}, {"name": "Cruz del Ángel Jesús Adrián", "city": "San Nicolás de la Garza", "state": "Nuevo León"}, {"name": "Dávalos García Sergio Roberto", "city": "Zapopan", "state": "Jalisco"}, {"name": "Dávila Torres José Ignacio", "city": "Orizaba", "state": "Veracruz"}, {"name": "Delgadillo Preciado Zaira América", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Domínguez García Rodolfo Omar", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Durán Padilla José Arturo", "city": "Zapopan", "state": "Jalisco"}, {"name": "Escutia Gutiérrez Raymundo", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Gazpar Castellanos José Luis", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Gómez Contreras Flor Alejandra", "city": "Guadalajara", "state": "Jalisco"}, {"name": "González Fajardo Alma Delia", "city": "San Gabriel", "state": "Jalisco"}, {"name": "Gutiérrez Gómez Alejandra", "city": "Zapopan", "state": "Jalisco"}, {"name": "Guzmán Castellanos Karen Berenice", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Guzmán Mares Lucio", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Guzmán Villarruel Jesús Fernando", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Hernández Abreu Karina Esther", "city": "Villahermosa", "state": "Tabasco"}, {"name": "Hernández Cortés Rigoberto", "city": "Ixtaczoquitlán", "state": "Veracruz"}, {"name": "Hernández García Anabella", "city": "Ocotlán", "state": "Jalisco"}, {"name": "Hernández Landeros Edgar Miguel Raúl", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Hernández Méndez Arturo", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Hernández Santa María José Guadalupe", "city": "Zapopan", "state": "Jalisco"}, {"name": "Iñiguez Carrillo Adriana Lorena", "city": "Zapotlán el Grande", "state": "Jalisco"}, {"name": "Jiménez Torres Jorge Alfredo", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Kristyan Felype Luis Navarro", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Lehmann Mendoza José Miguel", "city": "Villahermosa", "state": "Tabasco"}, {"name": "Lino Gamiño Juan Alfredo", "city": "Colima", "state": "Colima"}, {"name": "López Alvarado Miguel Ángel", "city": "Comalcalco", "state": "Tabasco"}, {"name": "López Chávez Gilberto", "city": "Guanajuato", "state": "Guanajuato"}, {"name": "Lozoya Arandia Jorge", "city": "Zapopan", "state": "Jalisco"}, {"name": "Luna Rizo Marisol", "city": "Zapopan", "state": "Jalisco"}, {"name": "Maciel Ruelas Estefany Teresa", "city": "Villa Corona", "state": "Jalisco"}, {"name": "Manzo Palomera Olga Rocío", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Montalvo Núñez Jorge Antonio", "city": "Zapopan", "state": "Jalisco"}, {"name": "Montesinos González Salvador", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Morán Martínez Francisco", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Nápoles Salas Luz Elena", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Ortiz Cruz Fabiola", "city": "Minatitlán", "state": "Veracruz"}, {"name": "Ortiz Palafox Karla Haydeee", "city": "Zapopan", "state": "Jalisco"}, {"name": "Pérez Villalpando Marlene Alejandra", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Ramírez Castillo Eric Amin", "city": "Oaxaca de Juárez", "state": "Oaxaca"}, {"name": "Ramírez Torres Miguel Ángel", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Rivas Paz Mariana", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Rivera Alaniz Chamir Darinka", "city": "Zapopan", "state": "Jalisco"}, {"name": "Rivera Alaniz Xiomara Hatzydy", "city": "Zapopan", "state": "Jalisco"}, {"name": "Robles González Vania Shuhua", "city": "Coyoacán", "state": "Ciudad de México"}, {"name": "Rodríguez Nieves Blanca", "city": "Zapopan", "state": "Jalisco"}, {"name": "Salas Coronado Raúl", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Solorio González Carolina", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Soto Chávez Alicia", "city": "Minatitlán", "state": "Veracruz"}, {"name": "Trujillo Mata Armin", "city": "Camerino Z. Mendoza", "state": "Veracruz"}, {"name": "Vargas Lares Oscar Alejandro", "city": "Zapopan", "state": "Jalisco"}, {"name": "Vázquez Arango María de Lourdes", "city": "Oaxaca de Juárez", "state": "Oaxaca"}, {"name": "Vázquez Cid de León Carlos", "city": "Huajuapan de León", "state": "Oaxaca"}, {"name": "Villegas Alcantar Benjamín", "city": "Tepatitlán de Morelos", "state": "Jalisco"}, {"name": "Yáñez Larios Adán", "city": "Guadalajara", "state": "Jalisco"}, {"name": "Zepeda Valle Gustavo", "city": "Zacatecas", "state": "Zacatecas"}];
 
 const escapeHtml=(value)=>String(value).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch]));
@@ -201,3 +196,56 @@ async function loadVisitors(){
   window.addEventListener('resize',resize,{passive:true});
 }
 loadVisitors();
+
+
+// Ventana de inscripción al Grupo Nacional de Coinventores
+const joinModal=document.getElementById('joinModal');
+const openJoinModal=document.getElementById('openJoinModal');
+const openJoinModalContact=document.getElementById('openJoinModalContact');
+const closeJoinModal=document.getElementById('closeJoinModal');
+const joinForm=document.getElementById('joinForm');
+
+function showJoinModal(){
+  if(!joinModal) return;
+  joinModal.classList.add('open');
+  joinModal.setAttribute('aria-hidden','false');
+  document.body.classList.add('modal-open');
+  window.setTimeout(()=>document.getElementById('joinName')?.focus(),50);
+}
+function hideJoinModal(){
+  if(!joinModal) return;
+  joinModal.classList.remove('open');
+  joinModal.setAttribute('aria-hidden','true');
+  document.body.classList.remove('modal-open');
+}
+openJoinModal?.addEventListener('click',showJoinModal);
+openJoinModalContact?.addEventListener('click',showJoinModal);
+closeJoinModal?.addEventListener('click',hideJoinModal);
+joinModal?.addEventListener('click',event=>{
+  if(event.target===joinModal) hideJoinModal();
+});
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape' && joinModal?.classList.contains('open')) hideJoinModal();
+});
+joinForm?.addEventListener('submit',event=>{
+  event.preventDefault();
+  const name=document.getElementById('joinName')?.value.trim();
+  const email=document.getElementById('joinEmail')?.value.trim();
+  const phone=document.getElementById('joinPhone')?.value.trim();
+  const collaboration=document.getElementById('joinType')?.value.trim();
+  if(!name || !email || !phone || !collaboration) return;
+
+  const message=[
+    'Hola, deseo integrarme al Grupo Nacional de Coinventores.',
+    '',
+    `Nombre: ${name}`,
+    `Correo electrónico: ${email}`,
+    `Teléfono: ${phone}`,
+    `Colaboración que pretendo realizar: ${collaboration}`,
+    '',
+    'Solicito información sobre los documentos requeridos: INE por ambos lados, comprobante de domicilio y CURP.'
+  ].join('\n');
+
+  const whatsappUrl=`https://wa.me/523331191167?text=${encodeURIComponent(message)}`;
+  window.open(whatsappUrl,'_blank','noopener');
+});
