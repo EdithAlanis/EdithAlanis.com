@@ -9,12 +9,12 @@
 <link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
-<header class="topbar"><span>✉ contacto@edithalanis.com</span><span>Portal Oficial del Programa de Innovación EdithAlanis™</span></header>
+<header class="topbar"><span>Programa de Innovación EdithAlanis™</span><span>Portal Oficial de Innovación Científica y Tecnológica</span></header>
 <nav class="navbar">
 <a class="brand" href="#inicio"><span class="logo">✦</span><span>EDITHALANIS<sup>™</sup><small>Programa de Innovación</small></span></a>
 <button aria-label="Abrir menú" class="menu-toggle">☰</button>
 <div class="navlinks">
-<a href="#inicio">Inicio</a><a href="#fundadora">Fundadora</a><a href="#equipo">Colaboradores</a><a href="#red">Coinventores</a><a href="#portafolio">Patentes</a><a href="#academia">Academia</a><a href="#areas">Áreas</a><a href="#portafolio-tecnologico">Proyectos tecnológicos</a><a href="#multimedia">Multimedia</a><a href="#visitantes">Visitantes</a><a href="#contacto">Contacto</a>
+<a href="#inicio">Inicio</a><a href="#fundadora">Fundadora</a><a href="#equipo">Colaboradores</a><a href="#integrate">Integrarte</a><a href="#red">Coinventores</a><a href="#portafolio">Patentes</a><a href="#academia">Academia</a><a href="#areas">Áreas</a><a href="#portafolio-tecnologico">Proyectos tecnológicos</a><a href="#multimedia">Multimedia</a><a href="#visitantes">Visitantes</a><a href="#contacto">Contacto</a>
 </div>
 </nav>
 <main>
@@ -33,18 +33,70 @@
 </section>
 <section class="section founder" id="fundadora"><p class="eyebrow">Fundadora</p><h2>Dra. María Elvia Edith Alanis Pérez</h2>
 <p>Profesora-investigadora de la Universidad de Guadalajara, inventora y fundadora del Programa de Innovación EdithAlanis™. El portal reúne su trayectoria institucional, la Academia, la propiedad intelectual y el portafolio tecnológico.</p></section>
+
 <section class="section alt" id="equipo">
 <p class="eyebrow">Equipo institucional</p>
 <h2>Fundadora, cofundadores y colaboradores</h2>
 <p class="lead">Personas que contribuyen al desarrollo científico, tecnológico, académico, gráfico, institucional y de vinculación del Programa de Innovación EdithAlanis™.</p>
 <div class="team-grid" id="teamGrid"></div>
 </section>
+
+
+<section class="section join-section" id="integrate">
+<div class="join-shell">
+<div class="join-intro">
+<p class="eyebrow">Participación nacional</p>
+<h2>¿Quieres integrarte al grupo de coinventores?</h2>
+<p class="lead">Participa en el Programa de Innovación EdithAlanis™ mediante alguna de las modalidades disponibles y contribuye al desarrollo de nuevas solicitudes de propiedad intelectual.</p>
+<button class="btn primary join-open" id="openJoinModal" type="button">Inscripción</button>
+</div>
+<div class="join-columns">
+<article class="join-card">
+<h3>Requisitos</h3>
+<ul>
+<li>INE por ambos lados.</li>
+<li>Comprobante de domicilio.</li>
+<li>CURP.</li>
+<li>Correo electrónico.</li>
+<li>Teléfono.</li>
+</ul>
+</article>
+<article class="join-card">
+<h3>Modalidades de colaboración</h3>
+<ol class="join-options">
+<li><strong>Apoyo económico para la inscripción de la solicitud:</strong> $2,400 MXN, sin derecho a regalías ni sobre el modelo de utilidad o patente.</li>
+<li><strong>Revisor.</strong></li>
+<li><strong>Coordinador estatal.</strong></li>
+<li><strong>Coordinador de vinculación con instituciones educativas.</strong></li>
+</ol>
+</article>
+</div>
+</div>
+</section>
+
+<div class="join-modal" id="joinModal" aria-hidden="true">
+<div class="join-modal-backdrop" data-close-join></div>
+<div class="join-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
+<button class="join-modal-close" type="button" aria-label="Cerrar" data-close-join>×</button>
+<p class="eyebrow">Inscripción</p>
+<h2 id="joinModalTitle">Integración al grupo de coinventores</h2>
+<p>Envía un mensaje de WhatsApp al <strong>333 119 1167</strong> y proporciona los siguientes datos:</p>
+<ul>
+<li>Nombre.</li>
+<li>Correo electrónico.</li>
+<li>Teléfono.</li>
+<li>Colaboración que pretende.</li>
+</ul>
+<a class="btn primary join-whatsapp" href="https://wa.me/523331191167?text=Hola%2C%20deseo%20integrarme%20al%20grupo%20de%20coinventores.%0A%0ANombre%3A%20%0ACorreo%20electr%C3%B3nico%3A%20%0ATel%C3%A9fono%3A%20%0AColaboraci%C3%B3n%20que%20pretendo%3A%20" target="_blank" rel="noopener">Enviar mensaje por WhatsApp</a>
+</div>
+</div>
+
 <section class="section" id="red">
 <p class="eyebrow">Red Nacional</p>
 <h2>Red Nacional de Coinventores</h2>
 <p class="lead">Red de especialistas, investigadores y colaboradores organizada por entidad federativa y municipio.</p>
 <div class="search-row">
-<input id="coinventorSearch" placeholder="Buscar coinventor, municipio o estado" type="search"/>
+<input id="coinventorSearch" type="search" placeholder="Buscar coinventor, municipio o estado">
 <span id="coinventorCount"></span>
 </div>
 <div class="network-layout">
@@ -56,11 +108,13 @@
 </div>
 </div>
 </section>
+
 <section class="section alt" id="portafolio"><p class="eyebrow">Propiedad intelectual</p><h2>Patentes concedidas y solicitudes en proceso</h2>
 <div class="summary-grid"><article><strong>🏆 5</strong><span>Patentes concedidas</span></article><article><strong>🏅 3</strong><span>Modelos de utilidad concedidos</span></article><article><strong>📄 114</strong><span>Solicitudes en proceso</span></article><article><strong>💡 670</strong><span>Proyectos tecnológicos</span></article></div></section>
 <section class="section" id="portafolio-tecnologico">
 <p class="eyebrow">Portafolio tecnológico</p>
 <h2>Familias Tecnológicas del Programa de Innovación EdithAlanis™</h2>
+
 <div class="tech-grid">
 <article class="tech-card">
 <div aria-label="Representación conceptual de Integración Biosférica" class="concept-art ecosystem" role="img">
@@ -75,9 +129,10 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Integraci%C3%B3n%20Biosf%C3%A9rica">Solicitar información</a>
+<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Integraci%C3%B3n%20Biosf%C3%A9rica%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
 </div>
 </article>
+
 <article class="tech-card">
 <div aria-label="Representación conceptual de Energía Regenerativa" class="concept-art energy" role="img">
 <span class="art-orbit"></span><span class="art-core"></span><span class="art-grid"></span>
@@ -91,9 +146,10 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Energ%C3%ADa%20Regenerativa">Solicitar información</a>
+<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Energ%C3%ADa%20Regenerativa%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
 </div>
 </article>
+
 <article class="tech-card">
 <div aria-label="Representación conceptual de Producción Biosférica" class="concept-art production" role="img">
 <span class="art-orbit"></span><span class="art-core"></span><span class="art-grid"></span>
@@ -107,9 +163,10 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Producci%C3%B3n%20Biosf%C3%A9rica">Solicitar información</a>
+<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Producci%C3%B3n%20Biosf%C3%A9rica%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
 </div>
 </article>
+
 <article class="tech-card">
 <div aria-label="Representación conceptual de Recuperación Circular" class="concept-art circular" role="img">
 <span class="art-orbit"></span><span class="art-core"></span><span class="art-grid"></span>
@@ -123,9 +180,10 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Recuperaci%C3%B3n%20Circular">Solicitar información</a>
+<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Recuperaci%C3%B3n%20Circular%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
 </div>
 </article>
+
 <article class="tech-card">
 <div aria-label="Representación conceptual de Distribución Biosférica" class="concept-art distribution" role="img">
 <span class="art-orbit"></span><span class="art-core"></span><span class="art-grid"></span>
@@ -139,9 +197,10 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Distribuci%C3%B3n%20Biosf%C3%A9rica">Solicitar información</a>
+<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Distribuci%C3%B3n%20Biosf%C3%A9rica%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
 </div>
 </article>
+
 <article class="tech-card">
 <div aria-label="Representación conceptual de Gestión Hídrica" class="concept-art water" role="img">
 <span class="art-orbit"></span><span class="art-core"></span><span class="art-grid"></span>
@@ -155,9 +214,10 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Gesti%C3%B3n%20H%C3%ADdrica">Solicitar información</a>
+<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Gesti%C3%B3n%20H%C3%ADdrica%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
 </div>
 </article>
+
 <article class="tech-card">
 <div aria-label="Representación conceptual de Conservación Biosférica" class="concept-art conservation" role="img">
 <span class="art-orbit"></span><span class="art-core"></span><span class="art-grid"></span>
@@ -171,9 +231,10 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Conservaci%C3%B3n%20Biosf%C3%A9rica">Solicitar información</a>
+<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Conservaci%C3%B3n%20Biosf%C3%A9rica%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
 </div>
 </article>
+
 <article class="tech-card">
 <div aria-label="Representación conceptual de Protección Biosférica" class="concept-art protection" role="img">
 <span class="art-orbit"></span><span class="art-core"></span><span class="art-grid"></span>
@@ -187,9 +248,10 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Protecci%C3%B3n%20Biosf%C3%A9rica">Solicitar información</a>
+<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Protecci%C3%B3n%20Biosf%C3%A9rica%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
 </div>
 </article>
+
 <article class="tech-card">
 <div aria-label="Representación conceptual de Regeneración Territorial" class="concept-art territory" role="img">
 <span class="art-orbit"></span><span class="art-core"></span><span class="art-grid"></span>
@@ -203,9 +265,10 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Regeneraci%C3%B3n%20Territorial">Solicitar información</a>
+<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Regeneraci%C3%B3n%20Territorial%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
 </div>
 </article>
+
 <article class="tech-card">
 <div aria-label="Representación conceptual de Expansión Biosférica" class="concept-art expansion" role="img">
 <span class="art-orbit"></span><span class="art-core"></span><span class="art-grid"></span>
@@ -219,9 +282,10 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Expansi%C3%B3n%20Biosf%C3%A9rica">Solicitar información</a>
+<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Expansi%C3%B3n%20Biosf%C3%A9rica%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
 </div>
 </article>
+
 <article class="tech-card">
 <div aria-label="Representación conceptual de Familia Estratégica 580–592" class="concept-art drought" role="img">
 <span class="art-orbit"></span><span class="art-core"></span><span class="art-grid"></span>
@@ -235,9 +299,10 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Familia%20Estrat%C3%A9gica%20580-592">Solicitar información</a>
+<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Familia%20Estrat%C3%A9gica%20580-592%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
 </div>
 </article>
+
 <article class="tech-card">
 <div aria-label="Representación conceptual de Familia Estratégica 593–605" class="concept-art flood" role="img">
 <span class="art-orbit"></span><span class="art-core"></span><span class="art-grid"></span>
@@ -251,9 +316,10 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Familia%20Estrat%C3%A9gica%20593-605">Solicitar información</a>
+<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Familia%20Estrat%C3%A9gica%20593-605%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
 </div>
 </article>
+
 <article class="tech-card">
 <div aria-label="Representación conceptual de Familia Estratégica 606–618" class="concept-art fire" role="img">
 <span class="art-orbit"></span><span class="art-core"></span><span class="art-grid"></span>
@@ -267,9 +333,10 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Familia%20Estrat%C3%A9gica%20606-618">Solicitar información</a>
+<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Familia%20Estrat%C3%A9gica%20606-618%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
 </div>
 </article>
+
 <article class="tech-card">
 <div aria-label="Representación conceptual de Familia Estratégica 619–631" class="concept-art coastal" role="img">
 <span class="art-orbit"></span><span class="art-core"></span><span class="art-grid"></span>
@@ -283,9 +350,10 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Familia%20Estrat%C3%A9gica%20619-631">Solicitar información</a>
+<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Familia%20Estrat%C3%A9gica%20619-631%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
 </div>
 </article>
+
 <article class="tech-card">
 <div aria-label="Representación conceptual de Familia Estratégica 632–644" class="concept-art weather" role="img">
 <span class="art-orbit"></span><span class="art-core"></span><span class="art-grid"></span>
@@ -299,9 +367,10 @@
 <span>$1,300,000 MXN</span>
 </div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Familia%20Estrat%C3%A9gica%20632-644">Solicitar información</a>
+<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Familia%20Estrat%C3%A9gica%20632-644%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
 </div>
 </article>
+
 <article class="tech-card">
 <div aria-label="Representación conceptual de Familia Estratégica 645–657" class="concept-art heat" role="img">
 <span class="art-orbit"></span><span class="art-core"></span><span class="art-grid"></span>
@@ -312,9 +381,10 @@
 <p class="tech-area"><strong>Área tecnológica:</strong> Adaptación climática, mitigación térmica y protección frente a olas de calor extremo.</p>
 <div class="meta"><span>13 solicitudes</span><span>$1,300,000 MXN</span></div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Familia%20Estrat%C3%A9gica%20645-657">Solicitar información</a>
+<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Familia%20Estrat%C3%A9gica%20645-657%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
 </div>
 </article>
+
 <article class="tech-card">
 <div aria-label="Representación conceptual de Familia Estratégica 658–670" class="concept-art climate" role="img">
 <span class="art-orbit"></span><span class="art-core"></span><span class="art-grid"></span>
@@ -325,7 +395,7 @@
 <p class="tech-area"><strong>Área tecnológica:</strong> Resiliencia climática integral y protección adaptativa de territorios e infraestructuras.</p>
 <div class="meta"><span>13 solicitudes</span><span>$1,300,000 MXN</span></div>
 <p class="small">Estos recursos se utilizarán para financiar otras solicitudes de patente en trámite.</p>
-<a class="btn primary card-cta" href="mailto:contacto@edithalanis.com?subject=Solicitar%20información%20sobre%20Familia%20Estrat%C3%A9gica%20658-670">Solicitar información</a>
+<a class="btn primary card-cta" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Familia%20Estrat%C3%A9gica%20658-670%20del%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Solicitar información</a>
 </div>
 </article>
 </div>
@@ -341,76 +411,56 @@
 <article><span>⌁</span><h3>Sistemas bioelectrocarbonosos</h3><p>Arquitecturas funcionales para integración biomédica, energética y fisiológica.</p></article>
 <article><span>⬡</span><h3>Infraestructura universal</h3><p>Modelos autónomos para educación, salud, cultura, vivienda y logística.</p></article>
 <article><span>↯</span><h3>Energía y continuidad</h3><p>Transporte, recuperación, regulación y continuidad operativa energética.</p></article></div></section>
+
+
+
 <section class="section multimedia-section" id="multimedia">
 <p class="eyebrow">Archivo multimedia</p>
 <h2>Trayectoria institucional, profesional y familiar</h2>
-<p class="lead">Archivo cronológico de momentos relevantes de la trayectoria de Edith Alanis. Se conserva únicamente una fotografía representativa; las demás descripciones abren directamente la fotografía o el video correspondiente en Facebook.</p>
-<p class="media-instruction">Presione para ver las fotos o videos.</p>
-<div class="year-archive">
-<article class="year-block featured-year"><div class="year-badge">1966</div>
-<a class="year-photo" href="https://www.facebook.com/photo.php?fbid=1372622866097504&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank"><img alt="Primer cumpleaños de Edith Alanis, 16 de junio de 1966" loading="lazy" src="assets/multimedia/1966-primer-cumpleanos.png"/></a>
-<div class="year-content"><h3>1966</h3><div class="year-links"><a href="https://www.facebook.com/photo.php?fbid=1372622866097504&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">Mi primer cumpleaños, 16 de junio de 1966. Fotografía tomada al cumplir un año de edad.</a></div></div>
-</article>
-<article class="year-block link-only-year"><div class="year-badge">1982</div><div class="year-content"><h3>1982</h3><div class="year-links">
-<a href="https://www.facebook.com/photo.php?fbid=1249449025081556&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">En la boda de mi hermano, cuando tenía 18 años. Un recuerdo significativo de mi juventud y de la historia familiar.</a>
-</div></div></article>
-<article class="year-block link-only-year"><div class="year-badge">1989</div><div class="year-content"><h3>1989</h3><div class="year-links">
-<a href="https://www.facebook.com/photo.php?fbid=704756712884126&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">1 de mayo de 1989. A los 24 años, un mes después del nacimiento de mi hija, mientras concluía mi carrera de Ingeniería e iniciaba mi trayectoria en la Universidad de Guadalajara.</a>
-</div></div></article>
-<article class="year-block link-only-year"><div class="year-badge">1994</div><div class="year-content"><h3>1994</h3><div class="year-links">
-<a href="https://www.facebook.com/photo.php?fbid=2066835226676261&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">Fotografía familiar junto a mis hijos cuando eran pequeños, una etapa esencial de mi vida personal y profesional.</a>
-</div></div></article>
-<article class="year-block link-only-year"><div class="year-badge">2014</div><div class="year-content"><h3>2014</h3><div class="year-links">
-<a href="https://www.facebook.com/photo.php?fbid=907006325992496&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">Aeropuerto Internacional de Múnich–Franz Josef Strauss, Alemania, 25 de mayo de 2014.</a>
-<a href="https://www.facebook.com/photo.php?fbid=907006169325845&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">Mi hijo en el aeropuerto de Múnich, Alemania, durante nuestro viaje familiar por Europa.</a>
-<a href="https://www.facebook.com/photo.php?fbid=909130615780067&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">Disneyland París, Francia, 28 de mayo de 2014.</a>
-<a href="https://www.facebook.com/photo.php?fbid=909785559047906&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">Catedral de Notre-Dame, París, Francia, 29 de mayo de 2014. Un hallazgo inesperado durante el recorrido.</a>
-<a href="https://www.facebook.com/photo.php?fbid=909775955715533&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">Museo del Louvre, París, Francia, 2014.</a>
-<a href="https://www.facebook.com/photo.php?fbid=909771139049348&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">Museo del Louvre, París, 29 de mayo de 2014, con la Mona Lisa a mis espaldas.</a>
-<a href="https://www.facebook.com/photo.php?fbid=6359532014073206&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">Otra visita al Museo del Louvre, referente del patrimonio artístico universal.</a>
-<a href="https://www.facebook.com/photo.php?fbid=908036475889481&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">En Francia, junto al homenaje dedicado a una de las primeras mujeres vinculadas con el uso de la bicicleta.</a>
-<a href="https://www.facebook.com/photo.php?fbid=914345311925264&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">Dentro de las históricas aulas de La Sorbonne, en París.</a>
-<a href="https://www.facebook.com/photo.php?fbid=911443402215455&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">Un recuerdo divertido tocando visualmente la Torre Eiffel.</a>
-<a href="https://www.facebook.com/photo.php?fbid=911441275549001&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">Recorrido por París, Francia.</a>
-<a href="https://www.facebook.com/photo.php?fbid=910699332289862&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">Vista panorámica de París desde la Torre Eiffel.</a>
-<a href="https://www.facebook.com/photo.php?fbid=910409325652196&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">Junto a mi hijo bajo la Torre Eiffel.</a>
-</div></div></article>
-<article class="year-block link-only-year"><div class="year-badge">2015</div><div class="year-content"><h3>2015</h3><div class="year-links">
-<a href="https://www.facebook.com/photo.php?fbid=1249426891750436&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">Con mis hijos en Madrid, España, compartiendo una experiencia familiar y cultural.</a>
-<a href="https://www.facebook.com/photo.php?fbid=917171131642682&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">Museo del Prado, Madrid, España, junto a mis hijos.</a>
-</div></div></article>
-<article class="year-block link-only-year"><div class="year-badge">2017</div><div class="year-content"><h3>2017</h3><div class="year-links">
-<a href="https://www.facebook.com/photo.php?fbid=1882715101754942&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">Ceremonia de titulación de Betzabé, egresada de la Maestría en Tecnologías de la Información del CUCEA.</a>
-<a href="https://www.facebook.com/photo.php?fbid=1882715085088277&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">Otro momento de la titulación de Betzabé en 2017, como parte de mi labor de formación de recursos humanos.</a>
-</div></div></article>
-<article class="year-block link-only-year"><div class="year-badge">2018</div><div class="year-content"><h3>2018</h3><div class="year-links">
-<a href="https://www.facebook.com/reel/2194416673918115" rel="noopener" target="_blank">Currículum Vitae, primera parte.</a>
-<a href="https://www.facebook.com/reel/2194420243917758" rel="noopener" target="_blank">Currículum Vitae, segunda parte.</a>
-</div></div></article>
-<article class="year-block link-only-year"><div class="year-badge">2022</div><div class="year-content"><h3>2022</h3><div class="year-links">
-<a href="https://www.facebook.com/photo.php?fbid=6383541351672272&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">Centro Espacial de la NASA, Houston, Texas, Estados Unidos.</a>
-<a href="https://www.facebook.com/photo.php?fbid=6382887715070969&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">NASA Johnson Space Center, Houston, Texas, durante la visita de 2022.</a>
-</div></div></article>
-<article class="year-block link-only-year"><div class="year-badge">2023</div><div class="year-content"><h3>2023</h3><div class="year-links">
-<a href="https://www.facebook.com/photo.php?fbid=7345994028760328&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">Las Vegas, Nevada, Estados Unidos, 2023.</a>
-</div></div></article>
-<article class="year-block link-only-year"><div class="year-badge">2024</div><div class="year-content"><h3>2024</h3><div class="year-links">
-<a href="https://www.facebook.com/reel/1329121697760008" rel="noopener" target="_blank">Homenaje y recuerdo de mi amado padre.</a>
-</div></div></article>
-<article class="year-block link-only-year"><div class="year-badge">2025</div><div class="year-content"><h3>2025</h3><div class="year-links">
-<a href="https://www.facebook.com/reel/1233053301996767" rel="noopener" target="_blank">Un momento espontáneo: mi hija quiere que coma vegetales.</a>
-<a href="https://www.facebook.com/reel/1189397999316076" rel="noopener" target="_blank">Navidad con mis hijos.</a>
-</div></div></article>
-<article class="year-block link-only-year"><div class="year-badge">2026</div><div class="year-content"><h3>2026</h3><div class="year-links">
-<a href="https://www.facebook.com/100000494119326/videos/pcb.26713735001559608/1306227951526747" rel="noopener" target="_blank">Entrevista realizada por mi hija antes de la boda.</a>
-<a href="https://www.facebook.com/photo/?fbid=26580631954869914&amp;set=pb.100000494119326.-2207520000" rel="noopener" target="_blank">Petición de mano, un momento especial para nuestra familia.</a>
-</div></div></article>
-<article class="year-block link-only-year"><div class="year-badge">Vínculo internacional</div><div class="year-content"><h3>España</h3><div class="year-links">
-<a href="https://www.facebook.com/reel/891332863348467" rel="noopener" target="_blank">Recuerdo de amistad y vinculación internacional con Máximo Fernández Sendín.</a>
-<a href="https://www.facebook.com/photo.php?fbid=923924997633962&amp;set=pb.100000494119326.-2207520000&amp;type=3" rel="noopener" target="_blank">En casa de Maximino, quien me sorprendió con un pastel.</a>
-</div></div></article>
+<p class="lead">Selección de fotografías y videos que documentan momentos relevantes de la trayectoria académica, profesional y familiar de Edith Alanis.</p>
+
+<div class="media-category">
+<div class="media-heading"><span>01</span><div><h3>Institucional</h3><p>Formación internacional, vida universitaria y formación de recursos humanos.</p></div></div>
+<div class="media-grid">
+<article class="media-card"><img src="assets/multimedia/sorbonne-generaciones-2014.png" alt="Visita académica a La Sorbonne en París en 2014" loading="lazy"><div class="media-content"><time>5 de junio de 2014</time><h4>Recorrido académico en La Sorbonne</h4><p>Visita a La Sorbonne y a instituciones universitarias de París como parte de un recorrido académico que continuó en España.</p></div></article>
+<article class="media-card"><img src="assets/multimedia/sorbonne-paris-2014.png" alt="Edith Alanis en La Sorbonne, París, junio de 2014" loading="lazy"><div class="media-content"><time>Junio de 2014</time><h4>La Sorbonne, Université de Paris</h4><p>Una experiencia profundamente significativa dentro de mi vida académica y de mi formación internacional.</p></div></article>
+<article class="media-card"><img src="assets/multimedia/louvre-paris-2014.png" alt="Edith Alanis en el Museo del Louvre, París, 2014" loading="lazy"><div class="media-content"><time>2014</time><h4>Museo del Louvre, París</h4><p>Recorrido cultural en una sala cercana a la que alberga la Mona Lisa, durante mi estancia académica en Francia.</p></div></article>
+<article class="media-card"><img src="assets/multimedia/paris-francia-2014.png" alt="Edith Alanis en París, Francia, 2014" loading="lazy"><div class="media-content"><time>30 de mayo de 2014</time><h4>Estancia en París, Francia</h4><p>Parte del recorrido internacional que fortaleció mi perspectiva académica, cultural y profesional.</p></div></article>
+<article class="media-card"><img src="assets/multimedia/titulacion-guillermo-ruelas-2017.png" alt="Titulación del maestro Guillermo Ruelas en CUCEA" loading="lazy"><div class="media-content"><time>14 de noviembre de 2017</time><h4>Titulación del Mtro. Guillermo Ruelas</h4><p>Acto protocolario de la Maestría en Tecnologías de la Información y reencuentro con colegas en CUCEA.</p></div></article>
+<article class="media-card"><img src="assets/multimedia/titulacion-marco-burgos-2017.png" alt="Titulación del maestro Marco Burgos en CUCEA" loading="lazy"><div class="media-content"><time>25 de octubre de 2017</time><h4>Titulación del Mtro. Marco Burgos</h4><p>Culminación de su formación en la Maestría en Tecnologías de la Información.</p></div></article>
+<article class="media-card"><img src="assets/multimedia/titulacion-gerardo-guzman-2025.png" alt="Titulación del doctor Gerardo Guzmán Silva" loading="lazy"><div class="media-content"><time>25 de octubre de 2025</time><h4>Titulación del Dr. Gerardo Guzmán Silva</h4><p>Celebración de la conclusión satisfactoria de su formación doctoral.</p></div></article>
+</div>
+</div>
+
+<div class="media-category alt-media">
+<div class="media-heading"><span>02</span><div><h3>Profesional</h3><p>Videos de currículum, vínculos internacionales y memoria profesional.</p></div></div>
+<div class="video-grid">
+<a class="video-card" href="https://www.facebook.com/reel/2194416673918115" target="_blank" rel="noopener"><span class="play">▶</span><div><time>8 de abril de 2018</time><h4>Currículum Vitae I</h4><p>Primera parte de la presentación audiovisual de mi trayectoria académica y profesional.</p><strong>Ver video en Facebook</strong></div></a>
+<a class="video-card" href="https://www.facebook.com/reel/2194420243917758" target="_blank" rel="noopener"><span class="play">▶</span><div><time>8 de abril de 2018</time><h4>Currículum Vitae II</h4><p>Segunda parte de la presentación audiovisual de mi trayectoria profesional.</p><strong>Ver video en Facebook</strong></div></a>
+<a class="video-card" href="https://www.facebook.com/reel/891332863348467" target="_blank" rel="noopener"><span class="play">▶</span><div><time>España</time><h4>Mi amigo Máximo Fernández Sendín</h4><p>Un recuerdo de amistad y vinculación internacional con España.</p><strong>Ver video en Facebook</strong></div></a>
+</div>
+</div>
+
+<div class="media-category">
+<div class="media-heading"><span>03</span><div><h3>Familiar</h3><p>Recuerdos, homenajes, celebraciones y momentos que forman parte de nuestra historia.</p></div></div>
+<div class="media-grid">
+<article class="media-card"><img src="assets/multimedia/1966-primer-cumpleanos.png" alt="Primer cumpleaños de Edith Alanis" loading="lazy"><div class="media-content"><time>16 de junio de 1966</time><h4>Mi primer cumpleaños</h4><p>Uno de los primeros recuerdos conservados de mi infancia y del inicio de mi historia familiar.</p></div></article>
+<article class="media-card"><img src="assets/multimedia/mi-amado-padre.png" alt="Edith Alanis con su padre" loading="lazy"><div class="media-content"><time>Recuerdo familiar</time><h4>Mi amado padre</h4><p>Su ejemplo, cariño, integridad y buen consejo han sido una fuente permanente de inspiración.</p></div></article>
+<article class="media-card"><img src="assets/multimedia/condolencias-isidm-2024.png" alt="Condolencias institucionales del ISIDM por el fallecimiento del padre de Edith Alanis" loading="lazy"><div class="media-content"><time>Marzo de 2024</time><h4>Solidaridad institucional del ISIDM</h4><p>Muestra de acompañamiento y respeto recibida por nuestra familia durante un momento de profundo dolor.</p></div></article>
+<article class="media-card"><img src="assets/multimedia/condolencias-udg-2024.png" alt="Condolencias de la Universidad de Guadalajara por el fallecimiento del padre de Edith Alanis" loading="lazy"><div class="media-content"><time>23 de marzo de 2024</time><h4>Condolencias de la Universidad de Guadalajara</h4><p>Mensaje del CUCSH que expresó solidaridad y acompañamiento a nuestra familia.</p></div></article>
+<article class="media-card"><img src="assets/multimedia/ejemplo-de-mi-madre-2024.png" alt="Edith Alanis con su madre y familiares preparando un expediente académico" loading="lazy"><div class="media-content"><time>20 de mayo de 2024</time><h4>El ejemplo de mi madre</h4><p>Gratitud a mi mamá Susy Pérez, a mi hijo Daniel, a mi prima Malena López y a su esposo por su apoyo para integrar un expediente académico.</p></div></article>
+<article class="media-card"><img src="assets/multimedia/boda-de-mi-hijo-2026.png" alt="Boda del hijo de Edith Alanis el 10 de enero de 2026" loading="lazy"><div class="media-content"><time>10 de enero de 2026</time><h4>La boda de mi hijo</h4><p>Un día de profunda emoción y alegría al presenciar el inicio de una nueva etapa en la vida de mi hijo.</p></div></article>
+</div>
+<div class="video-grid family-videos">
+<a class="video-card" href="https://www.facebook.com/reel/1329121697760008" target="_blank" rel="noopener"><span class="play">▶</span><div><time>Marzo de 2024</time><h4>Duelo por mi papá</h4><p>Homenaje a quien fue el mayor impulsor de mi vida y vivió para su familia.</p><strong>Ver video en Facebook</strong></div></a>
+<a class="video-card" href="https://www.facebook.com/100000494119326/videos/pcb.26713735001559608/1306227951526747" target="_blank" rel="noopener"><span class="play">▶</span><div><time>10 de enero de 2026</time><h4>Entrevista antes de la boda</h4><p>Mi hija Elsy me entrevista antes de la boda de mi hijo.</p><strong>Ver video en Facebook</strong></div></a>
+<a class="video-card" href="https://www.facebook.com/reel/1233053301996767" target="_blank" rel="noopener"><span class="play">▶</span><div><time>10 de diciembre de 2025</time><h4>Mi hija quiere que coma vegetales</h4><p>Un momento espontáneo y divertido durante la convivencia navideña con mis hijos.</p><strong>Ver video en Facebook</strong></div></a>
+<a class="video-card" href="https://www.facebook.com/reel/1189397999316076" target="_blank" rel="noopener"><span class="play">▶</span><div><time>4 de diciembre de 2025</time><h4>Navidad con mis hijos</h4><p>Un recuerdo de unión, convivencia y alegría familiar.</p><strong>Ver video en Facebook</strong></div></a>
+<a class="video-card" href="https://www.facebook.com/photo/?fbid=26580631954869914&amp;set=pb.100000494119326.-2207520000" target="_blank" rel="noopener"><span class="play">↗</span><div><time>Celebración familiar</time><h4>Petición de mano</h4><p>Un momento especial relacionado con la petición de mano de la novia de mi hijo.</p><strong>Ver publicación en Facebook</strong></div></a>
+</div>
 </div>
 </section>
+
 <section class="section visitors" id="visitantes">
 <p class="eyebrow">Alcance del portal</p>
 <h2>Visitantes del portal</h2>
@@ -420,15 +470,16 @@
 <span>Visitas registradas</span>
 </article>
 <article class="visitor-globe-card">
-<div aria-label="Planeta con puntos que representan la ubicación aproximada de los visitantes" id="visitorGlobe"></div>
+<div id="visitorGlobe" aria-label="Planeta con puntos que representan la ubicación aproximada de los visitantes"></div>
 <span>Procedencia aproximada de visitantes</span>
 </article>
 </div>
 <p class="privacy-note">Los puntos representan ubicaciones aproximadas. No se muestran nombres de ciudades, estados, países, domicilios ni coordenadas exactas.</p>
 </section>
+
 <section class="section contact" id="contacto"><p class="eyebrow">Contacto</p><h2>Información, licenciamiento y colaboración</h2>
 <p>Para conocer condiciones de adquisición, licenciamiento, coinversión o desarrollo conjunto, comuníquese con el Programa de Innovación EdithAlanis™.</p>
-<a class="btn primary" href="mailto:contacto@edithalanis.com">contacto@edithalanis.com</a></section>
+<a class="btn primary" href="https://wa.me/523331191167?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20el%20Programa%20de%20Innovaci%C3%B3n%20EdithAlanis%E2%84%A2." target="_blank" rel="noopener">Contactar por WhatsApp</a></section>
 </main>
 <footer><strong>Programa de Innovación EdithAlanis™</strong><span>Innovación • Ciencia • Tecnología • Colaboración</span><small>© 2026 Portal Oficial del Programa de Innovación EdithAlanis™</small></footer>
 <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>

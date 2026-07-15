@@ -1,4 +1,26 @@
 
+const joinModal=document.getElementById('joinModal');
+const openJoinModal=document.getElementById('openJoinModal');
+const closeJoinModal=()=>{
+  if(!joinModal) return;
+  joinModal.classList.remove('open');
+  joinModal.setAttribute('aria-hidden','true');
+  document.body.classList.remove('modal-open');
+};
+const showJoinModal=()=>{
+  if(!joinModal) return;
+  joinModal.classList.add('open');
+  joinModal.setAttribute('aria-hidden','false');
+  document.body.classList.add('modal-open');
+  joinModal.querySelector('.join-modal-close')?.focus();
+};
+openJoinModal?.addEventListener('click',showJoinModal);
+document.querySelectorAll('[data-close-join]').forEach(element=>element.addEventListener('click',closeJoinModal));
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape' && joinModal?.classList.contains('open')) closeJoinModal();
+});
+
+
 const toggle=document.querySelector('.menu-toggle');
 const links=document.querySelector('.navlinks');
 toggle?.addEventListener('click',()=>links.classList.toggle('open'));

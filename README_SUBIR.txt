@@ -1,15 +1,18 @@
-VERSIÓN FINAL DEL PORTAL EDITHALANIS.COM — ARCHIVO CRONOLÓGICO CON LIGAS
+VERSIÓN FINAL DEL PORTAL EDITHALANIS.COM — INTEGRACIÓN DE COINVENTORES
 
 CAMBIOS INTEGRADOS:
-- Se conserva una sola fotografía representativa: primer cumpleaños de 1966.
-- Todas las demás fotografías y videos se muestran como descripciones con enlace directo a Facebook.
-- No se incluyeron archivos multimedia que no tengan liga.
-- Se organizaron las ligas por año: 1966, 1982, 1989, 1994, 2014, 2015, 2017, 2018 y 2022 a 2026.
-- Se conservaron todas las demás secciones y funciones del sitio.
+- Se eliminó el correo electrónico visible del encabezado y de la sección de contacto.
+- Se añadió la sección “¿Quieres integrarte al grupo de coinventores?”.
+- Se incorporaron los requisitos: INE por ambos lados, comprobante de domicilio, CURP, correo electrónico y teléfono.
+- Se añadieron cuatro modalidades de colaboración.
+- Se añadió el botón Inscripción con ventana emergente.
+- La ventana dirige a WhatsApp al 333 119 1167 con datos prellenados.
+- Los botones “Solicitar información” del portafolio tecnológico ahora abren WhatsApp.
+- Se conservó el resto del portal.
 
 PARA SUBIR A GITHUB PAGES:
-1. Descomprime este ZIP.
+1. Descomprime el ZIP.
 2. Reemplaza index.html, script.js, styles.css, style.css y README_SUBIR.txt.
-3. Sube completa la carpeta assets.
+3. Conserva la carpeta assets existente en el repositorio.
 4. Haz clic en Commit changes.
-5. Espera de uno a tres minutos y actualiza edithalanis.com con Ctrl + F5.
+5. Actualiza la página con Ctrl + F5.
