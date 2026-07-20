@@ -1,39 +1,15 @@
-VERSIÓN FINAL DEL PORTAL EDITHALANIS.COM — 670 PROYECTOS + ARCHIVO MULTIMEDIA
+VERSIÓN CORREGIDA DE EDITHALANIS.COM
 
-CAMBIOS INTEGRADOS:
-- Se conservó íntegra la versión actualizada hasta 670 proyectos tecnológicos.
-- Se conservaron 5 patentes concedidas, 3 modelos de utilidad concedidos, 114 solicitudes en proceso y 21 cursos.
-- Se añadió al menú la sección Multimedia.
-- Se añadieron tres apartados: Institucional, Profesional y Familiar.
-- Se integraron físicamente 13 fotografías en la carpeta assets/multimedia.
-- Las fotografías ya no dependen de enlaces externos: quedan incluidas dentro del paquete y visibles en sus cuadros.
-- Se añadieron enlaces a los videos de Facebook de Currículum Vitae, homenaje familiar, Navidad y boda.
-- Se mantuvieron el equipo institucional, la Red Nacional de Coinventores, el portafolio tecnológico y el contador de visitantes.
+CORRECCIONES:
+- Se restauró la sección Inventores con las 5 patentes y los 3 modelos de utilidad concedidos.
+- Se agregó el Modelo de Utilidad No. 6279 sin fechas.
+- Se conservaron los números 3811 y 6270.
+- Se hicieron visibles todos los enlaces de Facebook como botones azules con la leyenda “Ver en Facebook”.
+- El ZIP está plano: los archivos están directamente en la raíz, no dentro de otra carpeta.
 
-PARA SUBIR A GITHUB PAGES:
-1. Descomprime este archivo ZIP.
-2. En el repositorio de edithalanis.com reemplaza los archivos:
-   - index.html
-   - script.js
-   - styles.css
-   - style.css
-   - README_SUBIR.txt
-3. Sube completa la carpeta:
-   - assets/multimedia
-4. No cambies los nombres de las fotografías ni la estructura de carpetas.
-5. Haz clic en Commit changes.
-6. Espera de uno a tres minutos.
-7. Abre edithalanis.com y actualiza con Ctrl + F5.
-
-IMPORTANTE:
-- Debes subir todos los archivos y la carpeta assets al mismo tiempo.
-- Si se omite assets/multimedia, los cuadros aparecerán sin fotografías.
-- styles.css y style.css se entregan idénticos para evitar incompatibilidades.
-
-
-ACTUALIZACIÓN DE INSCRIPCIÓN:
-- Se añadió la sección “¿Quieres integrarte al Grupo Nacional de Coinventores?”.
-- Se incorporaron cuatro modalidades de participación.
-- Se añadió una ventana de inscripción con nombre, correo electrónico, teléfono y colaboración pretendida.
-- El formulario abre WhatsApp con el mensaje preparado para el número 33 3119 1167.
-- Se retiró el correo electrónico visible de la barra superior y de la sección de contacto.
+PARA SUBIR A GITHUB:
+1. Descomprime el ZIP.
+2. Sube y reemplaza directamente en la raíz del repositorio: index.html, script.js, styles.css, style.css y README_SUBIR.txt.
+3. No subas la carpeta contenedora; sube los cinco archivos.
+4. Confirma con Commit changes.
+5. Espera dos minutos y abre edithalanis.com con Ctrl + F5.
