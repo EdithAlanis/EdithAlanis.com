@@ -1,15 +1,22 @@
-VERSIÓN CORREGIDA DE EDITHALANIS.COM
+VERSIÓN FINAL EDITHALANIS.COM — MODELO DE UTILIDAD 6279 Y LIGAS DE FACEBOOK
 
-CORRECCIONES:
-- Se restauró la sección Inventores con las 5 patentes y los 3 modelos de utilidad concedidos.
-- Se agregó el Modelo de Utilidad No. 6279 sin fechas.
-- Se conservaron los números 3811 y 6270.
-- Se hicieron visibles todos los enlaces de Facebook como botones azules con la leyenda “Ver en Facebook”.
-- El ZIP está plano: los archivos están directamente en la raíz, no dentro de otra carpeta.
+CAMBIOS INTEGRADOS:
+- Se muestran únicamente los números de los títulos concedidos, sin fechas.
+- Patentes concedidas: 324844, 330235, 337707, 392662 y 427287.
+- Modelos de utilidad concedidos: 3811, 6270 y 6279.
+- Se restauró la sección Multimedia.
+- Se conservaron las ligas directas de Facebook organizadas cronológicamente.
+- La sección Multimedia ya no depende de una carpeta de imágenes, para evitar enlaces rotos.
+- Se conservan las demás secciones, los 670 proyectos, la Red Nacional de Coinventores, los cursos y el contador de visitantes.
 
-PARA SUBIR A GITHUB:
-1. Descomprime el ZIP.
-2. Sube y reemplaza directamente en la raíz del repositorio: index.html, script.js, styles.css, style.css y README_SUBIR.txt.
-3. No subas la carpeta contenedora; sube los cinco archivos.
-4. Confirma con Commit changes.
-5. Espera dos minutos y abre edithalanis.com con Ctrl + F5.
+PARA SUBIR A GITHUB PAGES:
+1. Abre el repositorio de edithalanis.com.
+2. Reemplaza estos cinco archivos:
+   - index.html
+   - script.js
+   - styles.css
+   - style.css
+   - README_SUBIR.txt
+3. Haz clic en Commit changes.
+4. Espera de uno a tres minutos.
+5. Abre edithalanis.com y presiona Ctrl + F5.
